@@ -1,0 +1,130 @@
+---
+title: "When Splitting Teams into Backend and Front-end Goes Wrong"
+publishedAt: "2017-12-07"
+summary: "Discover better ways to build cross-functional feature teams without increasing dependencies"
+---
+
+Congratulations! Your engineering team has grown to the point where they
+must take on more engineers to simply keep up with maintenance demand,
+let alone tackling the tsunami of new features being requested. Each new
+team member adds additional overhead, communication becomes harder,
+and you have to find a way to make things more efficient.
+
+## The Trap
+
+After reviewing your growing team you notice really good engineers who
+excel at front-end work (HTML, CSS, JS), some that are amazing at backend
+systems, and a few in-between. “I’ll create two teams — one for front-end
+work and another for backend development” you think. “Similar skill sets
+will be together and everything will be great!”
+
+> Wrong.
+
+While you’ve done a great job assessing your **_team_**, you fallen into the trap of
+not reviewing your current portfolio of products _or_ forecasting the types of
+work your new teams will be tasked with over the next 12–18 months. You
+now have no clue if you’ve set them up for success or failure because you
+can’t say if their work will be isolated or inter-connected. Lacking this
+awareness of the field your engineers will be operating on is a crucial
+mistake.
+
+If you’re lucky, your oversight will cause minimal issues with shipping
+features. Or maybe you can compensate with Herculean efforts using project
+management and coordination. If you are unlucky, you’ve just screwed your
+teams, limited their throughput, and decreased your reliability and
+consistency.
+
+## The Problem
+
+Even though your engineering organization is growing, your project
+management approaches, communication channels, and workflows may not
+have followed suit. A backend/front-end split can, and does, work, but it
+often requires a maturity level your new teams probably aren’t ready to pull
+off quite yet.
+
+If your products are still tightly coupled, when your stakeholders request
+new features requiring multiple tiers of your stack — say a new payment type
+for your application — the separation of your teams into focus areas can
+create inefficiencies. Any change in requirements will ripple through
+multiple teams, creating additional work, and creating blockers between
+them as one team waits on another.
+
+This problem doesn’t magically stop after a feature is launched. When a bug
+is discovered, you are lucky if it can be isolated to just a single team. Now a
+bug report has to be completed for multiple teams, code has to be written
+across multiple codebases, and depending on the sophistication of your
+original implementation, you may have to coordinate deployment as well.
+
+Instead of an internal discussion you’ve used previously, you now must
+coordinate work across two or more teams using some type of project
+management process or creation of architectural documentation (i.e.
+contracts via API). If you don’t, the requested feature will take longer than
+expected, the project will be delayed, all due to a core problem having
+nothing to do with the complexity of the feature being requested.
+
+## A Better Way
+
+In agile terms, the original sin is the creation of teams unable to operate
+autonomously, that are focused too narrowly on _their_ speciality, and the
+creation of dependencies between teams that must be managed. A better
+way is to avoid the dependency in the first place.
+
+-   Break away from backend/front-end functional teams by using cross-
+    functional product teams who have a mixture of skills (back and front).
+-   Empower teams with full autonomy over their product(s).
+-   Mature your architecture and processes to adapt to, and support, this
+    new orientation.
+
+Perhaps your organization is too small or your product portfolio is too large
+to setup true long-term, cross-functional teams focused on products. Instead
+try utilizing project teams that live for the duration of the project, disbanding
+at the end of a successful launch. While you can’t ride this approach forever,
+it _can_ be a bridge between skill teams and product teams, by making a few
+rest stops with project teams. This will help your engineers start to think
+about the success of a product first instead of the walls between pieces and
+teams of that product.
+
+## But…but…but
+
+> “But my engineers are not cross-functional — they have specific strengths and can’t work on everything!”
+
+As with many things, Mike Cohn has already addressed this concern by
+highlighting that [while “multi-skilled” engineers are preferred, specialists
+are fine.](https://www.mountaingoatsoftware.com/blog/cross-functional-doesnt-mean-everyone-can-do-everything)
+In the end, it’s the **_team_** that should ultimately be cross-functional,
+not every single member of that team. That said, your engineers are
+probably more adaptable than you give them credit for. Give them the
+opportunity to try out new things in a safe, supportive, collaborative
+environment and see if they don’t surprise you.
+
+> “Sure, but how will I improve the skills of my engineers if they don’t work with
+> other people with the same skills? Iron sharpens iron!”
+
+There are a number of ways to do this that have minimal effect on the
+shipment of features — regular engineering discussions, baseline standards
+and approaches, technical talks (lightning or otherwise), architectural deep
+dives, etc. Taken to an extreme you may end up implementing something
+akin to [Spotify’s idea of “Chapters”](http://blog.crisp.se/2012/11/14/henrikkniberg/scaling-agile-at-spotify) where similar engineers are grouped
+across team boundaries and it’s their responsibility to organize and associate
+amongst themselves.
+
+> “How will I determine the performance of the engineers I oversee if I don’t have
+> them all in one team?”
+
+The key is attempting to separate _reporting lines_ from _team structure_ and the
+product/projects they oversee. Sure, you may have supervisors mentoring
+engineers across multiple teams. But this ensures that your engineers look to
+the right authority for guidance — your Product Owner (or equivalent) for
+their daily work; their supervisor for mentorship and career growth.
+Differentiation between types of focus (career growth vs. product/project) is
+healthy and often necessary.
+
+## One Size Fits All?
+
+Does this mean having backend and front-end teams is always wrong?
+Absolutely not. In many cases, this type of team structure can be incredibly
+successful — but it requires all of your support systems (leadership, project
+management, technology) to be aligned to meet the task of coordination.
+And it **_has_** to be done intentionally with an eye towards how and what your
+engineering organization develops. Otherwise, you are likely setting your
+teams up for frustrating failures they can’t easily fix.
