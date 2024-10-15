@@ -107,7 +107,8 @@ html {
     @apply font-medium;
 }
 
-.prose ul {
+.prose ul,
+section ul {
     @apply list-disc pl-6;
 }
 
