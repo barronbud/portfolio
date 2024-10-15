@@ -1,4 +1,4 @@
-import { BlogPosts } from "app/components/posts";
+import { BlogPostsSneakPeek } from "app/components/posts";
 
 export const metadata = {
     title: "Articles",
@@ -11,7 +11,9 @@ export default function Page() {
             <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
                 Articles
             </h1>
-            <BlogPosts />
+            <div>
+                <BlogPostsSneakPeek />
+            </div>
         </section>
     );
 }

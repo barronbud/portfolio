@@ -51,7 +51,7 @@ export default function Page() {
             <h2 className="my-8 text-xl font-semibold tracking-tighter">
                 Recent Articles
             </h2>
-            <div className="my-8">
+            <div className="my-8 card-preview">
                 <BlogPostsSneakPeek />
             </div>
         </section>

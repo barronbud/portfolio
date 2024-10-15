@@ -112,6 +112,11 @@ section ul {
     @apply list-disc pl-6;
 }
 
+.prose li,
+section li {
+    @apply my-3;
+}
+
 .prose ol {
     @apply list-decimal pl-6;
 }
@@ -156,4 +161,8 @@ table {
 
 .title {
     text-wrap: balance;
+}
+
+.card-preview > div {
+    @apply grid grid-cols-1 md:grid-cols-3;
 }

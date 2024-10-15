@@ -40,11 +40,13 @@ function getMDXData(dir) {
     return mdxFiles.map((file) => {
         let { metadata, content } = readMDXFile(path.join(dir, file));
         let slug = path.basename(file, path.extname(file));
+        let preview = content.split(".").slice(0, 2).join(".");
 
         return {
             metadata,
             slug,
             content,
+            preview,
         };
     });
 }
