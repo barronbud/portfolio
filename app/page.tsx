@@ -23,6 +23,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div className="mx-4">
+                    <h2 className="text-4xl font-bold py-4">Jeffrey Barron</h2>
                     <ul>
                         <li>
                             10+ years in software development across fin-tech,
