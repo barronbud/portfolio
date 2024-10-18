@@ -1,9 +1,10 @@
-import { BlogPosts, BlogPostsSneakPeek } from "app/components/posts";
+import { BlogPostsSneakPeek } from "app/components/posts";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import { ArrowIcon } from "./components/footer";
 import Recommendation from "./components/recommendation";
 import { title } from "process";
+import { showNewApp } from "flags";
 
 const recommendations = [
     {
@@ -33,7 +34,9 @@ const recommendations = [
     },
 ];
 
-export default function Page() {
+export default async function Page() {
+    const newApp = await showNewApp();
+    console.log(newApp);
     return (
         <section>
             <h1 className="mb-8 text-3xl font-semibold tracking-tighter">
@@ -101,6 +104,7 @@ export default function Page() {
             <div className="my-8 card-preview">
                 <BlogPostsSneakPeek />
             </div>
+            {newApp ? <div>New App</div> : null}
         </section>
     );
 }
