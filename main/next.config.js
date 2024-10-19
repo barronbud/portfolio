@@ -2,12 +2,16 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: "/demos",
-                destination: `${process.env.DEMO_DOMAIN}/demos`,
+                source: "/demos/order-management-system",
+                destination: `${process.env.OMS_DOMAIN}/`,
             },
             {
-                source: "/demos/:path+",
-                destination: `${process.env.DEMO_DOMAIN}/demos/:path+`,
+                source: "/demos/order-management-system/:path+",
+                destination: `${process.env.OMS_DOMAIN}/:path+`,
+            },
+            {
+                source: "/demos/_next/:path+",
+                destination: `${process.env.OMS_DOMAIN}/demos/_next/:path+`,
             },
         ];
     },
