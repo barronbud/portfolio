@@ -3,7 +3,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "lint": "next lint"
     },
     "dependencies": {
         "@tailwindcss/postcss": "4.0.0-alpha.13",
@@ -25,5 +26,9 @@
         "tailwindcss": "4.0.0-alpha.13",
         "typescript": "5.3.3",
         "vercel": "^37.11.0"
+    },
+    "devDependencies": {
+        "eslint": "^8",
+        "eslint-config-next": "14.2.15"
     }
 }
