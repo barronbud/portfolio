@@ -16,10 +16,11 @@ export const metadata: Metadata = {
         template: "%s | Portfolio | Jeffrey Barron",
     },
     description:
-        "Engineering Leader | Software Engineer | I empower engineering teams to solve hard problems.",
+        "Engineering Leader • Software Engineer • I empower engineering teams to solve hard problems.",
     openGraph: {
         title: "Jeffrey Barron's Portfolio",
-        description: "This is my portfolio.",
+        description:
+            "I'm an engineering leader specializing in building, growing, and empowering full-stack teams.",
         url: baseUrl,
         siteName: "Jeffrey Barron's Portfolio",
         locale: "en_US",
