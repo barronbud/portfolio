@@ -1,9 +1,9 @@
-import { Order } from "@/app/api/orders/route";
 import Link from "next/link";
 import {
     MagnifyingGlassIcon,
     PencilSquareIcon,
 } from "@heroicons/react/24/outline";
+import { Order } from "@/app/types";
 
 async function getOrders(): Promise<Order[]> {
     const res = await fetch(`${process.env.OMS_DOMAIN}/api/orders`);
