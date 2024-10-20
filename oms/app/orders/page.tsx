@@ -6,9 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 async function getOrders(): Promise<Order[]> {
-    const res = await fetch(
-        `${process.env.MAIN_DOMAIN}/demos/order-management-system/api/orders`
-    );
+    const res = await fetch(`${process.env.OMS_DOMAIN}/api/orders`);
     if (!res.ok) {
         throw new Error("Failed to fetch orders");
     }
