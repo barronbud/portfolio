@@ -4,13 +4,14 @@ import {
     PencilSquareIcon,
 } from "@heroicons/react/24/outline";
 import { Order } from "@/app/types";
-
+import { db } from "@/app/api/orders/db";
 async function getOrders(): Promise<Order[]> {
-    const res = await fetch(`${process.env.OMS_DOMAIN}/api/orders`);
-    if (!res.ok) {
-        throw new Error("Failed to fetch orders");
-    }
-    return res.json();
+    // const res = await fetch(`${process.env.OMS_DOMAIN}/api/orders`);
+    // if (!res.ok) {
+    //     throw new Error("Failed to fetch orders");
+    // }
+    // return res.json();
+    return db.getOrders();
 }
 
 export default async function Orders() {
