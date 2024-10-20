@@ -5,6 +5,8 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "./components/nav";
+import Link from "next/link";
+import { ReactNode } from "react";
 
 export const metadata: Metadata = {
     title: {
@@ -29,11 +31,7 @@ export const metadata: Metadata = {
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
