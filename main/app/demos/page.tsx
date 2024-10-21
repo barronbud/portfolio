@@ -22,7 +22,7 @@ export default function Page() {
             <p className="mb-4">
                 The Order Management System is a web-based application designed
                 to help businesses manage their sales and order processes
-                efficiently. Here's what it does:
+                efficiently.
             </p>
             <ul className="list-disc list-inside">
                 <li>
@@ -36,9 +36,9 @@ export default function Page() {
                     purchase.
                 </li>
                 <li>
-                    Quick Sale Feature: There's a feature for processing quick
-                    sales, which might be useful for in-person transactions or
-                    returning customers.
+                    Quick Sale Feature: There&apos;s a feature for processing
+                    quick sales, which might be useful for in-person
+                    transactions or returning customers.
                 </li>
             </ul>
         </section>
