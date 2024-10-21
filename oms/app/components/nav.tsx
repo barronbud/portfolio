@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLongLeftIcon } from "@heroicons/react/24/outline";
+
 export function Navbar() {
     return (
         <aside className="-ml-[8px] mb-16 tracking-tight">
@@ -17,15 +18,7 @@ export function Navbar() {
                         </li>
                         <li>
                             <Link
-                                href="/demos/order-management-system/"
-                                className="text-gray-400 hover:text-gray-500"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/demos/order-management-system/orders"
+                                href="/demos/order-management-system"
                                 className="text-gray-400 hover:text-gray-500"
                             >
                                 Orders

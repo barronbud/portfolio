@@ -3,4 +3,4 @@
 ## Monorepo Structure
 
 -   `main` => landing page & articles
--   `demos` => future demo apps
+-   `oms` => order management system demo app

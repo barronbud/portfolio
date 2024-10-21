@@ -15,28 +15,30 @@ export async function Navbar() {
     const shouldShowDemos = await showDemos();
 
     return (
-        <aside className="-ml-[8px] mb-16 tracking-tight">
+        <aside className="-ml-[8px] mb-16 tracking-tight z-10">
             <div className="lg:sticky lg:top-20">
-                <nav
-                    className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-                    id="nav"
-                >
-                    <div className="flex flex-row space-x-0 pr-10">
-                        {Object.entries(navItems).map(([path, { name }]) => {
-                            if (name === "demos" && !shouldShowDemos) {
-                                return;
-                            }
+                <nav className="" id="nav">
+                    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p4">
+                        <ul className="flex flex-row space-x-0 pr-10">
+                            {Object.entries(navItems).map(
+                                ([path, { name }]) => {
+                                    if (name === "demos" && !shouldShowDemos) {
+                                        return;
+                                    }
 
-                            return (
-                                <Link
-                                    key={path}
-                                    href={path}
-                                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1 capitalize"
-                                >
-                                    {name}
-                                </Link>
-                            );
-                        })}
+                                    return (
+                                        <li key={path}>
+                                            <Link
+                                                href={path}
+                                                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1 capitalize"
+                                            >
+                                                {name}
+                                            </Link>
+                                        </li>
+                                    );
+                                }
+                            )}
+                        </ul>
                     </div>
                 </nav>
             </div>
