@@ -36,19 +36,19 @@ const recommendations = [
 export default async function Page() {
     return (
         <section>
-            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 z-10 relative">
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     Jeffrey Barron
                 </h1>
                 <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
-                    Tech Leader • Software Engineer • I empower teams to solve
+                    Tech Leader • Software Engineer • Empowering teams to solve
                     hard problems
                 </p>
             </div>
             <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
 
             <div className="flex">
-                <div className="w-64">
+                <div className="w-64 z-10">
                     <Image
                         src="/images/profile-pic.png"
                         width={896}
@@ -62,7 +62,7 @@ export default async function Page() {
                         <SocialIcon url="https://github.com/barronbud" />
                     </div>
                 </div>
-                <div className="mx-4">
+                <div className="mx-4 z-10">
                     <ul>
                         <li>
                             10+ years in software development across fin-tech,
