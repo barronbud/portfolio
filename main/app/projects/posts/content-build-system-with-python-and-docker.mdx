@@ -1,0 +1,46 @@
+---
+title: "Creating a Content Build System with Python and Docker"
+publishedAt: "2024-10-21"
+summary: "A system for building and deploying content to a static site using Jenkins, Python, Bottle.py, and Docker"
+image: "/images/projects/content-build-system-with-python-and-docker.png"
+type: "projects"
+---
+
+## The Problem
+
+I was approached by a technology company specializing in training and certification software to help them create a content build system for their product. Their web application uses a standardized XML format called [DITA](https://www.dita.org/) (Darwin Information Typing Architecture), as well as leveraging a custom markup language to generate dynamic content.
+
+Their goal was to publish a web accessible content preview, both for topics, images, and test items, before submitting the content for final use within the web application. This content preview would allow content developers to iterate on content without requiring in-house software developer support.
+
+### Key Criteria for Success
+
+1. **Easy to Use and Support**: The system must be easy to use by content developers and support by IT staff.
+1. **Input Processing**: Handles DITA maps, DITA files, XML files, and custom markup language files.
+1. **Automated Builds**: Supports nightly builds of the entire site and ad-hoc builds triggered by Git pushes.
+1. **Interactive Preview**: Provides a clean, searchable interface with preview of custom markup language and support for interactive elements like accordions.
+1. **Modular Transformation**: Allows for individual file processing and full DITA map builds.
+1. **Performance**: Aims for quick rebuild times (< 1 minute for individual files, < 10 minutes for the entire site).
+1. **Security**: Implements access control for internal and external users.
+
+## The Solution
+
+I developed an end-to-end solution using modular Python scripts, a Dockerized [Bottle.py](https://bottlepy.org/) API server, and Jenkins jobs for building and deploying the static site. In addition, I created a custom vanilla Javascript library to power interactive elements like accordions and communication with the backend API to trigger builds and check build status.
+
+### Workflow
+
+1. Content developers edit files in their current tools, [OWA/Oxygen](https://www.oxygenxml.com/).
+2. Changes are pushed to the Git repository.
+3. Content developers trigger builds for affected files or the entire site.
+4. The system processes the input, generating static HTML/CSS/JS files.
+5. Processed content is deployed to a web server for preview.
+
+### System Architecture
+
+<div className="flex justify-center items-center bg-gray-200">
+    <Image
+        src="/images/projects/content-build-system-with-python-and-docker.png"
+        alt="Diagram of the content build system"
+        width={800}
+        height={640}
+    />
+</div>

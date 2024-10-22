@@ -1,20 +1,20 @@
 import { PostsSneakPeek } from "app/components/posts";
 import { Metadata } from "next";
-import { getBlogPosts } from "app/mdx-utils";
+import { getProjectPosts } from "app/mdx-utils";
 
 export const metadata: Metadata = {
-    title: "Articles",
-    description: "Read my articles.",
+    title: "Projects",
+    description: "Read case studies of projects I've worked on.",
 };
 
 export default function Page() {
     return (
         <section>
             <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
-                Articles
+                Projects
             </h1>
             <div>
-                <PostsSneakPeek posts={getBlogPosts()} type="articles" />
+                <PostsSneakPeek posts={getProjectPosts()} type="projects" />
             </div>
         </section>
     );

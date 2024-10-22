@@ -6,7 +6,15 @@ type Metadata = {
     publishedAt: string;
     summary: string;
     image?: string;
+    type: string;
 };
+
+export interface Post {
+    metadata: Metadata;
+    slug: string;
+    content: string;
+    preview: string;
+}
 
 function parseFrontmatter(fileContent: string) {
     let frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
@@ -35,12 +43,20 @@ function readMDXFile(filePath) {
     return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir) {
+function getMDXData(dir): Post[] {
     let mdxFiles = getMDXFiles(dir);
     return mdxFiles.map((file) => {
         let { metadata, content } = readMDXFile(path.join(dir, file));
         let slug = path.basename(file, path.extname(file));
-        let preview = content.split(".").slice(0, 2).join(".");
+        let preview = content
+            .replace(/^#.*$/gm, "") // Remove header lines
+            .replace(/^\s*[\r\n]/gm, "") // Remove empty lines
+            .replace(/<[^>]*>?/g, "") // Remove HTML tags
+            .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1") // Remove markdown links
+            .split("\n")
+            .slice(0, 1)
+            .join(".")
+            .trim();
 
         return {
             metadata,
@@ -53,6 +69,10 @@ function getMDXData(dir) {
 
 export function getBlogPosts() {
     return getMDXData(path.join(process.cwd(), "app", "articles", "posts"));
+}
+
+export function getProjectPosts() {
+    return getMDXData(path.join(process.cwd(), "app", "projects", "posts"));
 }
 
 export function formatDate(date: string, includeRelative = false) {

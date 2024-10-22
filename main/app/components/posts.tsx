@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { getBlogPosts } from "app/articles/utils";
+import { Post } from "app/mdx-utils";
 import { PostPreview } from "./post-preview";
 
-export function BlogPosts() {
-    let allBlogs = getBlogPosts();
-
+export function Posts({ posts, type }: { posts: Post[]; type: string }) {
     return (
         <div>
-            {allBlogs
+            {posts
                 .sort((a, b) => {
                     if (
                         new Date(a.metadata.publishedAt) >
@@ -21,7 +19,7 @@ export function BlogPosts() {
                     <Link
                         key={post.slug}
                         className="flex flex-col space-y-1 mb-4"
-                        href={`/articles/${post.slug}`}
+                        href={`/${type}/${post.slug}`}
                     >
                         <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
                             <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
@@ -34,12 +32,16 @@ export function BlogPosts() {
     );
 }
 
-export function BlogPostsSneakPeek() {
-    let allBlogs = getBlogPosts();
-
+export function PostsSneakPeek({
+    posts,
+    type,
+}: {
+    posts: Post[];
+    type: string;
+}) {
     return (
         <div>
-            {allBlogs
+            {posts
                 .sort((a, b) => {
                     if (
                         new Date(a.metadata.publishedAt) >
@@ -51,7 +53,7 @@ export function BlogPostsSneakPeek() {
                 })
                 .slice(0, 3)
                 .map((post) => (
-                    <PostPreview post={post} key={post.slug} />
+                    <PostPreview post={post} key={post.slug} type={type} />
                 ))}
         </div>
     );

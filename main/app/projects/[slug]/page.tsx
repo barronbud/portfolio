@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
-import { getBlogPosts } from "app/mdx-utils";
+import { getProjectPosts } from "app/mdx-utils";
 import { baseUrl } from "app/sitemap";
 import Image from "next/image";
 
 export async function generateStaticParams() {
-    let posts = getBlogPosts();
+    let posts = getProjectPosts();
 
     return posts.map((post) => ({
         slug: post.slug,
@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }) {
-    let post = getBlogPosts().find((post) => post.slug === params.slug);
+    let post = getProjectPosts().find((post) => post.slug === params.slug);
+
     if (!post) {
         return;
     }
@@ -36,7 +37,7 @@ export function generateMetadata({ params }) {
             description,
             type: "article",
             publishedTime,
-            url: `${baseUrl}/articles/${post.slug}`,
+            url: `${baseUrl}/projects/${post.slug}`,
             images: [
                 {
                     url: ogImage,
@@ -53,7 +54,7 @@ export function generateMetadata({ params }) {
 }
 
 export default function Blog({ params }) {
-    let post = getBlogPosts().find((post) => post.slug === params.slug);
+    let post = getProjectPosts().find((post) => post.slug === params.slug);
 
     if (!post) {
         notFound();
@@ -77,7 +78,7 @@ export default function Blog({ params }) {
                             : `/og?title=${encodeURIComponent(
                                   post.metadata.title
                               )}`,
-                        url: `${baseUrl}/articles/${post.slug}`,
+                        url: `${baseUrl}/projects/${post.slug}`,
                         author: {
                             "@type": "Person",
                             name: "My Portfolio",
@@ -88,17 +89,6 @@ export default function Blog({ params }) {
             <h1 className="title font-semibold text-2xl tracking-tighter">
                 {post.metadata.title}
             </h1>
-            <div className="flex justify-center items-center">
-                {post.metadata.image ? (
-                    <Image
-                        src={post.metadata.image}
-                        width={600}
-                        height={300}
-                        alt="Yoda meme - Do Or Do Not, There Is No Try"
-                        className="m-4"
-                    />
-                ) : null}
-            </div>
             <article className="prose">
                 <CustomMDX source={post.content} />
             </article>
