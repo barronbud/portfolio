@@ -1,5 +1,5 @@
 import { baseUrl } from "app/sitemap";
-import { getBlogPosts } from "app/articles/utils";
+import { getBlogPosts } from "app/mdx-utils";
 
 export async function GET() {
     let allBlogs = await getBlogPosts();
