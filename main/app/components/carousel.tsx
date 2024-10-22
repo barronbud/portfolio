@@ -21,7 +21,7 @@ export default function Carousel({ items, title }) {
     useEffect(() => {
         setTimeout(() => {
             goToNext();
-        }, 5000);
+        }, 10000);
     }, [currentIndex]);
 
     return (
