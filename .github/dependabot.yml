@@ -5,10 +5,10 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pnpm" # See documentation for possible values
+  - package-ecosystem: "npm" # See documentation for possible values
     directories:
       - "/"
       - "/main"
       - "/oms"
     schedule:
-      interval: "weekly"
+      interval: "daily"
