@@ -5,37 +5,56 @@ export const db = {
         {
             id: 1,
             cartID: "unique-cart-id-1",
-            wineryID: "winery-id-1",
             orderNumber: "1000",
             orderDate: new Date().toISOString(),
-            cartStatusID: "status-id-1",
-            cartPaymentTypeID: "payment-type-id-1",
-            memberID: "member-id-1",
-            billFirstName: "John",
-            billLastName: "Doe",
-            billEmail: "john.doe@example.com",
-            billPhone: "1234567890",
-            billAddress: "123 Main St",
-            billCity: "Anytown",
-            billState: "CA",
-            billZipCode: "12345",
-            billCountryID: "country-id-1",
-            shipFirstName: "Jane",
-            shipLastName: "Doe",
-            shipAddress: "456 Oak St",
-            shipCity: "Othertown",
-            shipState: "NY",
-            shipZipCode: "67890",
-            shipCountryID: "country-id-2",
+            user: {
+                id: 1,
+                name: "Jack Doe",
+            },
             subtotal: 100.0,
             tax: 8.0,
             shipping: 10.0,
             total: 118.0,
-            creditCardTypeID: "cc-type-id-1",
-            cardNumber: "************1234",
-            cardExpiryMo: "12",
-            cardExpiryYr: "2025",
-            nameOnCard: "John Doe",
+            items: [
+                {
+                    id: 1,
+                    orderID: 1,
+                    product: {
+                        id: 1,
+                        name: "Product 1",
+                        price: 100.0,
+                    },
+                    quantity: 1,
+                },
+                {
+                    id: 2,
+                    orderID: 1,
+                    product: { id: 2, name: "Product 2", price: 200.0 },
+                    quantity: 2,
+                },
+            ],
+        },
+        {
+            id: 2,
+            cartID: "unique-cart-id-2",
+            orderNumber: "1001",
+            orderDate: new Date().toISOString(),
+            user: {
+                id: 2,
+                name: "Jane Doe",
+            },
+            subtotal: 100.0,
+            tax: 8.0,
+            shipping: 10.0,
+            total: 118.0,
+            items: [
+                {
+                    id: 3,
+                    orderID: 2,
+                    product: { id: 3, name: "Product 3", price: 300.0 },
+                    quantity: 3,
+                },
+            ],
         },
     ] as Order[],
 
@@ -43,5 +62,9 @@ export const db = {
         // Simulate database query delay
         await new Promise((resolve) => setTimeout(resolve, 100));
         return this.orders;
+    },
+
+    async getOrder(id: string): Promise<Order | undefined> {
+        return this.orders.find((order) => order.id === parseInt(id));
     },
 };

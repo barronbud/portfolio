@@ -3,18 +3,10 @@ import {
     MagnifyingGlassIcon,
     PencilSquareIcon,
 } from "@heroicons/react/24/outline";
-import { Order } from "@/app/types";
-
-async function getOrders(): Promise<Order[]> {
-    const res = await fetch(`${process.env.OMS_DOMAIN}/api/orders`);
-    if (!res.ok) {
-        throw new Error("Failed to fetch orders");
-    }
-    return res.json();
-}
+import { db } from "./api/orders/db";
 
 export default async function Orders() {
-    const orders = await getOrders();
+    const orders = await db.getOrders();
 
     return (
         <div>
@@ -34,6 +26,9 @@ export default async function Orders() {
                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                             Total
                         </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                            Items
+                        </th>
                         <td></td>
                     </tr>
                 </thead>
@@ -43,12 +38,15 @@ export default async function Orders() {
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
                                 {order.orderNumber}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">{`${order.billFirstName} ${order.billLastName}`}</td>
+                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">{`${order.user.name}`}</td>
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
                                 {new Date(order.orderDate).toLocaleDateString()}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
                                 ${order.total}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
+                                {order.items.length}
                             </td>
                             <td className="px-6 py-4 flex items-center">
                                 <Link
