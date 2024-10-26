@@ -3,10 +3,10 @@ import {
     MagnifyingGlassIcon,
     PencilSquareIcon,
 } from "@heroicons/react/24/outline";
-import { db } from "./api/orders/db";
+import db from "./api/orders/db";
 
 export default async function Orders() {
-    const orders = await db.getOrders();
+    const orders = await db;
 
     return (
         <div>
@@ -36,17 +36,19 @@ export default async function Orders() {
                     {orders.map((order) => (
                         <tr key={order.id} className="dark:hover:bg-gray-700">
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {order.orderNumber}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">{`${order.user.name}`}</td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {new Date(order.orderDate).toLocaleDateString()}
+                                {order.id}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                ${order.total}
+                                {order.user.name}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {order.items.length}
+                                {new Date(order.createdAt).toLocaleDateString()}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
+                                ${order.total.toFixed(2)}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
+                                {order.orderItems.length}
                             </td>
                             <td className="px-6 py-4 flex items-center">
                                 <Link
