@@ -15,7 +15,7 @@ const nextConfig = {
             },
         ];
     },
-    transpilePackages: ["react-social-icons"],
+    transpilePackages: ["react-social-icons", "next-mdx-remote"],
 };
 
 const withVercelToolbar = require("@vercel/toolbar/plugins/next")();
