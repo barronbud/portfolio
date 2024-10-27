@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-export default function Carousel({ items, title }) {
+export default function Carousel({ children }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const previous = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? items.length - 1 : prevIndex - 1
+            prevIndex === 0 ? children.length - 1 : prevIndex - 1
         );
     };
 
     const next = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === items.length - 1 ? 0 : prevIndex + 1
+            prevIndex === children.length - 1 ? 0 : prevIndex + 1
         );
     };
 
@@ -32,7 +32,7 @@ export default function Carousel({ items, title }) {
             >
                 <ChevronLeftIcon className="w-6 h-6" />
             </button>
-            <div className="text-center w-full">{items[currentIndex]}</div>
+            <div className="text-center w-full">{children[currentIndex]}</div>
             <button
                 className="p-4 ml-6 bg-blue-500 text-white rounded-lg"
                 onClick={next}

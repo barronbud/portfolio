@@ -24,8 +24,8 @@ export default async function Page() {
                 </div>
                 <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
             </div>
-            <Carousel
-                items={posts.map((post) => (
+            <Carousel>
+                {posts.map((post) => (
                     <PostPreview
                         key={post.slug}
                         post={post}
@@ -33,8 +33,7 @@ export default async function Page() {
                         useLabel={true}
                     />
                 ))}
-                title="Recent Updates"
-            />
+            </Carousel>
             <About />
             <h2 className="mb-8 text-3xl font-semibold tracking-tighter">
                 Recommendations
