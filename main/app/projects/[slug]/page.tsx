@@ -2,10 +2,9 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 import { getProjectPosts } from "app/mdx-utils";
 import { baseUrl } from "app/sitemap";
-import Image from "next/image";
 
 export async function generateStaticParams() {
-    let posts = getProjectPosts();
+    const posts = getProjectPosts();
 
     return posts.map((post) => ({
         slug: post.slug,
@@ -13,19 +12,19 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }) {
-    let post = getProjectPosts().find((post) => post.slug === params.slug);
+    const post = getProjectPosts().find((post) => post.slug === params.slug);
 
     if (!post) {
         return;
     }
 
-    let {
+    const {
         title,
         publishedAt: publishedTime,
         summary: description,
         image,
     } = post.metadata;
-    let ogImage = image
+    const ogImage = image
         ? image
         : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
@@ -54,7 +53,7 @@ export function generateMetadata({ params }) {
 }
 
 export default function Blog({ params }) {
-    let post = getProjectPosts().find((post) => post.slug === params.slug);
+    const post = getProjectPosts().find((post) => post.slug === params.slug);
 
     if (!post) {
         notFound();
