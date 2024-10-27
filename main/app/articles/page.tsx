@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <section>
-            <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
+            <h1
+                data-testid="heading"
+                className="font-semibold text-2xl mb-8 tracking-tighter"
+            >
                 Articles
             </h1>
             <div>
