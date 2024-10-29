@@ -3,7 +3,7 @@ import prisma from "@/app/db";
 export default async function OrderPage({
     params,
 }: {
-    params: { orderNumber: string };
+    params: Promise<{ orderNumber: string }>;
 }) {
     const { orderNumber } = await params;
 
