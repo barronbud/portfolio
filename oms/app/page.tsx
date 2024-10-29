@@ -3,10 +3,19 @@ import {
     MagnifyingGlassIcon,
     PencilSquareIcon,
 } from "@heroicons/react/24/outline";
-import db from "./api/orders/db";
+import prisma from "@/app/db";
 
 export default async function Orders() {
-    const orders = await db;
+    const orders = await prisma.oms_Order.findMany({
+        include: {
+            user: true,
+            orderItems: {
+                include: {
+                    product: true,
+                },
+            },
+        },
+    });
 
     return (
         <div>
