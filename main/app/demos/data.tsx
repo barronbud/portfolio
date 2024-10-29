@@ -12,12 +12,6 @@ export const demoApps = [
                 "Create new orders",
             ],
         },
-        techStack: [
-            "Next.js 15",
-            "Tailwind CSS",
-            "Vercel",
-            "Prisma",
-            "PostgreSQL",
-        ],
+        techStack: ["Next.js 15", "Tailwind", "Vercel", "Prisma", "PostgreSQL"],
     },
 ];
