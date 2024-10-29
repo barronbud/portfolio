@@ -19,24 +19,24 @@ export default function About() {
                 </div>
             </div>
             <div className="mx-4 z-10">
-                <ul>
-                    <li>
+                <ul className="list-disc list-inside pl-6">
+                    <li className="my-4">
                         10+ years in software development across fin-tech,
                         edu-tech, and e-commerce
                     </li>
-                    <li>
+                    <li className="my-4">
                         3+ years as engineering leader working with 1 or more
                         remote full-stack teams
                     </li>
-                    <li>
+                    <li className="my-4">
                         Develop and lead teams utilizing Node, React, Python,
                         and Typescript
                     </li>
-                    <li>
+                    <li className="my-4">
                         Lead Agile transformations by applying Scrum, Kanban,
                         and other methodologies
                     </li>
-                    <li>
+                    <li className="my-4">
                         Hire and grow empowered cross-functional teams with a
                         high bias towards action
                     </li>

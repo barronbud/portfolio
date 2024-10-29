@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon, PencilIcon } from "@heroicons/react/24/outline";
 import prisma from "@/app/db";
+import { showFullOMS } from "@/flags";
 
 export default async function Orders() {
+    const shouldShowFullOMS = await showFullOMS();
+
     const orders = await prisma.oms_Order.findMany({
         include: {
             user: true,
@@ -68,6 +71,17 @@ export default async function Orders() {
                                         title="View"
                                     />
                                 </Link>
+                                {shouldShowFullOMS && (
+                                    <Link
+                                        href={`/demos/order-management-system/orders/${order.id}`}
+                                    >
+                                        <PencilIcon
+                                            aria-hidden="true"
+                                            className="w-5 h-5 mr-1"
+                                            title="Edit"
+                                        />
+                                    </Link>
+                                )}
                             </td>
                         </tr>
                     ))}

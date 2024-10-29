@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "./components/nav";
 import { ReactNode } from "react";
+import { VercelToolbar } from "@vercel/toolbar/next";
 
 export const metadata: Metadata = {
     title: {
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+    const shouldInjectToolbar = process.env.NODE_ENV === "development";
     return (
         <html
             lang="en"
@@ -46,6 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     {children}
                     <Analytics />
                     <SpeedInsights />
+                    {shouldInjectToolbar && <VercelToolbar />}
                 </main>
             </body>
         </html>
