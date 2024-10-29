@@ -107,13 +107,11 @@ html {
     @apply font-medium;
 }
 
-.prose ul,
-section ul {
+.prose ul {
     @apply list-disc pl-6;
 }
 
-.prose li,
-section li {
+.prose li {
     @apply my-3;
 }
 

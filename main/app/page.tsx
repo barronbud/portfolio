@@ -4,11 +4,25 @@ import Recommendations from "./components/recommendations";
 import { getBlogPosts, getProjectPosts } from "app/mdx-utils";
 import Carousel from "./components/carousel";
 import { PostPreview } from "./components/post-preview";
+import Demo from "./components/demos";
+import { demoApps } from "./demos/data";
 
 export default async function Page() {
     const articles = getBlogPosts();
     const cases = getProjectPosts();
     const posts = [...cases, ...articles];
+    const demos = demoApps.map((demo) => <Demo key={demo.href} {...demo} />);
+
+    const postPreviews = posts.map((post) => (
+        <PostPreview
+            key={post.slug}
+            post={post}
+            type={post.metadata.type}
+            useLabel={true}
+        />
+    ));
+
+    const previews = [...demos, ...postPreviews];
 
     return (
         <section>
@@ -27,16 +41,7 @@ export default async function Page() {
                 </div>
                 <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
             </div>
-            <Carousel>
-                {posts.map((post) => (
-                    <PostPreview
-                        key={post.slug}
-                        post={post}
-                        type={post.metadata.type}
-                        useLabel={true}
-                    />
-                ))}
-            </Carousel>
+            <Carousel>{previews}</Carousel>
             <About />
             <h2 className="mb-8 text-3xl font-semibold tracking-tighter">
                 Recommendations
