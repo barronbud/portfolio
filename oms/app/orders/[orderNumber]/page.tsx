@@ -5,9 +5,10 @@ export default async function OrderPage({
 }: {
     params: { orderNumber: string };
 }) {
-    console.log(params);
+    const { orderNumber } = await params;
+
     // Convert orderNumber to number since our ID is Int in schema
-    const orderId = parseInt(params.orderNumber);
+    const orderId = parseInt(orderNumber);
 
     // Fetch order with related data
     const order = await prisma.oms_Order.findUnique({

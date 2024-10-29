@@ -5,7 +5,6 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "./components/nav";
-import Link from "next/link";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
