@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html
             lang="en"
             className={cx(
-                "text-black bg-white dark:text-white dark:bg-black",
+                "text-black bg-slate-100 dark:text-white dark:bg-black",
                 GeistSans.variable,
                 GeistMono.variable
             )}

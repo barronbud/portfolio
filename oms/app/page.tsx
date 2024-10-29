@@ -18,7 +18,7 @@ export default async function Orders() {
     });
 
     return (
-        <div>
+        <section>
             <table className="w-full dark:bg-gray-800">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
@@ -87,6 +87,6 @@ export default async function Orders() {
                     ))}
                 </tbody>
             </table>
-        </div>
+        </section>
     );
 }
