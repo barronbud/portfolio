@@ -10,4 +10,4 @@ updates:
       - "/main"
       - "/oms"
     schedule:
-      interval: "daily"
+      interval: "weekly"
