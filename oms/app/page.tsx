@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MagnifyingGlassIcon, PencilIcon } from "@heroicons/react/24/outline";
-import prisma from "@/app/db";
+import prisma from "@/db/client";
 import { showFullOMS } from "@/flags";
 
 export default async function Orders() {
@@ -19,6 +19,7 @@ export default async function Orders() {
 
     return (
         <section>
+            <h1 className="text-2xl font-bold mb-4">Orders</h1>
             <table className="w-full dark:bg-gray-800">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>

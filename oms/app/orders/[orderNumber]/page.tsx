@@ -1,4 +1,4 @@
-import prisma from "@/app/db";
+import prisma from "@/db/client";
 
 export default async function OrderPage({
     params,
