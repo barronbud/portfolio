@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { ExternalButton } from "../components/buttons";
-
+import Image from "next/image";
 export const metadata: Metadata = {
     title: "Demos",
     description: "Demo apps exploring new tools and tech",
@@ -16,11 +16,11 @@ export default function Page() {
                 <div className="pt-6 space-y-4 flex flex-col items-center sm:flex-row">
                     <div className="">
                         <a href="/demos/order-management-system">
-                            <img
+                            <Image
                                 src="/images/order-demo.png"
                                 alt=""
-                                width="1308"
-                                height="816"
+                                width={1308}
+                                height={816}
                             />
                         </a>
                     </div>
