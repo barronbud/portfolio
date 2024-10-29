@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { ExternalButton } from "../components/buttons";
 
 export const metadata: Metadata = {
     title: "Demos",
@@ -8,39 +9,55 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <section>
-            <h2 className="text-xl font-bold mb-4">
-                <a
-                    href="/demos/order-management-system"
-                    className="hover:underline underline"
-                >
-                    Order Management System
-                </a>
-            </h2>
-            <h3 className="font-semibold mb-4">
-                Current Status: <em>Work in Progress</em>
-            </h3>
-            <p className="mb-4">
-                The Order Management System is a web-based application designed
-                to help businesses manage their sales and order processes
-                efficiently.
-            </p>
-            <ul className="list-disc list-inside">
-                <li>
-                    Order Processing: The application allows staff to process
-                    orders, moving them through various stages from initial
-                    creation to completion.
-                </li>
-                <li>
-                    Shopping Cart: It provides a digital shopping cart where
-                    items can be added, removed, or modified before finalizing a
-                    purchase.
-                </li>
-                <li>
-                    Quick Sale Feature: There&apos;s a feature for processing
-                    quick sales, which might be useful for in-person
-                    transactions or returning customers.
-                </li>
-            </ul>
+            <h1 className="mb-8 text-5xl font-semibold tracking-tighter">
+                Demos
+            </h1>
+            <div className="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
+                <div className="pt-6 space-y-4 flex flex-col items-center sm:flex-row">
+                    <div className="">
+                        <a href="/demos/order-management-system">
+                            <img
+                                src="/images/order-demo.png"
+                                alt=""
+                                width="1308"
+                                height="816"
+                            />
+                        </a>
+                    </div>
+                    <div className="font-medium text-center">
+                        <div className="text-amber-700 dark:text-amber-500 text-3xl">
+                            Order Management System
+                        </div>
+                        <div className="text-slate-700 dark:text-slate-500 text-lg mb-4">
+                            Current Status: <em>Work in Progress</em>
+                        </div>
+
+                        <blockquote className="text-left mx-4">
+                            <p className="text-lg font-medium">
+                                The Order Management System is a demo web-based
+                                application designed to help businesses create
+                                and manage their orders with an easy-to-use
+                                interface.
+                            </p>
+
+                            <p className="font-medium text-lg mt-4">
+                                Tech Stack:
+                            </p>
+                            <ul className="list-disc list-inside">
+                                <li>Next.js</li>
+                                <li>Tailwind CSS</li>
+                                <li>Prisma</li>
+                                <li>PostgreSQL</li>
+                            </ul>
+                            <div className="flex justify-center">
+                                <ExternalButton href="/demos/order-management-system">
+                                    View Demo
+                                </ExternalButton>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

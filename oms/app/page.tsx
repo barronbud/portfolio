@@ -1,8 +1,5 @@
 import Link from "next/link";
-import {
-    MagnifyingGlassIcon,
-    PencilSquareIcon,
-} from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import prisma from "@/app/db";
 
 export default async function Orders() {
@@ -19,7 +16,6 @@ export default async function Orders() {
 
     return (
         <div>
-            <h1>Orders</h1>
             <table className="w-full dark:bg-gray-800">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
@@ -43,7 +39,10 @@ export default async function Orders() {
                 </thead>
                 <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                     {orders.map((order) => (
-                        <tr key={order.id} className="dark:hover:bg-gray-700">
+                        <tr
+                            key={order.id}
+                            className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                        >
                             <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
                                 {order.id}
                             </td>
@@ -67,16 +66,6 @@ export default async function Orders() {
                                         aria-hidden="true"
                                         className="w-5 h-5 mr-1"
                                         title="View"
-                                    />
-                                </Link>
-
-                                <Link
-                                    href={`/demos/order-management-system/orders/${order.id}`}
-                                >
-                                    <PencilSquareIcon
-                                        aria-hidden="true"
-                                        className="w-5 h-5 mr-1"
-                                        title="Edit"
                                     />
                                 </Link>
                             </td>

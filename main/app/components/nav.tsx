@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { showDemos } from "flags";
 
 const navItems = {
     "/": {
@@ -15,8 +14,6 @@ const navItems = {
 };
 
 export async function Navbar() {
-    const shouldShowDemos = await showDemos();
-
     return (
         <aside className="-ml-[8px] mb-16 tracking-tight z-10">
             <div className="lg:sticky lg:top-20">
@@ -25,10 +22,6 @@ export async function Navbar() {
                         <ul className="flex flex-row space-x-0 pr-10">
                             {Object.entries(navItems).map(
                                 ([path, { name }]) => {
-                                    if (name === "demos" && !shouldShowDemos) {
-                                        return;
-                                    }
-
                                     return (
                                         <li key={path}>
                                             <Link
