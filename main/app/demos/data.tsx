@@ -14,7 +14,7 @@ export const demoApps = [
         },
         techStack: [
             "Next.js 15",
-            "Tailwind 4",
+            "Tailwind CSS",
             "Vercel",
             "Prisma",
             "PostgreSQL",
