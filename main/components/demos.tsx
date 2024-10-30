@@ -7,17 +7,14 @@ export default function Demo({
     description,
     image,
     techStack,
-    features,
+    goals,
 }: {
     href: string;
     title: string;
     description: string;
     image?: string;
     techStack: string[];
-    features: {
-        current: string[];
-        upcoming: string[];
-    };
+    goals: string[];
 }) {
     return (
         <div
@@ -42,29 +39,18 @@ export default function Demo({
                         />
                     )}
                 </div>
-                <div className="text-left mx-4">
+                <div className="text-left w-full mx-4">
                     <p className="mb-3 font-normal">{description}</p>
-                    <div className="grid grid-cols-2">
-                        <div>
-                            <p className="font-medium text-lg mt-4">
-                                Key Features
-                            </p>
-                            <ul className="list-disc list-inside">
-                                {features.current.map((feature) => (
-                                    <li key={feature}>{feature}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="">
-                            <p className="font-medium text-lg mt-4">
-                                Upcoming Features
-                            </p>
-                            <ul className="list-disc list-inside">
-                                {features.upcoming.map((feature) => (
-                                    <li key={feature}>{feature}</li>
-                                ))}
-                            </ul>
-                        </div>
+                    <div>
+                        <p className="font-medium text-lg mt-4">Goals</p>
+
+                        <ul className="list-disc list-inside grid grid-cols-2 justify-between">
+                            {goals.map((goal) => (
+                                <li key={goal} className="">
+                                    {goal}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                     <div className="flex flex-col">
                         <p className="font-medium text-lg mt-4">Tech Stack</p>

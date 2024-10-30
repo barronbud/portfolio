@@ -1,93 +1,78 @@
-import Link from "next/link";
-import { MagnifyingGlassIcon, PencilIcon } from "@heroicons/react/24/outline";
-import prisma from "@/db/client";
-import { showFullOMS } from "@/flags";
-
-export default async function Orders() {
-    const shouldShowFullOMS = await showFullOMS();
-
-    const orders = await prisma.oms_Order.findMany({
-        include: {
-            user: true,
-            orderItems: {
-                include: {
-                    product: true,
-                },
-            },
-        },
-    });
-
+export default async function Overview() {
     return (
-        <section>
-            <h1 className="text-2xl font-bold mb-4">Orders</h1>
-            <table className="w-full dark:bg-gray-800">
-                <thead className="bg-gray-50 dark:bg-gray-700">
-                    <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Order Number
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Customer
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Order Date
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Total
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Items
-                        </th>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                    {orders.map((order) => (
-                        <tr
-                            key={order.id}
-                            className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-                        >
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {order.id}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {order.user.name}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {new Date(order.createdAt).toLocaleDateString()}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                ${order.total.toFixed(2)}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap dark:text-gray-300">
-                                {order.orderItems.length}
-                            </td>
-                            <td className="px-6 py-4 flex items-center">
-                                <Link
-                                    href={`/demos/order-management-system/orders/${order.id}`}
-                                >
-                                    <MagnifyingGlassIcon
-                                        aria-hidden="true"
-                                        className="w-5 h-5 mr-1"
-                                        title="View"
-                                    />
-                                </Link>
-                                {shouldShowFullOMS && (
-                                    <Link
-                                        href={`/demos/order-management-system/orders/${order.id}`}
-                                    >
-                                        <PencilIcon
-                                            aria-hidden="true"
-                                            className="w-5 h-5 mr-1"
-                                            title="Edit"
-                                        />
-                                    </Link>
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </section>
+        <div className="max-w-4xl mx-auto space-y-6">
+            <header>
+                <h1 className="text-3xl font-bold mb-4">
+                    Order Management System
+                </h1>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A comprehensive full-stack web application built with
+                    Next.js 15, showcasing modern React development practices
+                    and cloud deployment strategies. This demo project serves as
+                    a practical exploration of contemporary web development
+                    technologies and methodologies.
+                </p>
+            </header>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-3">
+                    Project Overview
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    The Order Management System demonstrates the integration of
+                    frontend and backend technologies, featuring a PostgreSQL
+                    database managed through Prisma ORM, styled with Tailwind
+                    CSS, and deployed on Vercel&apos;s cloud platform.
+                    Currently, users can view orders and interact with
+                    pre-seeded data, with planned expansions to include customer
+                    management, product catalogs, and advanced search
+                    functionality.
+                </p>
+            </section>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-3">
+                    Technical Implementation
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    The application leverages Next.js 15&apos;s server
+                    components and server actions to handle data operations
+                    efficiently, while maintaining a responsive and intuitive
+                    user interface. The integration of Prisma ORM with
+                    PostgreSQL provides a type-safe database layer, ensuring
+                    reliable data management and scalability.
+                </p>
+            </section>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-3">
+                    Future Enhancements
+                </h2>
+                <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
+                    <li>
+                        Advanced search and filtering capabilities for orders
+                    </li>
+                    <li>Comprehensive customer and product management</li>
+                    <li>Order creation workflow</li>
+                </ul>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    These additions will transform the application into a
+                    full-featured business management tool.
+                </p>
+            </section>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-3">
+                    Learning Outcomes
+                </h2>
+                <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
+                    <li>Modern Next.js development practices</li>
+                    <li>React component architecture and state management</li>
+                    <li>Database integration using ORM technologies</li>
+                    <li>Server-side operations and API design</li>
+                    <li>Cloud deployment and infrastructure management</li>
+                </ul>
+            </section>
+        </div>
     );
 }

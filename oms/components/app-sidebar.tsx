@@ -26,7 +26,7 @@ const items = [
     },
     {
         title: "Orders",
-        url: "/demos/order-management-system",
+        url: "/demos/order-management-system/orders",
         icon: ShoppingCart,
         isInternal: true,
     },
