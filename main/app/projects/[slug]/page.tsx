@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "app/components/mdx";
-import { getProjectPosts } from "app/mdx-utils";
-import { baseUrl } from "app/sitemap";
+import { CustomMDX } from "@/components/mdx";
+import { getProjectPosts } from "@/app/mdx-utils";
+import { baseUrl } from "@/app/sitemap";
 
 export async function generateStaticParams() {
     const posts = getProjectPosts();
@@ -11,7 +11,11 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const { slug } = await params;
     const post = getProjectPosts().find((post) => post.slug === slug);
 
@@ -53,7 +57,11 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function Blog({ params }) {
+export default async function Blog({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const { slug } = await params;
     const post = getProjectPosts().find((post) => post.slug === slug);
 

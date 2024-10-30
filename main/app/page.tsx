@@ -1,10 +1,11 @@
-import { PostsSneakPeek } from "app/components/posts";
-import About from "./components/about";
-import Recommendations from "./components/recommendations";
-import { getBlogPosts, getProjectPosts } from "app/mdx-utils";
-import Carousel from "./components/carousel";
-import { PostPreview } from "./components/post-preview";
-import Demo from "./components/demos";
+import { PostsSneakPeek } from "@/components/posts";
+import About from "@/components/about";
+import Recommendations from "@/components/recommendations";
+import { getBlogPosts, getProjectPosts } from "@/app/mdx-utils";
+import { CarouselItem } from "@/components/ui/carousel";
+import Carousel from "@/components/carousel";
+import { PostPreview } from "@/components/post-preview";
+import Demo from "@/components/demos";
 import { demoApps } from "./demos/data";
 
 export default async function Page() {
@@ -41,7 +42,11 @@ export default async function Page() {
                 </div>
                 <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
             </div>
-            <Carousel>{previews}</Carousel>
+            <Carousel>
+                {previews.map((preview) => (
+                    <CarouselItem key={preview.key}>{preview}</CarouselItem>
+                ))}
+            </Carousel>
             <About />
             <h2 className="mb-8 text-3xl font-semibold tracking-tighter">
                 Recommendations

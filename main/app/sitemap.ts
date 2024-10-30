@@ -1,4 +1,4 @@
-import { getBlogPosts, getProjectPosts } from "app/mdx-utils";
+import { getBlogPosts, getProjectPosts } from "@/app/mdx-utils";
 
 export const baseUrl = "https://jeffreybarron.dev";
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "app/mdx-utils";
+import { Post } from "@/app/mdx-utils";
 import { PostPreview } from "./post-preview";
 
 export function Posts({ posts, type }: { posts: Post[]; type: string }) {

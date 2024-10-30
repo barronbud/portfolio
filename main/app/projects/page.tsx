@@ -1,6 +1,6 @@
-import { PostsSneakPeek } from "app/components/posts";
+import { PostsSneakPeek } from "@/components/posts";
 import { Metadata } from "next";
-import { getProjectPosts } from "app/mdx-utils";
+import { getProjectPosts } from "@/app/mdx-utils";
 
 export const metadata: Metadata = {
     title: "Projects",

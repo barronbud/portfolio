@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "app/mdx-utils";
+import { Post } from "@/app/mdx-utils";
 import Image from "next/image";
 import InternalButton from "./buttons";
 
