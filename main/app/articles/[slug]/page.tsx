@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "app/components/mdx";
-import { getBlogPosts } from "app/mdx-utils";
-import { baseUrl } from "app/sitemap";
+import { CustomMDX } from "@/components/mdx";
+import { getBlogPosts } from "@/app/mdx-utils";
+import { baseUrl } from "@/app/sitemap";
 import Image from "next/image";
 
 export async function generateStaticParams() {
@@ -12,7 +12,11 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const { slug } = await params;
     const post = getBlogPosts().find((post) => post.slug === slug);
     if (!post) {
@@ -53,7 +57,11 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function Blog({ params }) {
+export default async function Blog({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
     const { slug } = await params;
     const post = getBlogPosts().find((post) => post.slug === slug);
 

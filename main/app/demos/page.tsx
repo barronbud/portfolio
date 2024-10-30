@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { demoApps } from "./data";
-import Demo from "../components/demos";
+import Demo from "@/components/demos";
 
 export const metadata: Metadata = {
     title: "Demos",
