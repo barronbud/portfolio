@@ -1,6 +1,6 @@
 export default async function Overview() {
     return (
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6 pb-12">
             <header>
                 <h1 className="text-3xl font-bold mb-4">
                     Order Management System
@@ -32,6 +32,19 @@ export default async function Overview() {
 
             <section>
                 <h2 className="text-2xl font-semibold mb-3">
+                    Learning Outcomes
+                </h2>
+                <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
+                    <li>Modern Next.js development practices</li>
+                    <li>React component architecture and state management</li>
+                    <li>Database integration using ORM technologies</li>
+                    <li>Server-side operations and API design</li>
+                    <li>Cloud deployment and infrastructure management</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-3">
                     Technical Implementation
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -49,28 +62,9 @@ export default async function Overview() {
                     Future Enhancements
                 </h2>
                 <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
-                    <li>
-                        Advanced search and filtering capabilities for orders
-                    </li>
-                    <li>Comprehensive customer and product management</li>
+                    <li>Simple search and filtering capabilities for orders</li>
+                    <li>Simple customer and product management</li>
                     <li>Order creation workflow</li>
-                </ul>
-                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    These additions will transform the application into a
-                    full-featured business management tool.
-                </p>
-            </section>
-
-            <section>
-                <h2 className="text-2xl font-semibold mb-3">
-                    Learning Outcomes
-                </h2>
-                <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
-                    <li>Modern Next.js development practices</li>
-                    <li>React component architecture and state management</li>
-                    <li>Database integration using ORM technologies</li>
-                    <li>Server-side operations and API design</li>
-                    <li>Cloud deployment and infrastructure management</li>
                 </ul>
             </section>
         </div>
