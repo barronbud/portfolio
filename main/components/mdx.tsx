@@ -40,8 +40,21 @@ function CustomLink(props: { href: string; children: React.ReactNode }) {
     return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: { alt: string; src: string }) {
-    return <Image className="rounded-lg" alt={props.alt} src={props.src} />;
+function RoundedImage(props: {
+    alt: string;
+    src: string;
+    width: number;
+    height: number;
+}) {
+    return (
+        <Image
+            className="rounded-lg"
+            alt={props.alt}
+            src={props.src}
+            width={props.width}
+            height={props.height}
+        />
+    );
 }
 
 function Code({ children, ...props }: { children: string }) {
