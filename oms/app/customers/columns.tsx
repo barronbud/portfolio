@@ -8,7 +8,8 @@ import Link from "next/link";
 
 export type Customers = {
     id: number;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     createdAt: Date;
 };
@@ -21,9 +22,15 @@ export const columns: ColumnDef<Customers>[] = [
         ),
     },
     {
-        accessorKey: "name",
+        accessorKey: "firstName",
         header: ({ column }) => (
-            <DataTableColumnHeader column={column} title="Customer" />
+            <DataTableColumnHeader column={column} title="First Name" />
+        ),
+    },
+    {
+        accessorKey: "lastName",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Last Name" />
         ),
     },
     {

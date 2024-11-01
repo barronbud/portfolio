@@ -8,9 +8,10 @@ export default async function OrdersPage() {
             id: true,
             total: true,
             createdAt: true,
-            user: {
+            customer: {
                 select: {
-                    name: true,
+                    firstName: true,
+                    lastName: true,
                 },
             },
             _count: {
@@ -23,7 +24,7 @@ export default async function OrdersPage() {
 
     const orders = orderData.map((order) => ({
         id: order.id,
-        customerName: order.user.name,
+        customerName: `${order.customer.firstName} ${order.customer.lastName}`,
         total: Number(order.total),
         createdAt: order.createdAt.toLocaleDateString(),
         items: order._count.orderItems,

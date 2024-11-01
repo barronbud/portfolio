@@ -12,8 +12,8 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5(react@18.3.1)
       '@jeffreyabarron/portfolio-db':
-        specifier: ^0.0.8
-        version: 0.0.8(prisma@5.21.1)
+        specifier: ^0.0.9
+        version: 0.0.9(prisma@5.21.1)
       '@prisma/client':
         specifier: ^5.21.1
         version: 5.21.1(prisma@5.21.1)
@@ -295,8 +295,8 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@jeffreyabarron/portfolio-db@0.0.8':
-    resolution: {integrity: sha512-k3UPiQMgvnxZajsFJsPk6/pV3NDc5fbtcgJQqQN8+b/fGEIqOU0MLX7TNyCgSmj/Vd69kGBmtSum/suxov1iZw==}
+  '@jeffreyabarron/portfolio-db@0.0.9':
+    resolution: {integrity: sha512-rZJ7uSHM6wSqDFNnPFHHEw18YmxEdJkyzC4myNXgS60Fep9PTVUdnlzvk6H91PmA7KSkX8XCmVSm53cHnnazyA==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -2670,7 +2670,7 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@jeffreyabarron/portfolio-db@0.0.8(prisma@5.21.1)':
+  '@jeffreyabarron/portfolio-db@0.0.9(prisma@5.21.1)':
     dependencies:
       '@faker-js/faker': 9.1.0
       '@prisma/client': 5.21.1(prisma@5.21.1)

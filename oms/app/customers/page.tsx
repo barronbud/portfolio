@@ -3,7 +3,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { columns } from "./columns";
 
 export default async function CustomersPage() {
-    const customers = await prisma.oms_User.findMany();
+    const customers = await prisma.oms_Customer.findMany();
 
     return (
         <section>

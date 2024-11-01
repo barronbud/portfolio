@@ -14,7 +14,7 @@ export default async function OrderPage({
     const order = await prisma.oms_Order.findUnique({
         where: { id: orderId },
         include: {
-            user: true,
+            customer: true,
             orderItems: {
                 include: {
                     product: true,
@@ -48,7 +48,7 @@ export default async function OrderPage({
                             Customer
                         </p>
                         <p className="font-semibold dark:text-white">
-                            {order.user.name}
+                            {`${order.customer.firstName} ${order.customer.lastName}`}
                         </p>
                     </div>
                     <div>

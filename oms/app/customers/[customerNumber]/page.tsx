@@ -11,7 +11,7 @@ export default async function CustomerPage({
     const customerId = parseInt(customerNumber);
 
     // Fetch order with related data
-    const customer = await prisma.oms_User.findUnique({
+    const customer = await prisma.oms_Customer.findUnique({
         where: { id: customerId },
         include: {
             orders: {
@@ -52,10 +52,18 @@ export default async function CustomerPage({
                     </div>
                     <div>
                         <p className="text-gray-600 dark:text-gray-400">
-                            Customer Name
+                            First Name
                         </p>
                         <p className="font-semibold dark:text-white">
-                            {customer.name}
+                            {customer.firstName}
+                        </p>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Last Name
+                        </p>
+                        <p className="font-semibold dark:text-white">
+                            {customer.lastName}
                         </p>
                     </div>
                     <div>
