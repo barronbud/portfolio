@@ -44,6 +44,12 @@ export default async function ProductPage({
                         </p>
                     </div>
                     <div>
+                        <p className="text-gray-600 dark:text-gray-400">SKU</p>
+                        <p className="font-semibold dark:text-white">
+                            {product.sku}
+                        </p>
+                    </div>
+                    <div>
                         <p className="text-gray-600 dark:text-gray-400">
                             Description
                         </p>

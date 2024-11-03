@@ -15,7 +15,7 @@ export default async function CustomerPage({
         where: { id: customerId },
         include: {
             orders: {
-                take: 10,
+                take: 3,
                 orderBy: {
                     createdAt: "desc",
                 },
@@ -72,6 +72,17 @@ export default async function CustomerPage({
                         </p>
                         <p className="font-semibold dark:text-white">
                             {customer.email}
+                        </p>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Address
+                        </p>
+                        <p className="font-semibold dark:text-white">
+                            {customer.address}
+                        </p>
+                        <p className="font-semibold dark:text-white">
+                            {customer.city}, {customer.state} {customer.zip}
                         </p>
                     </div>
                 </div>

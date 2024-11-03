@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-
+import ReactQueryProvider from "@/lib/providers";
 export const metadata: Metadata = {
     title: {
         default: "Portfolio | Jeffrey Barron",
@@ -43,17 +43,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 GeistMono.variable
             )}
         >
-            <body className="antialiased max-w-7xl mx-4 mt-8">
-                <SidebarProvider defaultOpen={true}>
-                    <AppSidebar />
-                    <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-                        {children}
-                        <Analytics />
-                        <SpeedInsights />
-                        {shouldInjectToolbar && <VercelToolbar />}
-                    </main>
-                </SidebarProvider>
-            </body>
+            <ReactQueryProvider>
+                <body className="antialiased max-w-7xl mx-4 mt-8">
+                    <SidebarProvider defaultOpen={true}>
+                        <AppSidebar />
+                        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+                            {children}
+                            <Analytics />
+                            <SpeedInsights />
+                            {shouldInjectToolbar && <VercelToolbar />}
+                        </main>
+                    </SidebarProvider>
+                </body>
+            </ReactQueryProvider>
         </html>
     );
 }

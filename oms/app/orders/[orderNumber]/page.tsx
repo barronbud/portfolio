@@ -119,6 +119,27 @@ export default async function OrderPage({
 
                 <div className="mt-4 text-right">
                     <p className="text-lg font-semibold dark:text-white">
+                        Subtotal: $
+                        {(
+                            Number(order.total) -
+                            Number(order.shipping) -
+                            Number(order.tax)
+                        ).toFixed(2)}
+                    </p>
+                </div>
+                <div className="mt-4 text-right">
+                    <p className="text-lg font-semibold dark:text-white">
+                        Shipping: ${Number(order.shipping).toFixed(2)}
+                    </p>
+                </div>
+                <div className="mt-4 text-right">
+                    <p className="text-lg font-semibold dark:text-white">
+                        Tax: ${Number(order.tax).toFixed(2)}
+                    </p>
+                </div>
+
+                <div className="mt-4 text-right">
+                    <p className="text-lg font-semibold dark:text-white">
                         Total: ${Number(order.total).toFixed(2)}
                     </p>
                 </div>

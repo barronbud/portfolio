@@ -7,6 +7,8 @@ import Link from "next/link";
 export type Order = {
     id: number;
     customerName: string;
+    shipping: number;
+    tax: number;
     total: number;
     createdAt: string;
     items: number;
@@ -30,6 +32,30 @@ export const columns: ColumnDef<Order>[] = [
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Order Date" />
         ),
+    },
+    {
+        accessorKey: "shipping",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Shipping" />
+        ),
+        cell: ({ row }) => {
+            return row.original.shipping.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+            });
+        },
+    },
+    {
+        accessorKey: "tax",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Tax" />
+        ),
+        cell: ({ row }) => {
+            return row.original.tax.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+            });
+        },
     },
     {
         accessorKey: "total",

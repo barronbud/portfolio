@@ -10,6 +10,11 @@ export type Customers = {
     id: number;
     firstName: string;
     lastName: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    phone: string;
     email: string;
     createdAt: Date;
 };
@@ -37,6 +42,12 @@ export const columns: ColumnDef<Customers>[] = [
         accessorKey: "email",
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Email" />
+        ),
+    },
+    {
+        accessorKey: "address",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Address" />
         ),
     },
     {
