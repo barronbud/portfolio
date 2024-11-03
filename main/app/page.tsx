@@ -9,9 +9,9 @@ import Demo from "@/components/demos";
 import { demoApps } from "./demos/data";
 
 export default async function Page() {
-    const articles = getBlogPosts();
-    const cases = getProjectPosts();
-    const posts = [...cases, ...articles];
+    const articles = getBlogPosts().filter((post) => post.metadata.promoted);
+    const cases = getProjectPosts().filter((post) => post.metadata.promoted);
+    const posts = [...cases, ...articles].sort(() => Math.random() - 0.5);
     const demos = demoApps.map((demo) => <Demo key={demo.href} {...demo} />);
 
     const postPreviews = posts.map((post) => (
