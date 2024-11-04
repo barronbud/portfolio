@@ -25,6 +25,12 @@ export const metadata: Metadata = {
         siteName: "Jeffrey Barron's Portfolio",
         locale: "en_US",
         type: "website",
+        images: [
+            {
+                url: `${baseUrl}/images/profile-pic.png`,
+                alt: "Jeffrey Barron's Profile Picture",
+            },
+        ],
     },
     robots: {
         index: true,
