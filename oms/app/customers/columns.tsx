@@ -3,7 +3,7 @@
 import { DataTableColumnHeader } from "@/components/ui/data-table-header";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { SearchIcon } from "lucide-react";
+import { EditIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 
 export type Customers = {
@@ -66,6 +66,11 @@ export const columns: ColumnDef<Customers>[] = [
                             aria-hidden="true"
                             className="w-5 h-5 mr-1"
                         />
+                    </Link>
+                    <Link
+                        href={`/demos/order-management-system/customers/${row.original.id}/edit`}
+                    >
+                        <EditIcon aria-hidden="true" className="w-5 h-5 mr-1" />
                     </Link>
                 </div>
             );

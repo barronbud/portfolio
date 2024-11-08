@@ -1,9 +1,15 @@
 import prisma from "@/db/client";
 import { DataTable } from "@/components/ui/data-table";
 import { columns } from "./columns";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function CustomersPage() {
-    const customerData = await prisma.oms_Customer.findMany();
+    const customerData = await prisma.oms_Customer.findMany({
+        orderBy: {
+            createdAt: "desc",
+        },
+    });
 
     const customers = customerData.map((customer) => ({
         id: customer.id,
@@ -20,7 +26,12 @@ export default async function CustomersPage() {
 
     return (
         <section>
-            <h1 className="text-2xl font-bold mb-4">Customers</h1>
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold">Customers</h1>
+                <Link href="/demos/order-management-system/customers/create">
+                    <Button variant="default">Create new customer</Button>
+                </Link>
+            </div>
             <DataTable columns={columns} data={customers} />
         </section>
     );

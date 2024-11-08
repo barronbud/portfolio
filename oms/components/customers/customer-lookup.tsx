@@ -1,19 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "./ui/input";
+import { Input } from "@/components/ui/input";
 import {
     QueryClientProvider,
     useQuery,
     useQueryClient,
 } from "@tanstack/react-query";
 import { getCustomers } from "@/db/lookups";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import { Customer } from "@/components/customers/card";
 
 export default function CustomerLookup({
     handleSelect,
 }: {
-    handleSelect: (id: string) => void;
+    handleSelect: (customer: Customer) => void;
 }) {
     const queryClient = useQueryClient();
 
@@ -55,7 +56,7 @@ export default function CustomerLookup({
                         <div
                             key={customer.id}
                             onClick={() => {
-                                handleSelect(customer.id.toString());
+                                handleSelect(customer);
                                 setSearch("");
                                 setSearchValue("");
                             }}

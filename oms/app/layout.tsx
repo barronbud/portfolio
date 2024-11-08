@@ -9,6 +9,8 @@ import { VercelToolbar } from "@vercel/toolbar/next";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import ReactQueryProvider from "@/lib/providers";
+import { Toaster } from "@/components/ui/toaster";
+
 export const metadata: Metadata = {
     title: {
         default: "Portfolio | Jeffrey Barron",
@@ -53,6 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             <SpeedInsights />
                             {shouldInjectToolbar && <VercelToolbar />}
                         </main>
+                        <Toaster />
                     </SidebarProvider>
                 </body>
             </ReactQueryProvider>
