@@ -22,7 +22,7 @@ export default async function EditCustomerPage({
             data,
         });
 
-        revalidatePath("/demos/order-management-system/customers");
+        revalidatePath("/customers");
     };
 
     const customer = await prisma.oms_Customer.findUnique({

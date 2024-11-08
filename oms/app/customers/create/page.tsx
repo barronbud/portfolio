@@ -15,7 +15,7 @@ export default function CreateCustomerPage() {
             data,
         });
 
-        revalidatePath("/demos/order-management-system/customers");
+        revalidatePath("/customers");
     };
 
     return (
