@@ -4,7 +4,6 @@ import { z } from "zod";
 import prisma from "@/db/client";
 import { revalidatePath } from "next/cache";
 import { Button } from "@/components/ui/button";
-import { redirect } from "next/navigation";
 
 export default function CreateCustomerPage() {
     const onCreateCustomer = async (
@@ -17,7 +16,6 @@ export default function CreateCustomerPage() {
         });
 
         await revalidatePath("/customers");
-        redirect("/demos/order-management-system/customers");
     };
 
     return (

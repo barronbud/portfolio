@@ -14,7 +14,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { oms_CustomerModel } from "@jeffreyabarron/portfolio-db/prisma/zod";
 import StateDropdown from "@/components/ui/states";
-// import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 export default function CustomerForm({
     onSaveCustomer,
@@ -39,21 +40,22 @@ export default function CustomerForm({
         },
     });
 
-    // const { toast } = useToast();
+    const { toast } = useToast();
+    const router = useRouter();
 
-    // const onSubmit = async (data: z.infer<typeof oms_CustomerModel>) => {
-    //     await onSaveCustomer(data);
-    //     toast({
-    //         title: "Customer saved",
-    //         description: "Customer saved successfully",
-    //     });
-
-    //     // router.push("/demos/order-management-system/customers");
-    // };
+    const onSubmit = async (data: z.infer<typeof oms_CustomerModel>) => {
+        await onSaveCustomer(data);
+        toast({
+            title: "Customer saved",
+            description: "Customer saved successfully",
+        });
+        router.refresh();
+        router.push("/demos/order-management-system/customers");
+    };
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSaveCustomer)}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-2 gap-2">
                     <FormField
                         control={form.control}
