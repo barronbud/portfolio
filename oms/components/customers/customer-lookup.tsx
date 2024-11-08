@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-query";
 import { getCustomers } from "@/db/lookups";
 import { Button } from "@/components/ui/button";
-import { Customer } from "@/components/customers/card";
+import CustomerCard, { Customer } from "@/components/customers/card";
 
 export default function CustomerLookup({
     handleSelect,
@@ -61,7 +61,7 @@ export default function CustomerLookup({
                                 setSearchValue("");
                             }}
                         >
-                            {customer.firstName} {customer.lastName}
+                            <CustomerCard customer={customer} />
                         </div>
                     ))}
             </div>

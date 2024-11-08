@@ -56,7 +56,7 @@ export function DataTable<TData, TValue>({
         <div>
             <div className="flex items-center py-4">
                 <Input
-                    placeholder="Filter orders..."
+                    placeholder="Filter..."
                     onChange={(event) =>
                         table.setGlobalFilter(String(event.target.value))
                     }
