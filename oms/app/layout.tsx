@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             )}
         >
             <ReactQueryProvider>
-                <body className="antialiased max-w-7xl mx-4 mt-8">
+                <body className="antialiased mx-4 mt-8">
                     <SidebarProvider defaultOpen={true}>
                         <AppSidebar />
                         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">

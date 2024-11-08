@@ -15,8 +15,8 @@ importers:
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.53.1(react@18.3.1))
       '@jeffreyabarron/portfolio-db':
-        specifier: ^0.1.4
-        version: 0.1.4(zod@3.23.8)
+        specifier: ^0.1.8
+        version: 0.1.8(zod@3.23.8)
       '@prisma/client':
         specifier: ^5.22.0
         version: 5.22.0(prisma@5.22.0)
@@ -95,6 +95,12 @@ importers:
       use-debounce:
         specifier: ^10.0.4
         version: 10.0.4(react@18.3.1)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
+      zod-prisma:
+        specifier: ^0.5.4
+        version: 0.5.4(prisma@5.22.0)(zod@3.23.8)
     devDependencies:
       '@types/node':
         specifier: ^22.9.0
@@ -120,12 +126,6 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
-      zod:
-        specifier: ^3.23.8
-        version: 3.23.8
-      zod-prisma:
-        specifier: ^0.5.4
-        version: 0.5.4(prisma@5.22.0)(zod@3.23.8)
 
 packages:
 
@@ -328,8 +328,8 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@jeffreyabarron/portfolio-db@0.1.4':
-    resolution: {integrity: sha512-18kKLJlufGozqC6LuRAdBTq5HIsTFEyciv9VzqWj2xOkJMdoTWVIBB0EQ1MM4VeJjVgqKZHfeRX+COiCEYGOTg==}
+  '@jeffreyabarron/portfolio-db@0.1.8':
+    resolution: {integrity: sha512-eD2j/9mIvOanmqdIo2Uq3PIhTJQzx4b05AnYavIowzoYF4NB3dSY+Yr3HIbfA4kcEYY2OyDltXaNcPIOz95Guw==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -2810,7 +2810,7 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@jeffreyabarron/portfolio-db@0.1.4(zod@3.23.8)':
+  '@jeffreyabarron/portfolio-db@0.1.8(zod@3.23.8)':
     dependencies:
       '@faker-js/faker': 9.2.0
       '@prisma/client': 5.22.0(prisma@5.22.0)
