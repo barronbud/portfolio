@@ -15,7 +15,7 @@ export default function CreateCustomerPage() {
             data,
         });
 
-        revalidatePath("/customers");
+        await revalidatePath("/customers");
     };
 
     return (
