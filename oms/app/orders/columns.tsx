@@ -5,7 +5,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { SearchIcon } from "lucide-react";
 import Link from "next/link";
 export type Order = {
-    id: number;
+    id: string;
     customerName: string;
     shipping: number;
     tax: number;
@@ -15,12 +15,6 @@ export type Order = {
 };
 
 export const columns: ColumnDef<Order>[] = [
-    {
-        accessorKey: "id",
-        header: ({ column }) => (
-            <DataTableColumnHeader column={column} title="Order Number" />
-        ),
-    },
     {
         accessorKey: "customerName",
         header: ({ column }) => (

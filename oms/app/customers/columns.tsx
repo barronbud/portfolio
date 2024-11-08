@@ -7,7 +7,7 @@ import { SearchIcon } from "lucide-react";
 import Link from "next/link";
 
 export type Customers = {
-    id: number;
+    id: string;
     firstName: string;
     lastName: string;
     address: string;
@@ -20,12 +20,6 @@ export type Customers = {
 };
 
 export const columns: ColumnDef<Customers>[] = [
-    {
-        accessorKey: "id",
-        header: ({ column }) => (
-            <DataTableColumnHeader column={column} title="ID" />
-        ),
-    },
     {
         accessorKey: "firstName",
         header: ({ column }) => (

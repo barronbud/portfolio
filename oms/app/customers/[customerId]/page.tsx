@@ -3,12 +3,9 @@ import prisma from "@/db/client";
 export default async function CustomerPage({
     params,
 }: {
-    params: Promise<{ customerNumber: string }>;
+    params: Promise<{ customerId: string }>;
 }) {
-    const { customerNumber } = await params;
-
-    // Convert orderNumber to number since our ID is Int in schema
-    const customerId = parseInt(customerNumber);
+    const { customerId } = await params;
 
     // Fetch order with related data
     const customer = await prisma.oms_Customer.findUnique({
