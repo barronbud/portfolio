@@ -4,6 +4,7 @@ import { z } from "zod";
 import prisma from "@/db/client";
 import { revalidatePath } from "next/cache";
 import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export default async function EditCustomerPage({
     params,
@@ -23,6 +24,7 @@ export default async function EditCustomerPage({
         });
 
         await revalidatePath("/customers");
+        redirect("/demos/order-management-system/customers");
     };
 
     const customer = await prisma.oms_Customer.findUnique({
