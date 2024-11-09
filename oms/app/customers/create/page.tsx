@@ -1,23 +1,8 @@
 import CustomerForm from "@/components/customers/form";
-import { oms_CustomerModel } from "@jeffreyabarron/portfolio-db/prisma/zod";
-import { z } from "zod";
-import prisma from "@/db/client";
-import { revalidatePath } from "next/cache";
 import { Button } from "@/components/ui/button";
+import { onCreateCustomer } from "@/app/customers/actions";
 
 export default function CreateCustomerPage() {
-    const onCreateCustomer = async (
-        data: z.infer<typeof oms_CustomerModel>
-    ) => {
-        "use server";
-
-        await prisma.oms_Customer.create({
-            data,
-        });
-
-        await revalidatePath("/customers");
-    };
-
     return (
         <div>
             <h1 className="text-2xl font-bold mb-6">Create New Customer</h1>

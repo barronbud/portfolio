@@ -3,8 +3,9 @@
 import { DataTableColumnHeader } from "@/components/ui/data-table-header";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { EditIcon, SearchIcon } from "lucide-react";
+import { TrashIcon, EditIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
+import { onDeleteCustomer } from "./actions";
 
 export type Customers = {
     id: string;
@@ -72,6 +73,17 @@ export const columns: ColumnDef<Customers>[] = [
                     >
                         <EditIcon aria-hidden="true" className="w-5 h-5 mr-1" />
                     </Link>
+
+                    <div
+                        onClick={async () => {
+                            await onDeleteCustomer(row.original.id);
+                        }}
+                    >
+                        <TrashIcon
+                            aria-hidden="true"
+                            className="w-5 h-5 mr-1"
+                        />
+                    </div>
                 </div>
             );
         },

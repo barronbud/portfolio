@@ -6,6 +6,9 @@ import Link from "next/link";
 
 export default async function CustomersPage() {
     const customerData = await prisma.oms_Customer.findMany({
+        where: {
+            isActive: true,
+        },
         orderBy: {
             createdAt: "desc",
         },

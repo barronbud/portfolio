@@ -29,13 +29,14 @@ export default function CustomerForm({
     const form = useForm<z.infer<typeof oms_CustomerModel>>({
         resolver: zodResolver(oms_CustomerModel),
         defaultValues: {
-            firstName: customer?.firstName ?? "",
-            lastName: customer?.lastName ?? "",
-            email: customer?.email ?? "",
-            phone: customer?.phone ?? "",
-            address: customer?.address ?? "",
-            city: customer?.city ?? "",
-            state: customer?.state ?? "",
+            id: customer?.id || undefined,
+            firstName: customer?.firstName || "",
+            lastName: customer?.lastName || "",
+            email: customer?.email || "",
+            phone: customer?.phone || "",
+            address: customer?.address || "",
+            city: customer?.city || "",
+            state: customer?.state || "",
             zip: customer?.zip ?? "",
         },
     });
