@@ -1,4 +1,5 @@
 import prisma from "@/db/client";
+import Link from "next/link";
 
 export default async function CustomerPage({
     params,
@@ -119,28 +120,31 @@ export default async function CustomerPage({
                                     key={order.id}
                                     className="p-6 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
                                 >
-                                    <div className="flex items-center justify-between">
-                                        <div className="space-y-1">
-                                            <p className="text-sm font-medium text-gray-900 dark:text-white">
-                                                Order #{order.id}
-                                            </p>
-                                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                                                {new Date(
-                                                    order.createdAt
-                                                ).toLocaleDateString()}
-                                            </p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                                                {Number(
-                                                    order.total
-                                                ).toLocaleString("en-US", {
-                                                    style: "currency",
-                                                    currency: "USD",
-                                                })}
-                                            </p>
-                                            <span
-                                                className={`inline-flex px-3 py-1 text-xs font-medium rounded-full
+                                    <Link
+                                        href={`/demos/order-management-system/orders/${order.id}`}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <div className="space-y-1">
+                                                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                                                    Order #{order.id}
+                                                </p>
+                                                <p className="text-sm text-gray-500 dark:text-gray-400">
+                                                    {new Date(
+                                                        order.createdAt
+                                                    ).toLocaleDateString()}
+                                                </p>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    {Number(
+                                                        order.total
+                                                    ).toLocaleString("en-US", {
+                                                        style: "currency",
+                                                        currency: "USD",
+                                                    })}
+                                                </p>
+                                                <span
+                                                    className={`inline-flex px-3 py-1 text-xs font-medium rounded-full
                                                 ${
                                                     order.status === "completed"
                                                         ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
@@ -149,11 +153,12 @@ export default async function CustomerPage({
                                                         ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400"
                                                         : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                                                 }`}
-                                            >
-                                                {order.status}
-                                            </span>
+                                                >
+                                                    {order.status}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                     <div className="mt-4">
                                         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                                             <span>

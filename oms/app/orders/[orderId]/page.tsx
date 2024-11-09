@@ -1,5 +1,7 @@
 import CustomerCard from "@/components/customers/card";
 import prisma from "@/db/client";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 export default async function OrderPage({
     params,
@@ -44,7 +46,13 @@ export default async function OrderPage({
                         <h2 className="mb-4 text-sm font-medium text-gray-500 dark:text-gray-400">
                             Customer Information
                         </h2>
-                        <CustomerCard customer={order.customer} />
+                        <Link
+                            href={`/demos/order-management-system/customers/${order.customer.id}`}
+                        >
+                            <CustomerCard customer={order.customer}>
+                                <ExternalLink className="w-4 h-4 float-right" />
+                            </CustomerCard>
+                        </Link>
                     </div>
                     <div className="p-6 bg-white rounded-xl shadow-sm dark:bg-gray-800">
                         <h2 className="mb-4 text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -96,7 +104,11 @@ export default async function OrderPage({
                                 {order.orderItems.map((item) => (
                                     <tr key={item.id}>
                                         <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
-                                            {item.product.name}
+                                            <Link
+                                                href={`/demos/order-management-system/products/${item.product.id}`}
+                                            >
+                                                {item.product.name}
+                                            </Link>
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
                                             {item.quantity}
