@@ -1,9 +1,6 @@
-import { PostsSneakPeek } from "@/components/posts";
 import About from "@/components/about";
 import Recommendations from "@/components/recommendations";
 import { getBlogPosts, getProjectPosts } from "@/app/mdx-utils";
-import { CarouselItem } from "@/components/ui/carousel";
-import Carousel from "@/components/carousel";
 import { PostPreview } from "@/components/post-preview";
 import Demo from "@/components/demos";
 import { demoApps } from "./demos/data";
@@ -20,44 +17,36 @@ export default async function Page() {
             post={post}
             type={post.metadata.type}
             useLabel={true}
+            useImage={true}
         />
     ));
-
-    const previews = [...demos, ...postPreviews];
 
     return (
         <section>
             <div>
-                <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 z-10 relative">
-                    <h1
-                        data-testid="heading"
-                        className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-                    >
-                        Jeffrey Barron
-                    </h1>
-                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
-                        Tech Leader • Software Engineer • Empowering teams to
-                        solve hard problems
-                    </p>
-                </div>
+                <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-2 z-10 relative"></div>
                 <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
             </div>
-            <Carousel>
-                {previews.map((preview) => (
-                    <CarouselItem key={preview.key}>{preview}</CarouselItem>
-                ))}
-            </Carousel>
+
             <About />
+
+            <div className="grid gap-4">
+                <div className="z-50">
+                    {demos.map((demo) => (
+                        <div key={demo.key}>{demo}</div>
+                    ))}
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                    {postPreviews.slice(0, 4).map((preview) => (
+                        <div key={preview.key}>{preview}</div>
+                    ))}
+                </div>
+            </div>
+
             <h2 className="mb-8 text-3xl font-semibold tracking-tighter">
                 Recommendations
             </h2>
             <Recommendations />
-            <h2 className="my-8 text-3xl font-semibold tracking-tighter">
-                Recent Articles
-            </h2>
-            <div className="my-8 card-preview">
-                <PostsSneakPeek type="articles" posts={getBlogPosts()} />
-            </div>
         </section>
     );
 }
