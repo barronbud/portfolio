@@ -32,93 +32,141 @@ export default async function CustomerPage({
     }
 
     return (
-        <div className="p-6 dark:bg-gray-900">
-            <h1 className="text-2xl font-bold mb-4 dark:text-white">
-                Customer Details
-            </h1>
-
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            First Name
-                        </p>
-                        <p className="font-semibold dark:text-white">
-                            {customer.firstName}
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            Last Name
-                        </p>
-                        <p className="font-semibold dark:text-white">
-                            {customer.lastName}
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            Email
-                        </p>
-                        <p className="font-semibold dark:text-white">
-                            {customer.email}
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            Address
-                        </p>
-                        <p className="font-semibold dark:text-white">
-                            {customer.address}
-                        </p>
-                        <p className="font-semibold dark:text-white">
-                            {customer.city}, {customer.state} {customer.zip}
-                        </p>
-                    </div>
+        <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
+            <div className="max-w-5xl mx-auto">
+                {/* Header Section */}
+                <div className="flex items-center justify-between mb-8">
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+                        Customer Profile
+                    </h1>
+                    <span className="px-4 py-2 text-sm font-medium rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                        {customer.orders.length} Orders
+                    </span>
                 </div>
-            </div>
 
-            {customer.orders.length > 0 && (
-                <>
-                    <h2 className="text-xl font-bold my-4 dark:text-white">
-                        Recent Orders
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {customer.orders.map((order) => (
-                            <div
-                                key={order.id}
-                                className="bg-white dark:bg-gray-800 rounded-lg shadow p-4"
-                            >
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                                        {new Date(
-                                            order.createdAt
-                                        ).toLocaleDateString()}
-                                    </span>
-                                    <span className="font-semibold text-lg dark:text-white">
-                                        ${order.total.toFixed(2)}
-                                    </span>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <span
-                                        className={`text-sm px-2 py-1 rounded ${
-                                            order.status === "completed"
-                                                ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                                                : order.status === "pending"
-                                                ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                                                : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                                        }`}
-                                    >
-                                        {order.status}
-                                    </span>
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                                        {order.orderItems.length} items
-                                    </span>
+                {/* Customer Info Card */}
+                <div className="mb-8 overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
+                    <div className="p-6 border-b dark:border-gray-700">
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center justify-center w-12 h-12 text-lg font-semibold text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900/50 dark:text-blue-400">
+                                {customer.firstName[0]}
+                                {customer.lastName[0]}
+                            </div>
+                            <div>
+                                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                    {customer.firstName} {customer.lastName}
+                                </h2>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
+                                    {customer.email}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="p-6">
+                        <div className="grid gap-6 md:grid-cols-2">
+                            <div className="space-y-4">
+                                <div>
+                                    <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                                        Contact Information
+                                    </h3>
+                                    <div className="mt-2 space-y-2">
+                                        <p className="text-sm text-gray-900 dark:text-white">
+                                            <span className="text-gray-500 dark:text-gray-400 pr-2">
+                                                Email:
+                                            </span>
+                                            {customer.email}
+                                        </p>
+                                        <p className="text-sm text-gray-900 dark:text-white">
+                                            <span className="text-gray-500 dark:text-gray-400 pr-2">
+                                                Phone:
+                                            </span>
+                                            {customer.phone || "Not provided"}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        ))}
+                            <div className="space-y-4">
+                                <div>
+                                    <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                                        Shipping Address
+                                    </h3>
+                                    <div className="mt-2 space-y-1">
+                                        <p className="text-sm text-gray-900 dark:text-white">
+                                            {customer.address}
+                                        </p>
+                                        <p className="text-sm text-gray-900 dark:text-white">
+                                            {`${customer.city}, ${customer.state} ${customer.zip}`}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </>
-            )}
+                </div>
+
+                {/* Recent Orders Section */}
+                {customer.orders.length > 0 && (
+                    <div className="overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
+                        <div className="p-6 border-b dark:border-gray-700">
+                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                                Recent Orders
+                            </h2>
+                        </div>
+                        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+                            {customer.orders.map((order) => (
+                                <div
+                                    key={order.id}
+                                    className="p-6 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <div className="space-y-1">
+                                            <p className="text-sm font-medium text-gray-900 dark:text-white">
+                                                Order #{order.id}
+                                            </p>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                                                {new Date(
+                                                    order.createdAt
+                                                ).toLocaleDateString()}
+                                            </p>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                                                {Number(
+                                                    order.total
+                                                ).toLocaleString("en-US", {
+                                                    style: "currency",
+                                                    currency: "USD",
+                                                })}
+                                            </p>
+                                            <span
+                                                className={`inline-flex px-3 py-1 text-xs font-medium rounded-full
+                                                ${
+                                                    order.status === "completed"
+                                                        ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                                                        : order.status ===
+                                                          "pending"
+                                                        ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400"
+                                                        : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                                                }`}
+                                            >
+                                                {order.status}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4">
+                                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                            <span>
+                                                {order.orderItems.length} items
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
