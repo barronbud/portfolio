@@ -18,7 +18,6 @@ export default async function EditCustomerPage({
 
     return (
         <div>
-            <h1 className="text-2xl font-bold mb-6">Edit Customer</h1>
             <CustomerForm onSaveCustomer={onEditCustomer} customer={customer}>
                 <div className="flex justify-center mt-4">
                     <Button type="submit">Save customer</Button>

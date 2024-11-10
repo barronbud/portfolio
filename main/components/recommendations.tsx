@@ -1,5 +1,7 @@
 import Recommendation from "./recommendation";
 
+export const dynamic = "force-dynamic";
+
 export default function Recommendations() {
     const allRecommendations = [
         {

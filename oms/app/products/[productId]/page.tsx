@@ -63,14 +63,6 @@ export default async function ProductPage({
                             <div className="space-y-4">
                                 <div>
                                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                                        Product ID
-                                    </h4>
-                                    <p className="mt-1 text-sm text-gray-900 dark:text-white">
-                                        {product.id}
-                                    </p>
-                                </div>
-                                <div>
-                                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">
                                         Description
                                     </h4>
                                     <p className="mt-1 text-sm text-gray-900 dark:text-white">
@@ -109,26 +101,6 @@ export default async function ProductPage({
                                             </div>
                                             <span className="text-sm font-medium text-gray-900 dark:text-white">
                                                 {product.stock} units
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                                        Price Details
-                                    </h4>
-                                    <div className="mt-1 p-3 bg-gray-50 rounded-lg dark:bg-gray-700/50">
-                                        <div className="flex justify-between items-center">
-                                            <span className="text-sm text-gray-600 dark:text-gray-400">
-                                                Unit Price
-                                            </span>
-                                            <span className="text-sm font-medium text-gray-900 dark:text-white">
-                                                {(
-                                                    product.price / 100
-                                                ).toLocaleString("en-US", {
-                                                    style: "currency",
-                                                    currency: "USD",
-                                                })}
                                             </span>
                                         </div>
                                     </div>

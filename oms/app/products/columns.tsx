@@ -2,11 +2,13 @@
 
 import { DataTableColumnHeader } from "@/components/ui/data-table-header";
 import { ColumnDef } from "@tanstack/react-table";
-import { SearchIcon } from "lucide-react";
+import { EditIcon, SearchIcon, TrashIcon } from "lucide-react";
 import Link from "next/link";
+import { onDeleteProduct } from "./actions";
 
 export type Product = {
     id: string;
+    sku: string;
     name: string;
     description: string;
     price: number;
@@ -14,6 +16,13 @@ export type Product = {
 };
 
 export const columns: ColumnDef<Product>[] = [
+    {
+        accessorKey: "sku",
+        size: 50,
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="SKU" />
+        ),
+    },
     {
         accessorKey: "name",
         header: ({ column }) => (
@@ -61,6 +70,21 @@ export const columns: ColumnDef<Product>[] = [
                             className="w-5 h-5 mr-1"
                         />
                     </Link>
+                    <Link
+                        href={`/demos/order-management-system/products/${row.original.id}/edit`}
+                    >
+                        <EditIcon aria-hidden="true" className="w-5 h-5 mr-1" />
+                    </Link>
+                    <div
+                        onClick={async () => {
+                            await onDeleteProduct(row.original.id);
+                        }}
+                    >
+                        <TrashIcon
+                            aria-hidden="true"
+                            className="w-5 h-5 mr-1"
+                        />
+                    </div>
                 </div>
             );
         },

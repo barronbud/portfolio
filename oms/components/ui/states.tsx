@@ -63,14 +63,16 @@ const states = [
 export default function StateDropdown({
     value,
     onValueChange,
+    className,
 }: {
     value: string;
     onValueChange: (value: string) => void;
+    className?: string;
 }) {
     return (
         <Select defaultValue={value} onValueChange={onValueChange}>
             <FormControl>
-                <SelectTrigger>
+                <SelectTrigger className={className}>
                     <SelectValue placeholder="Select a state" />
                 </SelectTrigger>
             </FormControl>
