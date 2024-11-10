@@ -5,6 +5,8 @@ import { PostPreview } from "@/components/post-preview";
 import Demo from "@/components/demos";
 import { demoApps } from "./demos/data";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
     const articles = getBlogPosts().filter((post) => post.metadata.promoted);
     const cases = getProjectPosts().filter((post) => post.metadata.promoted);
