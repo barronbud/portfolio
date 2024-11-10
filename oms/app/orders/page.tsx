@@ -32,9 +32,9 @@ export default async function OrdersPage() {
     const orders = orderData.map((order) => ({
         id: order.id,
         customerName: `${order.customer.firstName} ${order.customer.lastName}`,
-        shipping: Number(order.shipping),
-        tax: Number(order.tax),
-        total: Number(order.total),
+        shipping: order.shipping / 100,
+        tax: order.tax / 100,
+        total: order.total / 100,
         createdAt: order.createdAt.toLocaleDateString(),
         items: order._count.orderItems,
     }));

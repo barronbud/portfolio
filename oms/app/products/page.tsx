@@ -6,7 +6,7 @@ export default async function ProductsPage() {
     const productData = await prisma.oms_Product.findMany();
     const products = productData.map((product) => ({
         ...product,
-        price: Number(product.price),
+        price: product.price / 100,
     }));
 
     return (

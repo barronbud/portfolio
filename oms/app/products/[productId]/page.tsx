@@ -42,7 +42,7 @@ export default async function ProductPage({
                             </p>
                             <div className="mt-2">
                                 <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                    {Number(product.price).toLocaleString(
+                                    {(product.price / 100).toLocaleString(
                                         "en-US",
                                         {
                                             style: "currency",
@@ -123,8 +123,8 @@ export default async function ProductPage({
                                                 Unit Price
                                             </span>
                                             <span className="text-sm font-medium text-gray-900 dark:text-white">
-                                                {Number(
-                                                    product.price
+                                                {(
+                                                    product.price / 100
                                                 ).toLocaleString("en-US", {
                                                     style: "currency",
                                                     currency: "USD",

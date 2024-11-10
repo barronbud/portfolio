@@ -114,7 +114,7 @@ export default async function OrderPage({
                                             {item.quantity}
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
-                                            {Number(item.price).toLocaleString(
+                                            {(item.price / 100).toLocaleString(
                                                 "en-US",
                                                 {
                                                     style: "currency",
@@ -124,8 +124,8 @@ export default async function OrderPage({
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
                                             {(
-                                                Number(item.price) *
-                                                item.quantity
+                                                (item.price * item.quantity) /
+                                                100
                                             ).toLocaleString("en-US", {
                                                 style: "currency",
                                                 currency: "USD",
@@ -146,9 +146,10 @@ export default async function OrderPage({
                                 </span>
                                 <span className="font-medium text-gray-900 dark:text-white">
                                     {(
-                                        Number(order.total) -
-                                        Number(order.shipping) -
-                                        Number(order.tax)
+                                        (order.total -
+                                            order.shipping -
+                                            order.tax) /
+                                        100
                                     ).toLocaleString("en-US", {
                                         style: "currency",
                                         currency: "USD",
@@ -160,7 +161,7 @@ export default async function OrderPage({
                                     Shipping
                                 </span>
                                 <span className="font-medium text-gray-900 dark:text-white">
-                                    {Number(order.shipping).toLocaleString(
+                                    {(order.shipping / 100).toLocaleString(
                                         "en-US",
                                         {
                                             style: "currency",
@@ -174,7 +175,7 @@ export default async function OrderPage({
                                     Tax
                                 </span>
                                 <span className="font-medium text-gray-900 dark:text-white">
-                                    {Number(order.tax).toLocaleString("en-US", {
+                                    {(order.tax / 100).toLocaleString("en-US", {
                                         style: "currency",
                                         currency: "USD",
                                     })}
@@ -186,7 +187,7 @@ export default async function OrderPage({
                                         Total
                                     </span>
                                     <span className="text-base font-medium text-gray-900 dark:text-white">
-                                        {Number(order.total).toLocaleString(
+                                        {(order.total / 100).toLocaleString(
                                             "en-US",
                                             {
                                                 style: "currency",
