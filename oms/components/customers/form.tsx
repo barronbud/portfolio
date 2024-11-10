@@ -45,12 +45,19 @@ export default function CustomerForm({
     const router = useRouter();
 
     const onSubmit = async (data: z.infer<typeof oms_CustomerModel>) => {
-        await onSaveCustomer(data);
-        toast({
-            title: "Customer saved",
-            description: "Customer saved successfully",
-        });
-        router.refresh();
+        try {
+            await onSaveCustomer(data);
+            toast({
+                title: "Customer saved",
+                description: "Customer saved successfully",
+            });
+            router.refresh();
+        } catch (error) {
+            toast({
+                title: "Error",
+                description: `${error}`,
+            });
+        }
         router.push("/demos/order-management-system/customers");
     };
 

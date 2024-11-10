@@ -8,9 +8,15 @@ import { revalidatePath } from "next/cache";
 export const onCreateCustomer = async (
     data: z.infer<typeof oms_CustomerModel>
 ) => {
-    await prisma.oms_Customer.create({
-        data,
-    });
+    const customerCount = await prisma.oms_Customer.count();
+
+    if (customerCount <= 100) {
+        await prisma.oms_Customer.create({
+            data,
+        });
+    } else {
+        throw new Error("The maximum number of customers has been reached");
+    }
 
     await revalidatePath("/customers");
 };
