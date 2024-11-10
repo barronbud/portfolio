@@ -1,7 +1,7 @@
 import Recommendation from "./recommendation";
 
 export default function Recommendations() {
-    const recommendations = [
+    const allRecommendations = [
         {
             name: "Anthony Bull",
             title: "Director of Engineering @ Rad AI",
@@ -27,7 +27,30 @@ export default function Recommendations() {
                 "Jeffrey has this unique combo of tech expertise and strategic thinking that made our collaboration between engineering and design seamless. He created an inclusive work environment where we freely shared ideas and worked together to deliver innovative, user-centered solutions.",
             ],
         },
+        {
+            name: "Adam Jaffe Back",
+            title: "Enginering Manager @ Routable",
+            link: "https://www.linkedin.com/in/adamjaffeback",
+            content: [
+                "Jeffrey is a fantastic engineering manager who was entrusted with leading some of the biggest projects at Routable. His ability to become a subject matter expert in any domain is exemplary.",
+                'What I love the most about Jeffrey, personally, is his ability to ask the "big questions" to ensure that the company is meeting their strategic objectives with our engineering resources.',
+            ],
+        },
+        {
+            name: "Linda Renard",
+            title: "Director Engineering @ LINQ",
+            link: "https://www.linkedin.com/in/lindalinsane",
+            content: [
+                "Jeffrey brings really detailed, thoughtful, and insightful observations and feedback and provides really strong options for resolving issues and moving things forward. He looks beyond the surface and is very aware of underlying and systemic impacts of situations.",
+                "Jeffrey is definitely an engineering leader that I value and trust.",
+            ],
+        },
     ];
+
+    const recommendations = allRecommendations
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-3">
             {recommendations.map((recommendation) => (
