@@ -7,15 +7,20 @@ import {
     useQuery,
     useQueryClient,
 } from "@tanstack/react-query";
-import { getCustomers } from "@/db/lookups";
+import { getProducts } from "@/db/lookups";
 import { Button } from "@/components/ui/button";
-import CustomerCard from "@/components/customers/card";
-import { Customer } from "@/app/types";
+import ProductCard from "./card";
+import { SearchIcon } from "lucide-react";
 
+interface Product {
+    id: string;
+    name: string;
+    price: number;
+}
 export default function CustomerLookup({
     handleSelect,
 }: {
-    handleSelect: (customer: Customer) => void;
+    handleSelect: (product: Product) => void;
 }) {
     const queryClient = useQueryClient();
 
@@ -24,10 +29,10 @@ export default function CustomerLookup({
     const {
         isPending,
         isError,
-        data: customers,
+        data: products,
     } = useQuery({
-        queryKey: ["customers", searchValue],
-        queryFn: () => getCustomers(searchValue),
+        queryKey: ["products", searchValue],
+        queryFn: () => getProducts(searchValue),
     });
 
     if (isPending) return <div>Loading...</div>;
@@ -39,7 +44,7 @@ export default function CustomerLookup({
                 <div className="flex gap-2">
                     <Input
                         type="text"
-                        placeholder="Search for a customer"
+                        placeholder="Search for a product"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
@@ -49,20 +54,20 @@ export default function CustomerLookup({
                             setSearchValue(search);
                         }}
                     >
-                        Search
+                        <SearchIcon />
                     </Button>
                 </div>
                 {searchValue &&
-                    customers.map((customer) => (
+                    products.map((product) => (
                         <div
-                            key={customer.id}
+                            key={product.id}
                             onClick={() => {
-                                handleSelect(customer);
+                                handleSelect(product);
                                 setSearch("");
                                 setSearchValue("");
                             }}
                         >
-                            <CustomerCard customer={customer} />
+                            <ProductCard product={product} />
                         </div>
                     ))}
             </div>

@@ -1,0 +1,26 @@
+"use server";
+
+import prisma from "@/db/client";
+import { revalidatePath } from "next/cache";
+import { Order } from "@/app/types";
+
+export const onCreateOrder = async (data: Order) => {
+    await prisma.oms_Order.create({
+        data: {
+            customerId: data.customer.id,
+            status: "pending",
+            total: data.total,
+            shipping: data.shipping,
+            tax: data.tax,
+            orderItems: {
+                create: data.orderItems.map((item) => ({
+                    productId: item.product.id,
+                    quantity: item.quantity,
+                    price: item.product.price,
+                })),
+            },
+        },
+    });
+
+    await revalidatePath("/orders");
+};

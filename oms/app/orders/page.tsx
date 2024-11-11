@@ -3,11 +3,8 @@ import { columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { showFullOMS } from "@/flags";
 
 export default async function OrdersPage() {
-    const shouldShowFullOMS = await showFullOMS();
-
     const orderData = await prisma.oms_Order.findMany({
         select: {
             id: true,
@@ -27,6 +24,9 @@ export default async function OrdersPage() {
                 },
             },
         },
+        orderBy: {
+            createdAt: "desc",
+        },
     });
 
     const orders = orderData.map((order) => ({
@@ -43,11 +43,9 @@ export default async function OrdersPage() {
         <section>
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Orders</h1>
-                {shouldShowFullOMS && (
-                    <Link href="/demos/order-management-system/orders/create">
-                        <Button variant="default">Create new order</Button>
-                    </Link>
-                )}
+                <Link href="/demos/order-management-system/orders/create">
+                    <Button variant="default">Create new order</Button>
+                </Link>
             </div>
             <DataTable columns={columns} data={orders} />
         </section>

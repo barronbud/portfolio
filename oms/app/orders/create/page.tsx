@@ -1,9 +1,8 @@
-import OrderForm from "@/components/order-form";
+import OrderForm from "@/components/orders/form";
 
 export default function CreateOrderPage() {
     return (
         <div>
-            <h1 className="text-2xl font-bold mb-6">Create New Order</h1>
             <OrderForm />
         </div>
     );

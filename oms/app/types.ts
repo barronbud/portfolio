@@ -1,30 +1,36 @@
 export interface Order {
-    id: number;
-    cartID: string;
-    orderNumber: string;
-    orderDate: string;
-    user: User;
+    id?: string;
+    customer: Customer;
     subtotal: number;
     tax: number;
     shipping: number;
     total: number;
-    items: OrderItem[];
+    orderItems: OrderItem[];
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 export interface OrderItem {
-    id: number;
-    orderID: number;
+    id?: string;
     product: Product;
     quantity: number;
 }
 
 export interface Product {
-    id: number;
+    id: string;
     name: string;
     price: number;
 }
 
-export interface User {
-    id: number;
-    name: string;
+export interface Customer {
+    id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    phone: string;
+    isActive: boolean;
 }
