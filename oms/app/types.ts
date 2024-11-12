@@ -33,4 +33,6 @@ export interface Customer {
     zip: string;
     phone: string;
     isActive: boolean;
+    createdAt?: Date;
+    updatedAt?: Date;
 }

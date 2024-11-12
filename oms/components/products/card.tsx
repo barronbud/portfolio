@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 })}`}
             </p>
             <p>Stock: {product.stock}</p>
-            <Button>
+            <Button data-testid="add-to-order-button">
                 <PlusIcon /> Add to Order
             </Button>
         </div>

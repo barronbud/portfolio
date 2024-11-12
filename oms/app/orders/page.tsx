@@ -47,7 +47,9 @@ export default async function OrdersPage() {
                     <Button variant="default">Create new order</Button>
                 </Link>
             </div>
-            <DataTable columns={columns} data={orders} />
+            <div data-testid="orders-table">
+                <DataTable columns={columns} data={orders} />
+            </div>
         </section>
     );
 }
