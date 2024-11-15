@@ -136,8 +136,8 @@ export default async function CustomerPage({
                                             </div>
                                             <div className="text-right">
                                                 <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                                                    {Number(
-                                                        order.total
+                                                    {(
+                                                        order.total / 100
                                                     ).toLocaleString("en-US", {
                                                         style: "currency",
                                                         currency: "USD",
