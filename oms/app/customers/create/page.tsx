@@ -1,4 +1,4 @@
-import CustomerForm from "@/components/customers/form";
+import CustomerForm from "@/components/customers/form-container";
 import { Button } from "@/components/ui/button";
 import { onCreateCustomer } from "@/app/customers/actions";
 

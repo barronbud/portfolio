@@ -23,7 +23,7 @@ export interface Product {
 }
 
 export interface Customer {
-    id: string;
+    id?: string;
     email: string;
     firstName: string;
     lastName: string;

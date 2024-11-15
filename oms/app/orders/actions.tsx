@@ -5,6 +5,10 @@ import { revalidatePath } from "next/cache";
 import { Order } from "@/app/types";
 
 export const onCreateOrder = async (data: Order) => {
+    if (!data.customer.id) {
+        throw new Error("Customer ID is required");
+    }
+
     await prisma.oms_Order.create({
         data: {
             customerId: data.customer.id,

@@ -1,30 +1,26 @@
 "use server";
 
-import { oms_CustomerModel } from "@jeffreyabarron/portfolio-db/prisma/zod";
-import { z } from "zod";
 import prisma from "@/db/client";
 import { revalidatePath } from "next/cache";
+import { Customer } from "@/app/types";
 
-export const onCreateCustomer = async (
-    data: z.infer<typeof oms_CustomerModel>
-) => {
+export const onCreateCustomer = async (data: Customer): Promise<Customer> => {
     const customerCount = await prisma.oms_Customer.count();
 
     if (customerCount <= 100) {
-        await prisma.oms_Customer.create({
+        const newCustomer = await prisma.oms_Customer.create({
             data,
         });
+
+        await revalidatePath("/customers");
+        return newCustomer;
     } else {
         throw new Error("The maximum number of customers has been reached");
     }
-
-    await revalidatePath("/customers");
 };
 
-export const onEditCustomer = async (
-    data: z.infer<typeof oms_CustomerModel>
-) => {
-    await prisma.oms_Customer.update({
+export const onEditCustomer = async (data: Customer): Promise<Customer> => {
+    const updatedCustomer = await prisma.oms_Customer.update({
         where: {
             id: data.id,
         },
@@ -32,6 +28,7 @@ export const onEditCustomer = async (
     });
 
     await revalidatePath("/customers");
+    return updatedCustomer;
 };
 
 export const onDeleteCustomer = async (customerId: string) => {

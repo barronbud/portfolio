@@ -1,4 +1,4 @@
-import CustomerForm from "@/components/customers/form";
+import CustomerForm from "@/components/customers/form-container";
 import prisma from "@/db/client";
 import { Button } from "@/components/ui/button";
 import { onEditCustomer } from "@/app/customers/actions";
