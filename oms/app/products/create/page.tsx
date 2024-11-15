@@ -7,7 +7,9 @@ export default function CreateProductPage() {
         <div>
             <ProductForm onSaveProduct={onCreateProduct}>
                 <div className="flex justify-center mt-4">
-                    <Button type="submit">Add new product</Button>
+                    <Button type="submit" data-testid="add-product-button">
+                        Add new product
+                    </Button>
                 </div>
             </ProductForm>
         </div>

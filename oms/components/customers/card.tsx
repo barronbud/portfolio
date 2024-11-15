@@ -9,7 +9,7 @@ export default function CustomerCard({
     children?: React.ReactNode;
 }) {
     return (
-        <Card>
+        <Card data-testid="customer-card">
             <CardHeader>
                 <CardTitle>{`${customer.firstName} ${customer.lastName}`}</CardTitle>
             </CardHeader>

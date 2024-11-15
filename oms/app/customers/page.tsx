@@ -32,10 +32,17 @@ export default async function CustomersPage() {
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Customers</h1>
                 <Link href="/demos/order-management-system/customers/create">
-                    <Button variant="default">Create new customer</Button>
+                    <Button
+                        variant="default"
+                        data-testid="create-customer-button"
+                    >
+                        Create new customer
+                    </Button>
                 </Link>
             </div>
-            <DataTable columns={columns} data={customers} />
+            <div data-testid="customers-table">
+                <DataTable columns={columns} data={customers} />
+            </div>
         </section>
     );
 }

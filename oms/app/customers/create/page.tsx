@@ -7,7 +7,9 @@ export default function CreateCustomerPage() {
         <div>
             <CustomerForm onSaveCustomer={onCreateCustomer}>
                 <div className="flex justify-center mt-4">
-                    <Button type="submit">Add new customer</Button>
+                    <Button type="submit" data-testid="add-customer-button">
+                        Add new customer
+                    </Button>
                 </div>
             </CustomerForm>
         </div>

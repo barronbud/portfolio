@@ -134,6 +134,7 @@ export default function OrderForm() {
                     console.log(errors);
                 })}
                 className="space-y-6"
+                data-testid="order-form"
             >
                 <div>
                     <div className="flex items-center justify-between mb-8">
@@ -202,6 +203,7 @@ export default function OrderForm() {
                                     <Button
                                         type="submit"
                                         disabled={orderItems.length === 0}
+                                        data-testid="create-order-button"
                                     >
                                         Create Order
                                     </Button>

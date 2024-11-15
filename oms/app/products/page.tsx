@@ -23,10 +23,17 @@ export default async function ProductsPage() {
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Products</h1>
                 <Link href="/demos/order-management-system/products/create">
-                    <Button variant="default">Create new product</Button>
+                    <Button
+                        variant="default"
+                        data-testid="create-product-button"
+                    >
+                        Create new product
+                    </Button>
                 </Link>
             </div>
-            <DataTable columns={columns} data={products} />
+            <div data-testid="products-table">
+                <DataTable columns={columns} data={products} />
+            </div>
         </section>
     );
 }

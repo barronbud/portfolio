@@ -47,12 +47,14 @@ export default function CustomerLookup({
                         placeholder="Search for a product"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
+                        data-testid="product-search-input"
                     />
                     <Button
                         onClick={(e) => {
                             e.preventDefault();
                             setSearchValue(search);
                         }}
+                        data-testid="product-search-button"
                     >
                         <SearchIcon />
                     </Button>
@@ -66,6 +68,7 @@ export default function CustomerLookup({
                                 setSearch("");
                                 setSearchValue("");
                             }}
+                            data-testid="product-search-result"
                         >
                             <ProductCard product={product} />
                         </div>
