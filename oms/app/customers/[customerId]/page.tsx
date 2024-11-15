@@ -1,3 +1,4 @@
+import StatusBadge from "@/components/orders/status-badge";
 import prisma from "@/db/client";
 import Link from "next/link";
 
@@ -143,19 +144,9 @@ export default async function CustomerPage({
                                                         currency: "USD",
                                                     })}
                                                 </p>
-                                                <span
-                                                    className={`inline-flex px-3 py-1 text-xs font-medium rounded-full
-                                                ${
-                                                    order.status === "completed"
-                                                        ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
-                                                        : order.status ===
-                                                          "pending"
-                                                        ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400"
-                                                        : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-                                                }`}
-                                                >
-                                                    {order.status}
-                                                </span>
+                                                <StatusBadge
+                                                    status={order.status}
+                                                />
                                             </div>
                                         </div>
                                     </Link>

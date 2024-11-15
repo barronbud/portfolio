@@ -1,5 +1,6 @@
 "use client";
 
+import StatusBadge from "@/components/orders/status-badge";
 import { DataTableColumnHeader } from "@/components/ui/data-table-header";
 import { ColumnDef } from "@tanstack/react-table";
 import { SearchIcon } from "lucide-react";
@@ -7,6 +8,7 @@ import Link from "next/link";
 export type Order = {
     id: string;
     customerName: string;
+    status: string;
     shipping: number;
     tax: number;
     total: number;
@@ -20,6 +22,15 @@ export const columns: ColumnDef<Order>[] = [
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Customer" />
         ),
+    },
+    {
+        accessorKey: "status",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Status" />
+        ),
+        cell: ({ row }) => {
+            return <StatusBadge status={row.original.status} />;
+        },
     },
     {
         accessorKey: "createdAt",

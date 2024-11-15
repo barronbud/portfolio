@@ -1,4 +1,5 @@
 import CustomerCard from "@/components/customers/card";
+import StatusBadge from "@/components/orders/status-badge";
 import prisma from "@/db/client";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -35,9 +36,7 @@ export default async function OrderPage({
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Order Details
                     </h1>
-                    <span className="px-4 py-2 text-sm font-medium rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
-                        {order.status}
-                    </span>
+                    <StatusBadge status={order.status} />
                 </div>
 
                 {/* Order Info Cards */}

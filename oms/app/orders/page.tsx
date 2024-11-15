@@ -8,6 +8,7 @@ export default async function OrdersPage() {
     const orderData = await prisma.oms_Order.findMany({
         select: {
             id: true,
+            status: true,
             shipping: true,
             tax: true,
             total: true,
@@ -32,6 +33,7 @@ export default async function OrdersPage() {
     const orders = orderData.map((order) => ({
         id: order.id,
         customerName: `${order.customer.firstName} ${order.customer.lastName}`,
+        status: order.status,
         shipping: order.shipping / 100,
         tax: order.tax / 100,
         total: order.total / 100,
