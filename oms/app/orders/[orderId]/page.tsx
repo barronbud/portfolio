@@ -3,6 +3,9 @@ import StatusBadge from "@/components/orders/status-badge";
 import prisma from "@/db/client";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import ProcessOrderButton, {
+    CancelOrderButton,
+} from "@/components/action-buttons";
 
 export default async function OrderPage({
     params,
@@ -36,6 +39,15 @@ export default async function OrderPage({
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Order Details
                     </h1>
+                    <div className="flex items-center">
+                        {order.status !== "completed" &&
+                            order.status !== "cancelled" && (
+                                <>
+                                    <ProcessOrderButton orderId={order.id} />
+                                    <CancelOrderButton orderId={order.id} />
+                                </>
+                            )}
+                    </div>
                     <StatusBadge status={order.status} />
                 </div>
 

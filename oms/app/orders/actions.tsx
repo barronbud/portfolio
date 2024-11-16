@@ -28,3 +28,17 @@ export const onCreateOrder = async (data: Order) => {
 
     await revalidatePath("/orders");
 };
+
+export const onProcessOrder = async (orderId: string) => {
+    await prisma.oms_Order.update({
+        where: { id: orderId },
+        data: { status: "completed" },
+    });
+};
+
+export const onCancelOrder = async (orderId: string) => {
+    await prisma.oms_Order.update({
+        where: { id: orderId },
+        data: { status: "cancelled" },
+    });
+};
