@@ -1,0 +1,98 @@
+---
+title: "Exploring Modern Web Development with NextJS"
+publishedAt: "2024-11-16"
+summary: "A full-stack demo application that showcases modern web development practices while serving as a practical learning experience"
+image: "/images/projects/building-an-order-management-system.png"
+type: "projects"
+promoted: "true"
+useImage: "true"
+---
+
+## The Project Vision
+
+When I started building the [Order Management System (OMS) demo app](https://www.jeffreybarron.dev/demos/order-management-system), I had a clear vision: create a full-stack application that would showcase modern web development practices while serving as a practical learning experience. I set out to build something that would demonstrate a successful integration of frontend and backend technologies in a meaningful way.
+
+## Technical Stack Decisions
+
+I chose a modern tech stack that would provide both development efficiency and learning opportunities:
+
+<div className="grid grid-cols-2 gap-4 items-center">
+    <div>
+        - **Next.js 15**: For server components and server actions
+        - **PostgreSQL + Prisma**: For type-safe database operations
+        - **Tailwind CSS**: For styling using the utility-first approach
+        - **shadcn/ui**: For headless UI components
+        - **Zod**: For type validation
+        - **TypeScript**: For end-to-end type safety
+    </div>
+    <div>
+        <Image
+            src="/images/projects/building-an-order-management-system.png"
+            alt="Next.js 15"
+            width={500}
+            height={300}
+            className="rounded-lg"
+        />
+    </div>
+
+</div>
+
+### Why These Choices?
+
+The combination of NextJS, shadcn/ui, and Tailwind CSS made the most sense; they all play well together and provide a solid foundation for building a modern web application. NextJS's implementation of server side rendering, server side generation, and server actions was a natural fit for the project, unlocking a lightweight, but flexible framework.
+
+The decision to use shadcn/ui was particularly interesting. As I noted in my development journal:
+
+> The embed model makes it super easy to customize things, and it's lightweight when adding new components to a project. Being built on top of solid packages like radix-ui was a bonus.
+
+However, it wasn't without its challenges. The deep component hierarchy for forms initially felt overwhelming, though this might have been more about my learning curve than an actual limitation.
+
+## Technical Challenges and Solutions
+
+### Data Validation Evolution
+
+One of the most significant pivots came with my approach to data validation. I initially implemented automatically generated Zod models, which worked great for customer management. However, when building the order creation functionality, I hit a wall. The disconnect between UI state and database requirements became a bottleneck.
+
+The solution? I made the pragmatic decision to throw out the automatic generation in favor of manually crafted models. This decision, while meaning some thrown-away work, ultimately led to a more maintainable and efficient solution.
+
+### Server Actions and Caching
+
+Working with Next.js 15's server actions was a refreshing experience. As I noted:
+
+> Really cool approach - simple and easy to use; sorta reminds me of old school PHP. I'd love to see how this would scale to a larger app.
+
+The aggressive caching in Next.js required careful consideration, especially in dynamic areas of the application. This led to some interesting architectural decisions around data freshness versus performance.
+
+## Applying YAGNI & DRY Principles
+
+An interesting insight came from balancing the tension between YAGNI (You Ain't Gonna Need It) and DRY (Don't Repeat Yourself) principles. This manifested clearly in the customer form component development.
+
+Initially, I built a simple customer form component that worked well in isolation. However, when I needed to add customer creation during order processing, I faced a decision point. After careful consideration, I extracted a reusable customer form component that could be validated with Zod models. This evolution reinforced the idea that sometimes YAGNI naturally evolves into "You Are Gonna Need It."
+
+## Building in Public
+
+One unique aspect of this project has been developing it in public. This came with some interesting challenges:
+
+-   👍 Feature flags hiding work-in-progress components
+-   🚧 Visible deployment hiccups with database migrations
+-   🎯 Real-time learning and problem-solving visible in the Git commit history
+
+## Outcomes vs Initial Goals
+
+Looking at the learning outcomes I outlined in the project overview, I'm pleased to see that the project has delivered on its educational goals:
+
+-   ✅ Modern Next.js development practices
+-   ✅ React component architecture
+-   ✅ Database integration with ORM
+-   ✅ Server-side operations
+-   ✅ Cloud deployment strategies
+
+## Key Takeaways
+
+1. **Pragmatism Wins**: Being willing to throw away code that no longer serves its purpose is crucial for maintaining project momentum.
+2. **Type Safety Pays Off**: The initial investment in TypeScript, Zod, and Prisma created a robust foundation that accelerated development.
+3. **Component Architecture Matters**: The evolution from specific to reusable components showed the importance of letting architecture emerge from real needs rather than speculation.
+
+Building this Order Management System demo has been an excellent journey through the modern JavaScript ecosystem. While there were certainly sharp edges and learning curves, the resulting application showcases both the power and complexity of contemporary web development tools and practices.
+
+_Want to see the project in action? Check out the live demo at [jeffreybarron.dev](https://www.jeffreybarron.dev/demos/order-management-system)_

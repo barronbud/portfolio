@@ -19,7 +19,7 @@ export default async function Page() {
             post={post}
             type={post.metadata.type}
             useLabel={true}
-            useImage={true}
+            useImage={post.metadata.useImage === "true"}
         />
     ));
 

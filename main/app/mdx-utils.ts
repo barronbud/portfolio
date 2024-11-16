@@ -8,6 +8,7 @@ type Metadata = {
     image?: string;
     type: string;
     promoted?: string;
+    useImage: string;
 };
 
 export interface Post {
