@@ -32,13 +32,13 @@ export default async function Page() {
 
             <About />
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-1 gap-4">
                 <div className="z-50">
                     {demos.map((demo) => (
                         <div key={demo.key}>{demo}</div>
                     ))}
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {postPreviews.slice(0, 4).map((preview) => (
                         <div key={preview.key}>{preview}</div>
                     ))}

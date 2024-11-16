@@ -31,7 +31,7 @@ export function PostPreview({
                         alt={post.metadata.title}
                         width={250}
                         height={150}
-                        className="rounded-lg p-4 float-right"
+                        className="rounded-lg p-4 md:float-right"
                     />
                 )}
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

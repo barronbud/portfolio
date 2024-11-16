@@ -3,7 +3,7 @@ import { SocialIcon } from "react-social-icons";
 
 export default function About() {
     return (
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
             <div className="w-64 z-10">
                 <h1
                     data-testid="heading"

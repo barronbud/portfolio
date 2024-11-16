@@ -27,7 +27,7 @@ export default function Demo({
                     {title}
                 </h5>
             </a>
-            <div className="flex flex-row mb-4">
+            <div className="flex flex-col md:flex-row mb-4 items-center md:items-start">
                 <div>
                     {image && (
                         <Image
@@ -35,7 +35,7 @@ export default function Demo({
                             alt={title}
                             width={1308}
                             height={816}
-                            className="rounded-lg max-w-[400px]"
+                            className="rounded-lg max-w-[200px] md:block md:max-w-[400px]"
                         />
                     )}
                 </div>
@@ -44,7 +44,7 @@ export default function Demo({
                     <div>
                         <p className="font-medium text-lg mt-4">Goals</p>
 
-                        <ul className="list-disc list-inside grid grid-cols-2 justify-between">
+                        <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 justify-between">
                             {goals.map((goal) => (
                                 <li key={goal} className="">
                                     {goal}
@@ -54,7 +54,7 @@ export default function Demo({
                     </div>
                     <div className="flex flex-col">
                         <p className="font-medium text-lg mt-4">Tech Stack</p>
-                        <ul className="flex flex-row">
+                        <ul className="flex flex-col md:flex-row">
                             {techStack.map((tech) => (
                                 <li key={tech} className="mx-4">
                                     {tech}
