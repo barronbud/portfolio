@@ -7,7 +7,6 @@ export default async function ProductPage({
 }) {
     const { productId } = await params;
 
-    // Fetch order with related data
     const product = await prisma.oms_Product.findUnique({
         where: { id: productId },
     });
@@ -19,7 +18,6 @@ export default async function ProductPage({
     return (
         <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
             <div className="max-w-5xl mx-auto">
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Product Details
@@ -29,9 +27,7 @@ export default async function ProductPage({
                     </span>
                 </div>
 
-                {/* Product Info Card */}
                 <div className="overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
-                    {/* Basic Info Section */}
                     <div className="p-6 border-b dark:border-gray-700">
                         <div className="flex flex-col gap-2">
                             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
@@ -54,7 +50,6 @@ export default async function ProductPage({
                         </div>
                     </div>
 
-                    {/* Details Grid */}
                     <div className="p-6">
                         <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             Product Information

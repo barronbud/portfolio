@@ -63,17 +63,14 @@ export default function ProductForm({
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         {product ? "Edit Product" : "New Product"}
                     </h1>
                 </div>
 
-                {/* Form Card */}
                 <div className="overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
                     <div className="p-6 space-y-6">
-                        {/* Basic Info Section */}
                         <div className="space-y-4">
                             <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                                 Basic Information
@@ -138,7 +135,6 @@ export default function ProductForm({
                             />
                         </div>
 
-                        {/* Pricing and Inventory Section */}
                         <div className="space-y-4 pt-6 border-t dark:border-gray-700">
                             <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                                 Pricing & Inventory
@@ -187,7 +183,6 @@ export default function ProductForm({
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className="flex justify-end gap-4 pt-6 border-t dark:border-gray-700">
                             {children}
                         </div>

@@ -130,9 +130,7 @@ export default function OrderForm() {
     return (
         <Form {...form}>
             <form
-                onSubmit={form.handleSubmit(handleSubmit, (errors) => {
-                    console.log(errors);
-                })}
+                onSubmit={form.handleSubmit(handleSubmit)}
                 className="space-y-6"
                 data-testid="order-form"
             >

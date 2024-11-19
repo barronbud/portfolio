@@ -102,7 +102,6 @@ export default function CustomerFormBody({
                     </div>
                 </div>
 
-                {/* Address Section */}
                 <div className="space-y-4 pt-6 border-t dark:border-gray-700">
                     <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                         Address Information

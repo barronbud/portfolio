@@ -14,7 +14,6 @@ export default async function OrderPage({
 }) {
     const { orderId } = await params;
 
-    // Fetch order with related data
     const order = await prisma.oms_Order.findUnique({
         where: { id: orderId },
         include: {
@@ -34,7 +33,6 @@ export default async function OrderPage({
     return (
         <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
             <div className="max-w-5xl mx-auto">
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Order Details
@@ -51,7 +49,6 @@ export default async function OrderPage({
                     <StatusBadge status={order.status} />
                 </div>
 
-                {/* Order Info Cards */}
                 <div className="grid gap-6 mb-8 md:grid-cols-2">
                     <div className="p-6 bg-white rounded-xl shadow-sm dark:bg-gray-800">
                         <h2 className="mb-4 text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -86,7 +83,6 @@ export default async function OrderPage({
                     </div>
                 </div>
 
-                {/* Order Items Table */}
                 <div className="overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
                     <div className="p-6 border-b dark:border-gray-700">
                         <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -148,7 +144,6 @@ export default async function OrderPage({
                         </table>
                     </div>
 
-                    {/* Order Summary */}
                     <div className="p-6 bg-gray-50 dark:bg-gray-700/50">
                         <div className="space-y-3">
                             <div className="flex justify-between text-sm">

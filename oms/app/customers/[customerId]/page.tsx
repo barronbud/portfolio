@@ -36,7 +36,6 @@ export default async function CustomerPage({
     return (
         <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
             <div className="max-w-5xl mx-auto">
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         Customer Profile
@@ -46,7 +45,6 @@ export default async function CustomerPage({
                     </span>
                 </div>
 
-                {/* Customer Info Card */}
                 <div className="mb-8 overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
                     <div className="p-6 border-b dark:border-gray-700">
                         <div className="flex items-center gap-4">
@@ -107,7 +105,6 @@ export default async function CustomerPage({
                     </div>
                 </div>
 
-                {/* Recent Orders Section */}
                 {customer.orders.length > 0 && (
                     <div className="overflow-hidden bg-white rounded-xl shadow-sm dark:bg-gray-800">
                         <div className="p-6 border-b dark:border-gray-700">

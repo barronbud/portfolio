@@ -56,7 +56,6 @@ export default function CustomerForm({
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                         {customer?.id ? "Edit Customer" : "New Customer"}
