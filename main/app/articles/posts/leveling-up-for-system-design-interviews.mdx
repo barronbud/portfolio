@@ -1,0 +1,137 @@
+---
+title: "Leveling Up for System Design Interviews"
+publishedAt: "2024-11-20"
+summary: "What I've learned about system design interviews and how to prepare for them"
+image: "/images/notification-system-design.png"
+type: "articles"
+useImage: "true"
+promoted: "true"
+---
+
+As I've navigated the tech leadership job market, I've encountered an unexpected emphasis on system design interviews. These interviews have proven to be both challenging and enlightening, pushing me to develop a more structured approach to solving complex architectural problems. Here's what I've learned along the way.
+
+## Create a Baseline Interview Framework
+
+Having a reliable framework is crucial for tackling system design questions systematically. I've found [hellointerview.com](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) to be an invaluable resource for this. A solid framework typically includes:
+
+1. Requirements gathering and scope definition, broken into functional and non-functional requirements
+2. Back-of-the-envelope calculations
+3. High-level architecture design
+4. Component deep dives
+5. Trade-off discussions
+6. Future improvements
+
+## Understand Key Concepts
+
+One of the most critical aspects of system design is balancing various non-functional requirements. These trade-offs often define the success of a system:
+
+-   **Scalability**: Horizontal vs. vertical scaling strategies
+-   **Availability**: Understanding the implications of different availability levels (99.9% vs 99.99%)
+-   **Consistency**: When to choose strong consistency over eventual consistency
+-   **Performance**: Latency vs throughput considerations
+-   **Security**: Authentication, authorization, and data protection
+-   **Reliability**: Fault tolerance and recovery mechanisms
+-   **Cost**: Infrastructure expenses and operational overhead
+
+## Know Essential Design Patterns
+
+Modern distributed systems rely heavily on established patterns. Some key ones to master include:
+
+<div className="mb-4 flex justify-center">
+    <div className="flex flex-row gap-4">
+        <div className="rounded-lg p-4 border-2 border-sky-700">
+            ### Streams & Queues
+
+            -   Event-driven architectures
+            -   Pub/sub systems
+            -   Message queues for decoupling
+        </div>
+        <div className="rounded-lg p-4 border-2 border-sky-700">
+            ### Fan-out Pattern
+
+            -   Broadcasting messages to multiple consumers
+            -   Load distribution strategies
+            -   Parallel processing
+        </div>
+        <div className="rounded-lg p-4 border-2 border-sky-700">
+            ### Caching Strategies
+
+            -   Cache-aside
+            -   Write-through
+            -   Write-behind
+            -   Cache invalidation approaches
+        </div>
+        <div className="rounded-lg p-4 border-2 border-sky-700">
+            ### Data Management
+
+            -   Partitioning strategies
+            -   Sharding implementations
+            -   Change data capture for data synchronization
+        </div>
+    </div>
+
+</div>
+
+## Learning from Mock Interviews
+
+YouTube has become a fantastic resource for system design preparation. Channels like [Jordan has no life](https://www.youtube.com/@jordanhasnolife5163) and [IGotAnOffer](https://www.youtube.com/@IGotAnOffer-Engineering) are great opportunities to learn:
+
+-   Real-world interview scenarios
+-   Common pitfalls to avoid
+-   Different approaches to similar problems
+
+## Tools and Technologies at Scale
+
+Understanding enterprise-scale technologies such as those below is crucial.
+
+<div className="mb-4 flex justify-center">
+    <div className="flex flex-row gap-4">
+        <div className="rounded-lg p-4 border-2 border-slate-500">
+            ### Message Brokers
+
+            -   Apache Kafka for high-throughput event streaming
+            -   RabbitMQ for traditional message queuing
+        </div>
+        <div className="rounded-lg p-4 border-2 border-slate-500">
+            ### Caching Solutions
+
+            -   Redis for in-memory data storage
+            -   Memcached for distributed caching
+        </div>
+        <div className="rounded-lg p-4 border-2 border-slate-500">
+            ### Stream Processing
+
+            -   Apache Flink for real-time processing
+            -   Apache Storm for distributed stream processing
+        </div>
+    </div>
+
+</div>
+
+## A Real Interview Experience: Designing a Notification System
+
+I recently faced a challenging interview question about designing a multi-channel notification system. This system needed to support multiple channels (email, SMS, push notifications), handle user preferences and opt-ins, process events from various services, and manage delivery status tracking.
+
+I created a basic outline of a system that would meet these requirements, but I struggled to fully flesh out the details since I wasn't familiar with many of the underlying technologies. This experience helped me identify gaps in my knowledge and areas I needed to focus on.
+
+### Improved Approach
+
+After reflection, I would now approach this with:
+
+-   Event sourcing pattern for notification triggers
+-   Queue-per-channel architecture
+-   User preference service with caching
+-   Dead letter queues for failed notifications
+
+<div className="mb-4 flex justify-center">
+    <Image
+        src="/images/notification-system-design.png"
+        alt="Notification system design"
+        width={950}
+        height={346}
+    />
+</div>
+
+## Moving Forward
+
+System design interviews require both breadth and depth of knowledge. By focusing on these areas and learning from each interview experience, I'm better prepared for future system design challenges. Remember, it's not just about knowing the solutions – it's about understanding why certain approaches work better in specific contexts.

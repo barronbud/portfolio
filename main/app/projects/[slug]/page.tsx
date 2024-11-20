@@ -95,7 +95,7 @@ export default async function Blog({
                     }),
                 }}
             />
-            <h1 className="title font-semibold text-2xl tracking-tighter">
+            <h1 className="title font-semibold text-3xl tracking-tighter">
                 {post.metadata.title}
             </h1>
             <article className="prose">

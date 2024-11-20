@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getBlogPosts } from "@/app/mdx-utils";
 import { baseUrl } from "@/app/sitemap";
-import Image from "next/image";
 
 export async function generateStaticParams() {
     const posts = getBlogPosts();
@@ -95,20 +94,9 @@ export default async function Blog({
                     }),
                 }}
             />
-            <h1 className="title font-semibold text-2xl tracking-tighter">
+            <h1 className="title font-semibold text-3xl tracking-tighter">
                 {post.metadata.title}
             </h1>
-            <div className="flex justify-center items-center">
-                {post.metadata.image ? (
-                    <Image
-                        src={post.metadata.image}
-                        width={600}
-                        height={300}
-                        alt="Yoda meme - Do Or Do Not, There Is No Try"
-                        className="m-4"
-                    />
-                ) : null}
-            </div>
             <article className="prose">
                 <CustomMDX source={post.content} />
             </article>
