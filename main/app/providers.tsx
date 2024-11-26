@@ -1,23 +1,8 @@
 "use client";
 
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import posthog from "posthog-js";
 import { PostHogProvider as CorePostHogProvider } from "posthog-js/react";
-import { useState, useEffect } from "react";
-
-export const ReactQueryProvider = ({
-    children,
-}: {
-    children: React.ReactNode;
-}) => {
-    const [queryClient] = useState(() => new QueryClient());
-
-    return (
-        <QueryClientProvider client={queryClient}>
-            {children}
-        </QueryClientProvider>
-    );
-};
+import { useEffect } from "react";
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {

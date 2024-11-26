@@ -4,12 +4,13 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import ReactQueryProvider from "@/lib/providers";
+import { ReactQueryProvider, PostHogProvider } from "@/lib/providers";
 import { Toaster } from "@/components/ui/toaster";
+import PostHogPageView from "@/app/PostHogPageView";
 
 export const metadata: Metadata = {
     title: {
@@ -45,20 +46,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 GeistMono.variable
             )}
         >
-            <ReactQueryProvider>
-                <body className="antialiased mx-4 mt-8">
-                    <SidebarProvider defaultOpen={true}>
-                        <AppSidebar />
-                        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-                            {children}
-                            <Analytics />
-                            <SpeedInsights />
-                            {shouldInjectToolbar && <VercelToolbar />}
-                        </main>
-                        <Toaster />
-                    </SidebarProvider>
-                </body>
-            </ReactQueryProvider>
+            <PostHogProvider>
+                <ReactQueryProvider>
+                    <body className="antialiased mx-4 mt-8">
+                        <Suspense>
+                            <PostHogPageView />
+                        </Suspense>
+                        <SidebarProvider defaultOpen={true}>
+                            <AppSidebar />
+                            <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+                                {children}
+                                <Analytics />
+                                <SpeedInsights />
+                                {shouldInjectToolbar && <VercelToolbar />}
+                            </main>
+                            <Toaster />
+                        </SidebarProvider>
+                    </body>
+                </ReactQueryProvider>
+            </PostHogProvider>
         </html>
     );
 }
