@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
 import { withVercelToolbar } from "@vercel/toolbar/plugins/next";
 
 const nextConfig = {
-    assetPrefix: "/demos/order-management-system",
+    assetPrefix: "/demos/ledger",
     experimental: {
         serverActions: {
             allowedOrigins: [`${process.env.MAIN_ORIGIN}`],
