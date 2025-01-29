@@ -1,16 +1,41 @@
-"use client";
-
 import TransactionTable from "@/components/transactionTable";
 import TransactionSummary from "@/components/transactionSummary";
 import { Transaction } from "@/app/types";
+import prisma from "@/db/client";
 // import { usePreferences } from "@/hooks/usePreferences";
 
-function TransactionList() {
-    const data: Transaction[] = [];
+export default async function TransactionList() {
+    const transactionData = await prisma.ledger_Transaction.findMany({
+        select: {
+            id: true,
+            amount: true,
+            date: true,
+            merchant: {
+                select: {
+                    name: true,
+                    isFlagged: true,
+                },
+            },
+            category: {
+                select: {
+                    name: true,
+                },
+            },
+        },
+    });
+
+    const transactions = transactionData.map((transaction) => ({
+        id: transaction.id,
+        amount: transaction.amount,
+        date: transaction.date,
+        isFlagged: transaction.merchant?.isFlagged,
+        merchant: transaction.merchant?.name,
+        category: transaction.category?.name,
+    }));
 
     // const { data: preferences } = usePreferences();
 
-    if (!data) return [];
+    if (!transactions) return [];
 
     // const flaggedCompanies = preferences?.flaggedCompanies || [];
 
@@ -32,11 +57,9 @@ function TransactionList() {
         <>
             <h1>Wallet</h1>
             <div className="flex flex-row gap-2">
-                <TransactionTable data={data} />
+                <TransactionTable data={transactions} />
                 <TransactionSummary />
             </div>
         </>
     );
 }
-
-export default TransactionList;

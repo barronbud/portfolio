@@ -52,8 +52,10 @@ function TransactionTable({ data }: { data: Transaction[] }) {
         <Table>
             <TableHeader>
                 <TableRow>
+                    <TableHead></TableHead>
                     <TableHead>Date</TableHead>
                     <TableHead>Merchant</TableHead>
+                    <TableHead>Categories</TableHead>
                     <TableHead>Amount</TableHead>
                 </TableRow>
             </TableHeader>
@@ -62,30 +64,29 @@ function TransactionTable({ data }: { data: Transaction[] }) {
                     <TableRow key={transaction.id}>
                         <TableCell>
                             <Checkbox
-                                checked={flaggedCompanies.includes(
-                                    transaction?.merchant_name || ""
-                                )}
+                                checked={transaction?.isFlagged}
                                 onCheckedChange={(checked) =>
                                     handleFlag(
-                                        transaction?.merchant_name || "",
+                                        transaction?.merchant || "",
                                         checked
                                     )
                                 }
                             />
                         </TableCell>
-                        <TableCell>{transaction.date}</TableCell>
                         <TableCell>
-                            {flaggedCompanies.includes(
-                                transaction?.merchant_name || ""
-                            ) && (
+                            {transaction.date
+                                ? transaction.date.toLocaleDateString()
+                                : ""}
+                        </TableCell>
+                        <TableCell>
+                            {transaction?.isFlagged && (
                                 <Badge color="destructive">
-                                    {transaction?.merchant_name || ""}
+                                    {transaction?.merchant || ""}
                                 </Badge>
                             )}
-                            {!flaggedCompanies.includes(
-                                transaction?.merchant_name || ""
-                            ) && transaction?.merchant_name}
+                            {!transaction?.isFlagged && transaction?.merchant}
                         </TableCell>
+                        <TableCell>{transaction?.category}</TableCell>
                         <TableCell>
                             {transaction?.amount
                                 ? transaction?.amount.toLocaleString("en-US", {
