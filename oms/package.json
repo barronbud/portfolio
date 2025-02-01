@@ -38,7 +38,7 @@
         "lucide-react": "^0.469.0",
         "next": "15.1.4",
         "playwright": "^1.49.1",
-        "posthog-js": "^1.205.0",
+        "posthog-js": "^1.215.1",
         "prisma": "^6.2.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
