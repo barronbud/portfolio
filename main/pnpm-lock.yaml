@@ -30,8 +30,8 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@vercel/flags':
-        specifier: 2.6.3
-        version: 2.6.3(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.1.0
+        version: 3.1.0(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vercel/speed-insights':
         specifier: ^1.1.0
         version: 1.1.0(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -76,7 +76,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-social-icons:
         specifier: latest
-        version: 6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sugar-high:
         specifier: ^0.8.1
         version: 0.8.1
@@ -133,6 +133,10 @@ packages:
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
+
+  '@edge-runtime/cookies@5.0.2':
+    resolution: {integrity: sha512-Sd8LcWpZk/SWEeKGE8LT6gMm5MGfX/wm+GPnh1eBEtCpya3vYqn37wYknwAHw92ONoyyREl1hJwxV/Qx2DWNOg==}
+    engines: {node: '>=16'}
 
   '@edge-runtime/format@2.2.1':
     resolution: {integrity: sha512-JQTRVuiusQLNNLe2W9tnzBlV/GvSVcozLl4XZHk5swnRZ/v6jp8TqR8P7sqmJsQqblDZ3EztcWmLDbhRje/+8g==}
@@ -728,14 +732,17 @@ packages:
   '@vercel/error-utils@2.0.3':
     resolution: {integrity: sha512-CqC01WZxbLUxoiVdh9B/poPbNpY9U+tO1N9oWHwTl5YAZxcqXmmWJ8KNMFItJCUUWdY3J3xv8LvAuQv2KZ5YdQ==}
 
-  '@vercel/flags@2.6.3':
-    resolution: {integrity: sha512-knLDYS8MCc/zx4FF6KRzHQzAKdo8VQ3V0PEBI5WvRlFIhcqhcEomxHoK41/xMnNEQvUzETACHw610/i/pVwYSA==}
+  '@vercel/flags@3.1.0':
+    resolution: {integrity: sha512-TesmMiY9n5oY0BK1jPJhxrqwLf0w54ZYETrp6MSWqC/tqVIpc1E4IQNAUTvZ9OoyMoOqOn+BPRDXDHmKwTWaVA==}
     peerDependencies:
+      '@opentelemetry/api': ^1.7.0
       '@sveltejs/kit': '*'
       next: '*'
       react: '*'
       react-dom: '*'
     peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
       '@sveltejs/kit':
         optional: true
       next:
@@ -2027,8 +2034,8 @@ packages:
     resolution: {integrity: sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==}
     hasBin: true
 
-  jose@5.2.1:
-    resolution: {integrity: sha512-qiaQhtQRw6YrOaOj0v59h3R6hUY9NvxBmmnMfKemkqYmBB0tEc97NbLP7ix44VP5p9/0YHG8Vyhzuo5YBNwviA==}
+  jose@5.9.6:
+    resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -2665,8 +2672,8 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-social-icons@6.18.0:
-    resolution: {integrity: sha512-eUWAaTw9FDMYjXIXkyt9oqMIwO7l9z68jlNBbfEh/Rsxs0WaUKK5P1OgC1thITOQumgLqzTB10h3Fjzl/IdvGw==}
+  react-social-icons@6.22.0:
+    resolution: {integrity: sha512-+KN3yL61+oPR9BqHvMRin7gwfYnzLPFsiyHTTJ6g+AwO5v8rfJ/qWUv3TZqeqInfGmKWobpnLOp4pm48HHaK+A==}
     peerDependencies:
       react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
       react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
@@ -3308,6 +3315,8 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
+  '@edge-runtime/cookies@5.0.2': {}
+
   '@edge-runtime/format@2.2.1': {}
 
   '@edge-runtime/node-utils@2.3.0': {}
@@ -3876,9 +3885,10 @@ snapshots:
 
   '@vercel/error-utils@2.0.3': {}
 
-  '@vercel/flags@2.6.3(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@vercel/flags@3.1.0(next@15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      jose: 5.2.1
+      '@edge-runtime/cookies': 5.0.2
+      jose: 5.9.6
     optionalDependencies:
       next: 15.1.4(@playwright/test@1.49.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
@@ -5413,7 +5423,7 @@ snapshots:
 
   jiti@1.21.7: {}
 
-  jose@5.2.1: {}
+  jose@5.9.6: {}
 
   js-tokens@4.0.0: {}
 
@@ -6207,7 +6217,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-social-icons@6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-social-icons@6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.26.0
       react: 18.3.1
