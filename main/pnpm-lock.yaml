@@ -66,8 +66,8 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       posthog-js:
-        specifier: ^1.205.0
-        version: 1.205.0
+        specifier: ^1.215.1
+        version: 1.215.1
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -76,7 +76,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-social-icons:
         specifier: latest
-        version: 6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sugar-high:
         specifier: ^0.8.1
         version: 0.8.1
@@ -2609,8 +2609,8 @@ packages:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.205.0:
-    resolution: {integrity: sha512-zP4SQ9Dg9JwqkEteoAOviAAAMdT/nJ4vk1jqfE6fVudziEa3szkQWd7czk5ehlEdrKFUE85MonCKW4L/uwtybA==}
+  posthog-js@1.215.1:
+    resolution: {integrity: sha512-C64FFbuBB1VyMRMbFj+SyFwcJ6CjsGvNbsPfrH/PO/rv+SeK3KDXMmJ4XrqEN/eZU4DEEfx0Gscqdq9v9jbhCw==}
 
   preact@10.25.4:
     resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
@@ -2665,8 +2665,8 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-social-icons@6.18.0:
-    resolution: {integrity: sha512-eUWAaTw9FDMYjXIXkyt9oqMIwO7l9z68jlNBbfEh/Rsxs0WaUKK5P1OgC1thITOQumgLqzTB10h3Fjzl/IdvGw==}
+  react-social-icons@6.22.0:
+    resolution: {integrity: sha512-+KN3yL61+oPR9BqHvMRin7gwfYnzLPFsiyHTTJ6g+AwO5v8rfJ/qWUv3TZqeqInfGmKWobpnLOp4pm48HHaK+A==}
     peerDependencies:
       react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
       react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
@@ -6148,7 +6148,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.205.0:
+  posthog-js@1.215.1:
     dependencies:
       core-js: 3.40.0
       fflate: 0.4.8
@@ -6207,7 +6207,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-social-icons@6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-social-icons@6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.26.0
       react: 18.3.1
