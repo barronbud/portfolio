@@ -56,17 +56,6 @@ export default async function Overview() {
                     reliable data management and scalability.
                 </p>
             </section>
-
-            <section>
-                <h2 className="text-2xl font-semibold mb-3">
-                    Future Enhancements
-                </h2>
-                <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
-                    <li>Simple search and filtering capabilities for orders</li>
-                    <li>Simple customer and product management</li>
-                    <li>Order creation workflow</li>
-                </ul>
-            </section>
         </div>
     );
 }
