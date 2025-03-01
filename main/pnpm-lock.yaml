@@ -76,13 +76,13 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-social-icons:
         specifier: latest
-        version: 6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sugar-high:
         specifier: ^0.8.4
         version: 0.8.4
       tailwind-merge:
-        specifier: ^2.6.0
-        version: 2.6.0
+        specifier: ^3.0.2
+        version: 3.0.2
       tailwindcss:
         specifier: 3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.3))
@@ -734,6 +734,7 @@ packages:
 
   '@vercel/flags@3.1.0':
     resolution: {integrity: sha512-TesmMiY9n5oY0BK1jPJhxrqwLf0w54ZYETrp6MSWqC/tqVIpc1E4IQNAUTvZ9OoyMoOqOn+BPRDXDHmKwTWaVA==}
+    deprecated: This package was renamed to flags, which offers the same functionality. https://vercel.com/changelog/npm-i-flags
     peerDependencies:
       '@opentelemetry/api': ^1.7.0
       '@sveltejs/kit': '*'
@@ -2672,8 +2673,8 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-social-icons@6.18.0:
-    resolution: {integrity: sha512-eUWAaTw9FDMYjXIXkyt9oqMIwO7l9z68jlNBbfEh/Rsxs0WaUKK5P1OgC1thITOQumgLqzTB10h3Fjzl/IdvGw==}
+  react-social-icons@6.22.0:
+    resolution: {integrity: sha512-+KN3yL61+oPR9BqHvMRin7gwfYnzLPFsiyHTTJ6g+AwO5v8rfJ/qWUv3TZqeqInfGmKWobpnLOp4pm48HHaK+A==}
     peerDependencies:
       react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
       react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
@@ -2976,8 +2977,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
+  tailwind-merge@3.0.2:
+    resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -6217,7 +6218,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-social-icons@6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-social-icons@6.22.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.26.0
       react: 18.3.1
@@ -6616,7 +6617,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tailwind-merge@2.6.0: {}
+  tailwind-merge@3.0.2: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.3))):
     dependencies:
