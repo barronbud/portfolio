@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { verifyAccess, ProviderData } from "@vercel/flags";
-import { unstable_getProviderData as getProviderData } from "@vercel/flags/next";
+import { getProviderData } from "@vercel/flags/next";
 import * as flags from "../../../../flags";
 
 export async function GET(request: NextRequest) {
