@@ -14,9 +14,18 @@ export function PostPreview({
     useLabel?: boolean;
     useImage?: boolean;
 }) {
+    const getPostUrl = () => {
+        if (post.metadata.category) {
+            return `/articles/${post.slug}`;
+        }
+        return `/${type}/${post.slug}`;
+    };
+
+    const postUrl = getPostUrl();
+
     return (
         <div className="mb-4 md:mr-4 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <Link href={`/${type}/${post.slug}`}>
+            <Link href={postUrl}>
                 <h3 className="text-3xl text-gray-500 capitalize">
                     {useLabel && `${type}`}
                 </h3>
@@ -39,9 +48,7 @@ export function PostPreview({
                 </p>
             </div>
 
-            <InternalButton href={`/${type}/${post.slug}`}>
-                Read more
-            </InternalButton>
+            <InternalButton href={postUrl}>Read more</InternalButton>
         </div>
     );
 }

@@ -4,27 +4,33 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { categories } from "@/app/categories";
 
-export function ArticleCategories({}) {
+interface CategorySubnavProps {
+    currentCategory: string;
+}
+
+export function CategorySubnav({ currentCategory }: CategorySubnavProps) {
     const pathname = usePathname();
-    const currentCategory = pathname.split("/").pop();
+    const category = categories.find((cat) => cat.slug === currentCategory);
+
+    if (!category) return null;
 
     return (
         <nav className="flex flex-col space-y-4">
             <h2 className="text-lg font-semibold">Categories</h2>
             <div className="flex flex-col space-y-2">
-                {categories.map((category) => (
+                {categories.map((cat) => (
                     <Link
-                        key={category.slug}
-                        href={`/articles/category/${category.slug}`}
+                        key={cat.slug}
+                        href={`/articles/category/${cat.slug}`}
                         className={`px-4 py-2 rounded-lg transition-colors ${
-                            currentCategory === category.slug
+                            cat.slug === currentCategory
                                 ? "bg-gray-100 dark:bg-gray-800"
                                 : "hover:bg-gray-50 dark:hover:bg-gray-800/50"
                         }`}
                     >
-                        <div className="font-medium">{category.name}</div>
+                        <div className="font-medium">{cat.name}</div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
-                            {category.description}
+                            {cat.description}
                         </div>
                     </Link>
                 ))}

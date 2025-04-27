@@ -3,6 +3,8 @@ import { CustomMDX } from "@/components/mdx";
 import { getBlogPosts } from "@/app/mdx-utils";
 import { baseUrl } from "@/app/sitemap";
 import { SeriesNavigation } from "@/components/series-navigation";
+import { CategorySubnav } from "@/components/navigation/category-subnav";
+import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 
 export async function generateStaticParams() {
     const posts = getBlogPosts();
@@ -96,15 +98,29 @@ export default async function Blog({
                     }),
                 }}
             />
-            <h1 className="title font-semibold text-3xl tracking-tighter">
-                {post.metadata.title}
-            </h1>
-            <article className="prose">
-                <CustomMDX source={post.content} />
-            </article>
-            {post.metadata.seriesOrder && (
-                <SeriesNavigation currentPost={post} allPosts={posts} />
+            {post.metadata.category && (
+                <Breadcrumbs currentCategory={post.metadata.category} />
             )}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="md:col-span-1">
+                    {post.metadata.category && (
+                        <CategorySubnav
+                            currentCategory={post.metadata.category}
+                        />
+                    )}
+                </div>
+                <div className="md:col-span-3">
+                    <h1 className="title font-semibold text-3xl tracking-tighter">
+                        {post.metadata.title}
+                    </h1>
+                    <article className="prose">
+                        <CustomMDX source={post.content} />
+                    </article>
+                    {post.metadata.seriesOrder && (
+                        <SeriesNavigation currentPost={post} allPosts={posts} />
+                    )}
+                </div>
+            </div>
         </section>
     );
 }
