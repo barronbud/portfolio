@@ -9,6 +9,8 @@ type Metadata = {
     type: string;
     promoted?: string;
     useImage: string;
+    category?: string;
+    seriesOrder?: string;
 };
 
 export interface Post {

@@ -41,7 +41,6 @@ export function PostsSneakPeek({
                     }
                     return 1;
                 })
-                .slice(0, 3)
                 .map((post) => (
                     <PostPreview post={post} key={post.slug} type={type} />
                 ))}
