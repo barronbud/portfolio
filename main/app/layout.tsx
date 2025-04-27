@@ -1,14 +1,17 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Inter } from "next/font/google";
 import { Navbar } from "@/components/nav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
 import { baseUrl } from "./sitemap";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { Analytics } from "@vercel/analytics/react";
-import { Suspense } from "react";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
@@ -59,8 +62,7 @@ export default function RootLayout({
             lang="en"
             className={cx(
                 "dark text-black bg-slate-200 dark:text-white dark:bg-black",
-                GeistSans.variable,
-                GeistMono.variable
+                inter.variable
             )}
         >
             <body className="antialiased max-w-6xl mx-4 mt-8 lg:mx-auto px-4 bg-slate-200 dark:bg-black">
