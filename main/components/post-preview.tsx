@@ -6,7 +6,6 @@ import InternalButton from "./buttons";
 export function PostPreview({
     post,
     type,
-    useLabel = false,
     useImage = false,
 }: {
     post: Post;
@@ -26,9 +25,6 @@ export function PostPreview({
     return (
         <div className="mb-4 md:mr-4 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <Link href={postUrl}>
-                <h3 className="text-3xl text-gray-500 capitalize">
-                    {useLabel && `${type}`}
-                </h3>
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {post.metadata.title}
                 </h5>
