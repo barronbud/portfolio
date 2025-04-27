@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getBlogPosts } from "@/app/mdx-utils";
 import { baseUrl } from "@/app/sitemap";
+import { SeriesNavigation } from "@/components/series-navigation";
 
 export async function generateStaticParams() {
     const posts = getBlogPosts();
@@ -62,7 +63,8 @@ export default async function Blog({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const post = getBlogPosts().find((post) => post.slug === slug);
+    const posts = getBlogPosts();
+    const post = posts.find((post) => post.slug === slug);
 
     if (!post) {
         notFound();
@@ -97,6 +99,9 @@ export default async function Blog({
             <h1 className="title font-semibold text-3xl tracking-tighter">
                 {post.metadata.title}
             </h1>
+            {post.metadata.category === "how-i-hire" && (
+                <SeriesNavigation currentPost={post} allPosts={posts} />
+            )}
             <article className="prose">
                 <CustomMDX source={post.content} />
             </article>
