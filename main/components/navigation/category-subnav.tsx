@@ -1,19 +1,11 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { categories } from "@/app/categories";
 
 interface CategorySubnavProps {
-    currentCategory: string;
+    currentCategory?: string;
 }
 
 export function CategorySubnav({ currentCategory }: CategorySubnavProps) {
-    const pathname = usePathname();
-    const category = categories.find((cat) => cat.slug === currentCategory);
-
-    if (!category) return null;
-
     return (
         <nav className="flex flex-col space-y-4">
             <h2 className="text-lg font-semibold">Categories</h2>

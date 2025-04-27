@@ -1,6 +1,6 @@
 import { ArticleCategories } from "@/components/article-categories";
 import { PostPreview } from "@/components/post-preview";
-import { getBlogPosts, Post } from "@/app/mdx-utils";
+import { getBlogPosts } from "@/app/mdx-utils";
 import { categories, getCategory, getCategoryPosts } from "@/app/categories";
 import { notFound } from "next/navigation";
 
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 export default async function CategoryPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
     const posts = await getBlogPosts();
     const { slug } = await params;

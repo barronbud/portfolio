@@ -1,6 +1,7 @@
 import { PostsSneakPeek } from "@/components/posts";
 import { Metadata } from "next";
 import { getBlogPosts } from "@/app/mdx-utils";
+import { CategorySubnav } from "@/components/navigation/category-subnav";
 
 export const metadata: Metadata = {
     title: "Articles",
@@ -16,8 +17,13 @@ export default function Page() {
             >
                 Articles
             </h1>
-            <div>
-                <PostsSneakPeek posts={getBlogPosts()} type="articles" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="md:col-span-1">
+                    <CategorySubnav />
+                </div>
+                <div className="md:col-span-3">
+                    <PostsSneakPeek posts={getBlogPosts()} type="articles" />
+                </div>
             </div>
         </section>
     );
