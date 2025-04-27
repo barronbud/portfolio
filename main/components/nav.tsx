@@ -10,7 +10,6 @@ const navItems = {
     "/projects": {
         name: "past projects",
     },
-    "/demos": { name: "demos" },
 };
 
 export async function Navbar() {

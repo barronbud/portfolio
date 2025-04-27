@@ -2,8 +2,6 @@ import About from "@/components/about";
 import Recommendations from "@/components/recommendations";
 import { getBlogPosts, getProjectPosts } from "@/app/mdx-utils";
 import { PostPreview } from "@/components/post-preview";
-import Demo from "@/components/demos";
-import { demoApps } from "./demos/data";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +9,6 @@ export default async function Page() {
     const articles = getBlogPosts().filter((post) => post.metadata.promoted);
     const cases = getProjectPosts().filter((post) => post.metadata.promoted);
     const posts = [...cases, ...articles].sort(() => Math.random() - 0.5);
-    const demos = demoApps.map((demo) => <Demo key={demo.href} {...demo} />);
 
     const postPreviews = posts.map((post) => (
         <PostPreview
@@ -33,11 +30,6 @@ export default async function Page() {
             <About />
 
             <div className="grid grid-cols-1 gap-4">
-                <div className="z-50">
-                    {demos.map((demo) => (
-                        <div key={demo.key}>{demo}</div>
-                    ))}
-                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {postPreviews.slice(0, 4).map((preview) => (
                         <div key={preview.key}>{preview}</div>

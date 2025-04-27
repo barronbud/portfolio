@@ -7,9 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
 import { baseUrl } from "./sitemap";
 import { VercelToolbar } from "@vercel/toolbar/next";
-import AnalyticsWrapper from "@/components/analytics";
-import { PostHogProvider } from "./providers";
-import PostHogPageView from "@/app/PostHogPageView";
+import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -65,21 +63,16 @@ export default function RootLayout({
                 GeistMono.variable
             )}
         >
-            <PostHogProvider>
-                <body className="antialiased max-w-6xl mx-4 mt-8 lg:mx-auto px-4 bg-slate-200 dark:bg-black">
-                    <Suspense>
-                        <PostHogPageView />
-                    </Suspense>
-                    <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-                        <Navbar />
-                        {children}
-                        <Footer />
-                        <AnalyticsWrapper />
-                        <SpeedInsights />
-                        {shouldInjectToolbar && <VercelToolbar />}
-                    </main>
-                </body>
-            </PostHogProvider>
+            <body className="antialiased max-w-6xl mx-4 mt-8 lg:mx-auto px-4 bg-slate-200 dark:bg-black">
+                <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    <Analytics />
+                    <SpeedInsights />
+                    {shouldInjectToolbar && <VercelToolbar />}
+                </main>
+            </body>
         </html>
     );
 }
