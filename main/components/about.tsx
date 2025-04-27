@@ -4,7 +4,8 @@ import { SocialIcon } from "react-social-icons";
 export default function About() {
     return (
         <div className="flex flex-col md:flex-row">
-            <div className="w-64 z-10">
+            {/* make the left column take up 30% of the width */}
+            <div className="w-1/2 z-10">
                 <h1
                     data-testid="heading"
                     className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white"
@@ -25,27 +26,39 @@ export default function About() {
                     <SocialIcon url="https://github.com/barronbud" />
                 </div>
             </div>
-            <div className="mx-4 my-8 z-10 text-lg">
+            <div className="mx-4 my-8 z-10 text-lg z-10">
+                {/* highlight this paragraph to seperate from the bullet list */}
+                <p className="mb-6 text-gray-700 dark:text-gray-300 font-bold ">
+                    Engineering Manager with 10+ years of experience building
+                    and leading high-performing teams across fin-tech, edu-tech,
+                    and e-commerce. Proven track record of delivering scalable
+                    solutions while fostering inclusive, innovative engineering
+                    cultures.
+                </p>
                 <ul className="list-disc list-inside pl-6">
                     <li className="my-4">
-                        10+ years in software development across fin-tech,
-                        edu-tech, and e-commerce
+                        Led cross-functional engineering teams through
+                        successful Agile transformations, implementing Scrum and
+                        Kanban methodologies to improve delivery efficiency
                     </li>
                     <li className="my-4">
-                        3+ years as engineering leader working with 1 or more
-                        remote full-stack teams
+                        Architected and delivered scalable solutions using
+                        Node.js, React, Python, and TypeScript, with a focus on
+                        system reliability and performance
                     </li>
                     <li className="my-4">
-                        Develop and lead teams utilizing Node, React, Python,
-                        and Typescript
+                        Built and mentored remote engineering teams,
+                        establishing best practices for code quality, testing,
+                        and continuous integration
                     </li>
                     <li className="my-4">
-                        Lead Agile transformations by applying Scrum, Kanban,
-                        and other methodologies
+                        Drove technical strategy and innovation while balancing
+                        business objectives with technical excellence
                     </li>
                     <li className="my-4">
-                        Hire and grow empowered cross-functional teams with a
-                        high bias towards action
+                        Championed data-driven decision making and continuous
+                        improvement, resulting in measurable improvements in
+                        team productivity and product quality
                     </li>
                 </ul>
             </div>
