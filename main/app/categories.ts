@@ -7,16 +7,16 @@ export interface Category {
 
 export const categories: Category[] = [
     {
-        name: "How I Hire",
-        slug: "how-i-hire",
-        description: "Articles about my approach to hiring and building teams",
-        sortBy: "seriesOrder",
-    },
-    {
         name: "General",
         slug: "general",
         description: "Other articles and thoughts",
         sortBy: "date",
+    },
+    {
+        name: "How I Hire",
+        slug: "how-i-hire",
+        description: "Articles about my approach to hiring and building teams",
+        sortBy: "seriesOrder",
     },
 ];
 

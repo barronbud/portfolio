@@ -99,12 +99,12 @@ export default async function Blog({
             <h1 className="title font-semibold text-3xl tracking-tighter">
                 {post.metadata.title}
             </h1>
-            {post.metadata.category === "how-i-hire" && (
-                <SeriesNavigation currentPost={post} allPosts={posts} />
-            )}
             <article className="prose">
                 <CustomMDX source={post.content} />
             </article>
+            {post.metadata.seriesOrder && (
+                <SeriesNavigation currentPost={post} allPosts={posts} />
+            )}
         </section>
     );
 }

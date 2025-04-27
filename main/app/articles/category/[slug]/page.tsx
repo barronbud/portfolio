@@ -16,7 +16,8 @@ export default async function CategoryPage({
     params: { slug: string };
 }) {
     const posts = await getBlogPosts();
-    const category = getCategory(params.slug);
+    const { slug } = await params;
+    const category = getCategory(slug);
 
     if (!category) {
         notFound();
