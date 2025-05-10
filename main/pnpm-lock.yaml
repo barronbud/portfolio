@@ -73,7 +73,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-social-icons:
         specifier: latest
-        version: 6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.24.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sugar-high:
         specifier: ^0.9.3
         version: 0.9.3
@@ -2710,11 +2710,11 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-social-icons@6.18.0:
-    resolution: {integrity: sha512-eUWAaTw9FDMYjXIXkyt9oqMIwO7l9z68jlNBbfEh/Rsxs0WaUKK5P1OgC1thITOQumgLqzTB10h3Fjzl/IdvGw==}
+  react-social-icons@6.24.0:
+    resolution: {integrity: sha512-1YlJe2TOf/UwPi2JAb8Ci7J207owP806Tpxu36o4EkB1/jLjGhi83xbCHOagoMyPozTZrPnZIGgvp1LiiWGuZw==}
     peerDependencies:
-      react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
-      react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+      react: 16.x.x || 17.x.x || 18.x.x || 19.x.x
+      react-dom: 16.x.x || 17.x.x || 18.x.x || 19.x.x
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -6293,7 +6293,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-social-icons@6.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-social-icons@6.24.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.27.0
       react: 18.3.1
