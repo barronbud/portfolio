@@ -28,9 +28,9 @@ export default function About() {
             </div>
             <div className="mx-4 my-8 z-10 text-lg">
                 <p className="mb-6 text-gray-700 dark:text-gray-300 font-bold ">
-                    Engineering Manager with 10+ years of experience building
-                    and leading high-performing teams across fin-tech, edu-tech,
-                    and e-commerce. Proven track record of delivering scalable
+                    Engineering Manager with 3+ years of experience building and
+                    leading high-performing teams across fin-tech, edu-tech, and
+                    e-commerce. Proven track record of delivering scalable
                     solutions while fostering inclusive, innovative engineering
                     cultures.
                 </p>
