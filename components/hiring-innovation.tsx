@@ -68,7 +68,7 @@ export default function HiringInnovation() {
                 "Builds long-term relationships beyond hiring decisions",
             ],
             insight:
-                "                    &quot;Job searching is hard enough without adding unnecessary stress and uncertainty to the process.&quot;",
+                "                    &quot;                    &quot;Job searching is hard enough without adding unnecessary stress and uncertainty to the process.&quot;&quot;",
             color: "orange",
         },
     ];

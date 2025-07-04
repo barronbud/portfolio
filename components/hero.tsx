@@ -76,7 +76,7 @@ export default function Hero() {
                                 href="mailto:me@jeffreybarron.dev"
                                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                             >
-                                Let's Connect
+                                Let&apos;s Connect
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                             <a
