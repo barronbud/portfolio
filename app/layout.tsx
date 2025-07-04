@@ -16,17 +16,17 @@ const inter = Inter({
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
     title: {
-        default: "Portfolio | Jeffrey Barron",
-        template: "%s | Portfolio | Jeffrey Barron",
+        default: "Jeffrey Barron | Engineering Leader & Technical Executive",
+        template: "%s | Jeffrey Barron",
     },
     description:
-        "Engineering Leader • Software Engineer • I empower engineering teams to solve hard problems.",
+        "Engineering Leader with 10+ years in software development and 3+ years leading remote full-stack teams. Proven track record of increasing team velocity by 150% and delivering scalable solutions using Node, React, Python, and TypeScript.",
     openGraph: {
-        title: "Jeffrey Barron's Portfolio",
+        title: "Jeffrey Barron | Engineering Leader & Technical Executive",
         description:
-            "I'm an engineering leader specializing in building, growing, and empowering full-stack teams.",
+            "Engineering Leader with 10+ years in software development and 3+ years leading remote full-stack teams across fin-tech, edu-tech, and e-commerce.",
         url: baseUrl,
-        siteName: "Jeffrey Barron's Portfolio",
+        siteName: "Jeffrey Barron | Engineering Leader",
         locale: "en_US",
         type: "website",
         images: [
@@ -61,11 +61,11 @@ export default function RootLayout({
         <html
             lang="en"
             className={cx(
-                "dark text-black bg-slate-200 dark:text-white dark:bg-black",
+                "dark text-black bg-gray-50 dark:text-white dark:bg-gray-900",
                 inter.variable
             )}
         >
-            <body className="antialiased max-w-6xl mx-4 mt-8 lg:mx-auto px-4 bg-slate-200 dark:bg-black">
+            <body className="antialiased max-w-7xl mx-4 mt-8 lg:mx-auto px-4 bg-gray-50 dark:bg-gray-900">
                 <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
                     <Navbar />
                     {children}

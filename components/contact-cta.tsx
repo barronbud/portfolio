@@ -1,0 +1,104 @@
+import { SocialIcon } from "react-social-icons";
+import { Mail, Download, MapPin, MessageCircle } from "lucide-react";
+
+export default function ContactCTA() {
+    return (
+        <div className="mb-12">
+            {/* Main CTA Section */}
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center">
+                <h3 className="text-3xl font-bold mb-4">
+                    Ready to Build Something Great Together?
+                </h3>
+                <p className="text-xl mb-8 text-blue-100">
+                    Let&apos;s discuss how I can help lead your engineering team
+                    to success
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a
+                        href="mailto:me@jeffreybarron.dev"
+                        className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                    >
+                        <Mail className="w-5 h-5" />
+                        Get in Touch
+                    </a>
+
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                    >
+                        <Download className="w-5 h-5" />
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        Email
+                    </h4>
+                    <a
+                        href="mailto:me@jeffreybarron.dev"
+                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                        me@jeffreybarron.dev
+                    </a>
+                </div>
+
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        Location
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Remote-First
+                        <br />
+                        <span className="text-sm">Open to Travel</span>
+                    </p>
+                </div>
+
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <MessageCircle className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        Connect
+                    </h4>
+                    <div className="flex justify-center gap-2">
+                        <SocialIcon
+                            url="https://www.linkedin.com/in/jeffreyabarron/"
+                            style={{ height: 32, width: 32 }}
+                        />
+                        <SocialIcon
+                            url="https://github.com/barronbud"
+                            style={{ height: 32, width: 32 }}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* Availability Status */}
+            <div className="mt-8 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="font-semibold text-green-800 dark:text-green-300">
+                        Currently Available for New Opportunities
+                    </span>
+                </div>
+                <p className="text-green-700 dark:text-green-400">
+                    Seeking Engineering Manager or Senior Engineering Leadership
+                    roles
+                </p>
+            </div>
+        </div>
+    );
+}

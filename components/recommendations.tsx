@@ -1,4 +1,5 @@
 import Recommendation from "./recommendation";
+import { MessageSquareQuote } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -54,17 +55,60 @@ export default function Recommendations() {
         .slice(0, 3);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3">
-            {recommendations.map((recommendation) => (
-                <div className="mb-4 md:mr-4 p-2" key={recommendation.name}>
-                    <Recommendation
-                        name={recommendation.name}
-                        title={recommendation.title}
-                        link={recommendation.link}
-                        content={recommendation.content}
-                    />
+        <div className="mb-12">
+            {/* Section Header */}
+            <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    Leadership Testimonials
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    What senior leaders and colleagues say about working with
+                    Jeffrey
+                </p>
+            </div>
+
+            {/* Featured Recommendation (remove first recommendation from array) */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 mb-8">
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-6">
+                        <div className="w-12 h-12 mx-auto mb-4">
+                            <MessageSquareQuote className="w-12 h-12 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <blockquote className="text-xl lg:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
+                            {recommendations[0].content[0]}
+                        </blockquote>
+                        <div className="mt-6 flex items-center justify-center gap-3">
+                            <div className="text-center">
+                                <div className="font-semibold text-gray-900 dark:text-white">
+                                    {recommendations[0].name}
+                                </div>
+                                <div className="text-blue-600 dark:text-blue-400 font-medium">
+                                    {recommendations[0].title}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            ))}
+            </div>
+
+            {/* Additional Recommendations Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {recommendations
+                    .filter((_, index) => index > 0)
+                    .map((recommendation) => (
+                        <div
+                            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+                            key={recommendation.name}
+                        >
+                            <Recommendation
+                                name={recommendation.name}
+                                title={recommendation.title}
+                                link={recommendation.link}
+                                content={recommendation.content}
+                            />
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 }

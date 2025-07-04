@@ -9,10 +9,10 @@ export interface NavItem {
 
 export const navItems: { [key: string]: NavItem } = {
     "/": {
-        name: "portfolio home",
+        name: "Home",
     },
     "/articles": {
-        name: "articles",
+        name: "Leadership Insights",
         subItems: {
             "/articles/category/general": {
                 name: "General",
@@ -23,6 +23,6 @@ export const navItems: { [key: string]: NavItem } = {
         },
     },
     "/projects": {
-        name: "past projects",
+        name: "Portfolio",
     },
 };

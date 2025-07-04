@@ -1,5 +1,8 @@
 import About from "@/components/about";
+import TechnicalSkills from "@/components/technical-skills";
+import LeadershipImpact from "@/components/leadership-impact";
 import Recommendations from "@/components/recommendations";
+import ContactCTA from "@/components/contact-cta";
 import { getBlogPosts } from "@/app/mdx-utils";
 import { PostPreview } from "@/components/post-preview";
 import { categories, getCategoryPosts } from "@/app/categories";
@@ -17,12 +20,11 @@ export default async function Page() {
 
     return (
         <section>
-            <div>
-                <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-2 z-10 relative"></div>
-                <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
-            </div>
-
             <About />
+
+            <TechnicalSkills />
+
+            <LeadershipImpact />
 
             {featuredPosts.length > 0 && (
                 <div className="mb-16">
@@ -43,10 +45,9 @@ export default async function Page() {
                 </div>
             )}
 
-            <h2 className="mb-8 text-3xl font-semibold tracking-tighter">
-                Recommendations
-            </h2>
             <Recommendations />
+
+            <ContactCTA />
         </section>
     );
 }
