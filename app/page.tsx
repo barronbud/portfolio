@@ -19,35 +19,62 @@ export default async function Page() {
         : [];
 
     return (
-        <section>
-            <About />
+        <section className="space-y-0">
+            <div id="about" className="mb-24">
+                <About />
+            </div>
 
-            <TechnicalSkills />
+            <div className="section-divider"></div>
 
-            <LeadershipImpact />
+            <div id="skills" className="mb-24">
+                <TechnicalSkills />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="leadership" className="mb-24">
+                <LeadershipImpact />
+            </div>
 
             {featuredPosts.length > 0 && (
-                <div className="mb-16">
-                    <h2 className="text-3xl font-semibold tracking-tighter mb-8">
-                        Featured Articles
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {featuredPosts.map((post) => (
-                            <PostPreview
-                                key={post.slug}
-                                post={post}
-                                type="articles"
-                                useLabel={true}
-                                useImage={post.metadata.useImage === "true"}
-                            />
-                        ))}
+                <>
+                    <div className="section-divider"></div>
+                    <div id="articles" className="mb-24">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                                Featured Articles
+                            </h2>
+                            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                                Insights on engineering leadership, team
+                                building, and technical excellence
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {featuredPosts.map((post) => (
+                                <PostPreview
+                                    key={post.slug}
+                                    post={post}
+                                    type="articles"
+                                    useLabel={true}
+                                    useImage={post.metadata.useImage === "true"}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </>
             )}
 
-            <Recommendations />
+            <div className="section-divider"></div>
 
-            <ContactCTA />
+            <div id="recommendations" className="mb-24">
+                <Recommendations />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="contact" className="mb-24">
+                <ContactCTA />
+            </div>
         </section>
     );
 }
