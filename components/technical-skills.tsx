@@ -1,24 +1,21 @@
 "use client";
 
-import { useStaggeredScrollReveal } from "@/hooks/useScrollReveal";
-
 export default function TechnicalSkills() {
-    const skillsRef = useStaggeredScrollReveal(4, 150);
     const skillCategories = [
         {
             title: "Backend Technologies",
             skills: [
                 { name: "Node.js", level: "Intermediate", years: "1+" },
                 { name: "Python", level: "Intermediate", years: "2+" },
-                { name: "TypeScript", level: "Expert", years: "5+" },
                 { name: "Django", level: "Intermediate", years: "1+" },
+                { name: "Coldfusion", level: "Expert", years: "10+" },
             ],
         },
         {
             title: "Frontend Technologies",
             skills: [
                 { name: "React", level: "Advanced", years: "2+" },
-                { name: "JavaScript", level: "Expert", years: "10+" },
+                { name: "TypeScript", level: "Expert", years: "5+" },
                 { name: "Next.js", level: "Intermediate", years: "1+" },
                 { name: "Tailwind CSS", level: "Intermediate", years: "1+" },
             ],
@@ -50,10 +47,7 @@ export default function TechnicalSkills() {
                 </p>
             </div>
 
-            <div
-                ref={skillsRef as React.RefObject<HTMLDivElement>}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-            >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {skillCategories.map((category, categoryIndex) => (
                     <div
                         key={categoryIndex}

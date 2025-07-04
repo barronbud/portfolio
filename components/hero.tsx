@@ -60,7 +60,7 @@ export default function Hero() {
                                 <span className="font-semibold text-blue-600 dark:text-blue-400">
                                     3+ years
                                 </span>{" "}
-                                leading remote teams, I've consistently
+                                leading remote teams, I&apos;ve consistently
                                 increased team velocity by{" "}
                                 <span className="font-semibold text-green-600 dark:text-green-400">
                                     150%

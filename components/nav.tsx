@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { NavList } from "./navigation/nav-list";
 import { Menu, X, Download } from "lucide-react";
 

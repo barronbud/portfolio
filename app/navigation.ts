@@ -15,10 +15,7 @@ export const navItems: { [key: string]: NavItem } = {
         name: "Results",
     },
     "/philosophy": {
-        name: "Philosophy",
-    },
-    "/remote-leadership": {
-        name: "Remote Leadership",
+        name: "Leadership Philosophy",
     },
     "/technical-leadership": {
         name: "Technical Leadership",

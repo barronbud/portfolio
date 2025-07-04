@@ -161,7 +161,7 @@ export default function TechnicalLeadership() {
                                         <blockquote
                                             className={`text-sm italic ${colors.icon} border-l-4 ${colors.border} pl-4`}
                                         >
-                                            "{principle.quote}"
+                                            &ldquo;{principle.quote}&rdquo;
                                         </blockquote>
                                     </div>
                                 </div>

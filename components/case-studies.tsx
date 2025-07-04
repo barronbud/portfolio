@@ -8,6 +8,7 @@ import {
     ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CaseStudies() {
     const caseStudies = [
@@ -45,6 +46,7 @@ export default function CaseStudies() {
             ],
             technologies: ["Node.js", "React", "TypeScript"],
             image: "/images/projects/agile-process-iterative-execution.png",
+            link: "/projects/tackling-complex-rewrite-with-process-changes",
             color: "blue",
         },
         {
@@ -78,11 +80,6 @@ export default function CaseStudies() {
                     description: "Developer independence for content team",
                     icon: Users,
                 },
-                {
-                    metric: "24/7",
-                    description: "Automated build availability",
-                    icon: CheckCircle,
-                },
             ],
             technologies: [
                 "Python",
@@ -93,6 +90,7 @@ export default function CaseStudies() {
                 "JavaScript",
             ],
             image: "/images/projects/content-build-system-with-python-and-docker.png",
+            link: "/projects/content-build-system-with-python-and-docker",
             color: "green",
         },
         {
@@ -105,10 +103,10 @@ export default function CaseStudies() {
             challenge:
                 "Build an AI/ML powered study path solution that increases user engagement and provides personalized learning experiences.",
             solution: [
-                "Developed TypeScript-based AI/ML algorithms for personalized paths",
+                "Integrated with Azure Machine Learning for path recommendations",
+                "Developed TypeScript-based application of personalized learning",
                 "Created adaptive learning system based on user performance",
-                "Implemented real-time progress tracking and recommendations",
-                "Built responsive UI with modern React patterns",
+                "Built responsive UI using modern UX patterns",
             ],
             results: [
                 {
@@ -124,6 +122,7 @@ export default function CaseStudies() {
             ],
             technologies: ["TypeScript", "Azure Machine Learning"],
             image: null,
+            link: "",
             color: "purple",
         },
     ];
@@ -159,7 +158,7 @@ export default function CaseStudies() {
                     Case Studies
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Real-world examples of how I've transformed teams and
+                    Real-world examples of how I&pos;ve transformed teams and
                     delivered exceptional results across diverse technical
                     challenges
                 </p>
@@ -292,14 +291,17 @@ export default function CaseStudies() {
                             </div>
 
                             {/* CTA */}
-                            <div className="flex justify-end">
-                                <button
-                                    className={`${colors.button} text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2`}
-                                >
-                                    View Full Details
-                                    <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </div>
+                            {study.link && (
+                                <div className="flex justify-end">
+                                    <Link
+                                        href={study.link}
+                                        className={`${colors.button} text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2`}
+                                    >
+                                        View Full Details
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     );
                 })}
@@ -312,7 +314,7 @@ export default function CaseStudies() {
                         Ready to Tackle Your Next Challenge?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        Let's discuss how these proven methodologies and
+                        Let&apos;s discuss how these proven methodologies and
                         leadership approaches can drive success for your
                         engineering team.
                     </p>
@@ -320,7 +322,7 @@ export default function CaseStudies() {
                         href="mailto:me@jeffreybarron.dev"
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
-                        Let's Connect
+                        Let&apos;s Connect
                         <ArrowRight className="w-5 h-5" />
                     </a>
                 </div>

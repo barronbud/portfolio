@@ -75,7 +75,11 @@ export default function Recommendations() {
                             <MessageSquareQuote className="w-12 h-12 text-blue-600 dark:text-blue-400" />
                         </div>
                         <blockquote className="text-xl lg:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
-                            {recommendations[0].content[0]}
+                            {recommendations[0].content.map((para, i) => (
+                                <p key={`paragraph${i}`} className="mb-4">
+                                    {para}
+                                </p>
+                            ))}
                         </blockquote>
                         <div className="mt-6 flex items-center justify-center gap-3">
                             <div className="text-center">

@@ -5,27 +5,31 @@ export default function CoreCompetencies() {
         {
             icon: Users,
             title: "Team Leadership & Agile Transformation",
-            description: "Led Agile transformations by applying Scrum, Kanban, and other methodologies. Built and nurtured cross-functional teams of up to 13 engineers, increasing feature delivery by 20% through scalable agile processes.",
-            color: "blue"
+            description:
+                "Led Agile transformations by applying Scrum, Kanban, and other methodologies. Built and nurtured cross-functional teams of up to 13 engineers, increasing feature delivery by 20% through scalable agile processes.",
+            color: "blue",
         },
         {
             icon: Code,
             title: "Full-Stack Development & Architecture",
-            description: "Developed and led teams using Node, React, Python, and JavaScript/TypeScript. Executed strategic re-architecture of core data models and systems, coordinating efforts across multiple squads.",
-            color: "green"
+            description:
+                "Developed and led teams using Node, React, Python, and JavaScript/TypeScript. Executed strategic re-architecture of core data models and systems, coordinating efforts across multiple squads.",
+            color: "green",
         },
         {
             icon: TrendingUp,
             title: "Process Optimization & Velocity",
-            description: "Increased team velocity by 150% through non-blocking processes, code contracts, and reduced friction during merges. Led teams to 60% decrease in completion time by proactively clearing roadblocks.",
-            color: "purple"
+            description:
+                "Increased team velocity by 150% through non-blocking processes, code contracts, and reduced friction during merges. Led teams to 60% decrease in completion time by proactively clearing roadblocks.",
+            color: "purple",
         },
         {
             icon: Lightbulb,
             title: "Product Innovation & Technical Leadership",
-            description: "Led development of OCR for invoice recording (60% time savings), AI/ML powered study paths, and PCI-compliant payment systems. Released 9 high-quality projects with defect rate lower than 5%.",
-            color: "orange"
-        }
+            description:
+                "Led development of OCR for invoice recording (60% time savings), AI/ML powered study paths, and PCI-compliant payment systems. Released 9 high-quality projects with defect rate lower than 5%.",
+            color: "orange",
+        },
     ];
 
     const getColorClasses = (color: string) => {
@@ -34,26 +38,26 @@ export default function CoreCompetencies() {
                 icon: "text-blue-600 dark:text-blue-400",
                 bg: "bg-blue-50 dark:bg-blue-900/20",
                 border: "border-blue-200 dark:border-blue-800",
-                dot: "bg-blue-600"
+                dot: "bg-blue-600",
             },
             green: {
                 icon: "text-green-600 dark:text-green-400",
                 bg: "bg-green-50 dark:bg-green-900/20",
                 border: "border-green-200 dark:border-green-800",
-                dot: "bg-green-600"
+                dot: "bg-green-600",
             },
             purple: {
                 icon: "text-purple-600 dark:text-purple-400",
                 bg: "bg-purple-50 dark:bg-purple-900/20",
                 border: "border-purple-200 dark:border-purple-800",
-                dot: "bg-purple-600"
+                dot: "bg-purple-600",
             },
             orange: {
                 icon: "text-orange-600 dark:text-orange-400",
                 bg: "bg-orange-50 dark:bg-orange-900/20",
                 border: "border-orange-200 dark:border-orange-800",
-                dot: "bg-orange-600"
-            }
+                dot: "bg-orange-600",
+            },
         };
         return colorMap[color as keyof typeof colorMap] || colorMap.blue;
     };
@@ -65,7 +69,8 @@ export default function CoreCompetencies() {
                     Core Leadership Competencies
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Proven expertise in building high-performing engineering teams and delivering scalable technical solutions
+                    Proven expertise in building high-performing engineering
+                    teams and delivering scalable technical solutions
                 </p>
             </div>
 
@@ -73,14 +78,16 @@ export default function CoreCompetencies() {
                 {competencies.map((competency, index) => {
                     const colors = getColorClasses(competency.color);
                     const Icon = competency.icon;
-                    
+
                     return (
                         <div
                             key={index}
                             className={`group relative ${colors.bg} ${colors.border} border-2 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
                         >
                             {/* Icon */}
-                            <div className={`w-16 h-16 ${colors.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                            <div
+                                className={`w-16 h-16 ${colors.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                            >
                                 <Icon className={`w-8 h-8 ${colors.icon}`} />
                             </div>
 
@@ -95,7 +102,9 @@ export default function CoreCompetencies() {
                             </div>
 
                             {/* Decorative Element */}
-                            <div className={`absolute top-6 right-6 w-3 h-3 ${colors.dot} rounded-full opacity-60 group-hover:opacity-100 transition-opacity`}></div>
+                            <div
+                                className={`absolute top-6 right-6 w-3 h-3 ${colors.dot} rounded-full opacity-60 group-hover:opacity-100 transition-opacity`}
+                            ></div>
                         </div>
                     );
                 })}
@@ -108,7 +117,9 @@ export default function CoreCompetencies() {
                         Ready to Transform Your Engineering Team?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        Let's discuss how these competencies can drive your team's success and accelerate your product development.
+                        Let&apos;s discuss how these competencies can drive your
+                        team&apos;s success and accelerate your product
+                        development.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"

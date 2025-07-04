@@ -68,7 +68,7 @@ export default function HiringInnovation() {
                 "Builds long-term relationships beyond hiring decisions",
             ],
             insight:
-                "                    &quot;                    &quot;Job searching is hard enough without adding unnecessary stress and uncertainty to the process.&quot;&quot;",
+                "Job searching is hard enough without adding unnecessary stress and uncertainty to the process.",
             color: "orange",
         },
     ];
@@ -80,19 +80,14 @@ export default function HiringInnovation() {
             detail: "Through careful hiring and onboarding",
         },
         {
-            metric: "20+",
+            metric: "12+",
             description: "Engineers Successfully Hired",
             detail: "Across multiple organizations and roles",
         },
         {
-            metric: "50%",
+            metric: "30%",
             description: "Reduced Interview Time",
             detail: "By eliminating redundant steps",
-        },
-        {
-            metric: "90%",
-            description: "Candidate Satisfaction",
-            detail: "Even among those not selected",
         },
     ];
 
@@ -129,7 +124,7 @@ export default function HiringInnovation() {
             title: "Team Interaction",
             description:
                 "Meet potential teammates and assess collaboration fit",
-            duration: "30 minutes",
+            duration: "30-45 minutes",
         },
         {
             step: "6",
@@ -172,7 +167,7 @@ export default function HiringInnovation() {
                     Hiring Innovation & Philosophy
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Revolutionizing technical hiring through human-centered
+                    Improving technical hiring through human-centered
                     approaches, practical assessments, and transparent
                     communication
                 </p>
@@ -229,7 +224,7 @@ export default function HiringInnovation() {
                             <blockquote
                                 className={`text-sm italic ${colors.icon} border-l-4 ${colors.border} pl-4`}
                             >
-                                "{principle.insight}"
+                                &ldquo;{principle.insight}&rdquo;
                             </blockquote>
                         </div>
                     );
@@ -242,8 +237,8 @@ export default function HiringInnovation() {
                     Streamlined Hiring Process
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400 text-center mb-8">
-                    Efficient, respectful process that values both candidate and
-                    company time
+                    Respectful process that values both candidate and company
+                    time
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -276,7 +271,7 @@ export default function HiringInnovation() {
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 rounded-3xl p-8 border border-gray-200 dark:border-gray-700">
                 <div className="text-center mb-8">
                     <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        Hiring Innovation Results
+                        Hiring Results
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400">
                         Measurable improvements in hiring quality, efficiency,
@@ -284,7 +279,7 @@ export default function HiringInnovation() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-3 lg:grid-cols-3 gap-6">
                     {hiringStats.map((stat, index) => (
                         <div key={index} className="text-center">
                             <div className="text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">

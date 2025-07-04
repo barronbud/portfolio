@@ -32,7 +32,7 @@ export default function LeadershipResults() {
             metric: "60%",
             title: "Time Savings with OCR",
             description:
-                "Led development of invoice recording automation that revolutionized workflow efficiency",
+                "Led development of invoice recording automation that increased workflow efficiency",
             details: [
                 "Designed OCR integration architecture",
                 "Coordinated cross-functional implementation",
@@ -247,7 +247,7 @@ export default function LeadershipResults() {
                             <Target className="w-8 h-8 text-orange-600 dark:text-orange-400" />
                         </div>
                         <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
-                            5+
+                            4+
                         </div>
                         <div className="text-sm text-gray-600 dark:text-gray-400">
                             Industries Served

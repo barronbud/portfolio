@@ -1,8 +1,9 @@
 import LeadershipPhilosophy from "@/components/leadership-philosophy";
 
 export const metadata = {
-    title: "Leadership Philosophy",
-    description: "Authentic leadership through transparency, psychological safety, and servant leadership. Creating environments where innovation thrives through honest communication and genuine care.",
+    title: "Leadership Philosophy & Remote Expertise",
+    description:
+        "Authentic leadership through transparency, psychological safety, and servant leadership. 3+ years leading distributed teams across multiple time zones, building high-performing remote-first cultures.",
 };
 
 export default function PhilosophyPage() {

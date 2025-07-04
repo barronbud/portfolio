@@ -2,18 +2,13 @@
 
 import { SocialIcon } from "react-social-icons";
 import { Mail, Download, MapPin, MessageCircle, Sparkles } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import ParticleBackground from "./particle-background";
 
 export default function ContactCTA() {
-    const ctaRef = useScrollReveal({ delay: 200 });
     return (
         <div className="mb-12">
             {/* Main CTA Section */}
-            <div
-                ref={ctaRef as React.RefObject<HTMLDivElement>}
-                className="scroll-reveal relative bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center overflow-hidden group"
-            >
+            <div className="scroll-reveal relative bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center overflow-hidden group">
                 <ParticleBackground
                     particleCount={30}
                     colors={["#ffffff", "#bfdbfe", "#93c5fd"]}
@@ -90,7 +85,9 @@ export default function ContactCTA() {
                     <p className="text-gray-600 dark:text-gray-400">
                         Remote-First
                         <br />
-                        <span className="text-sm">Open to Travel</span>
+                        <span className="text-sm">Sacramento, CA</span>
+                        <br />
+                        <span className="text-sm">Open to Relocation</span>
                     </p>
                 </div>
 
