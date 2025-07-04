@@ -10,7 +10,7 @@ export function Navbar() {
     return (
         <aside className="sticky top-0 z-50 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20 -mx-4 px-4 mb-8">
             <div className="max-w-7xl mx-auto">
-                <nav className="flex items-center justify-between py-4">
+                <nav className="flex items-center justify-evenly py-4">
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-1">
                         <NavList />
@@ -20,7 +20,7 @@ export function Navbar() {
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                            className="justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                         >
                             <Download className="w-4 h-4" />
                             Resume
