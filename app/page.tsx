@@ -1,5 +1,9 @@
 import About from "@/components/about";
+import QuickImpact from "@/components/quick-impact";
 import TechnicalSkills from "@/components/technical-skills";
+import LeadershipPhilosophy from "@/components/leadership-philosophy";
+import CaseStudies from "@/components/case-studies";
+import InteractiveTimeline from "@/components/interactive-timeline";
 import LeadershipImpact from "@/components/leadership-impact";
 import Recommendations from "@/components/recommendations";
 import ContactCTA from "@/components/contact-cta";
@@ -26,8 +30,32 @@ export default async function Page() {
 
             <div className="section-divider"></div>
 
+            <div id="impact" className="mb-24">
+                <QuickImpact />
+            </div>
+
+            <div className="section-divider"></div>
+
             <div id="skills" className="mb-24">
                 <TechnicalSkills />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="philosophy" className="mb-24">
+                <LeadershipPhilosophy />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="case-studies" className="mb-24">
+                <CaseStudies />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="timeline" className="mb-24">
+                <InteractiveTimeline />
             </div>
 
             <div className="section-divider"></div>

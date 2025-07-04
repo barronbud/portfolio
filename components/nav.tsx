@@ -12,7 +12,11 @@ export function Navbar() {
         const handleScroll = () => {
             const sections = [
                 "about",
+                "impact",
                 "skills",
+                "philosophy",
+                "case-studies",
+                "timeline",
                 "leadership",
                 "articles",
                 "recommendations",
@@ -70,9 +74,10 @@ export function Navbar() {
                         <div className="flex items-center space-x-1 ml-6 pl-6 border-l border-gray-300 dark:border-gray-600">
                             {[
                                 { id: "about", label: "About" },
-                                { id: "skills", label: "Skills" },
-                                { id: "leadership", label: "Leadership" },
-                                { id: "recommendations", label: "Reviews" },
+                                { id: "impact", label: "Impact" },
+                                { id: "philosophy", label: "Philosophy" },
+                                { id: "case-studies", label: "Cases" },
+                                { id: "timeline", label: "Journey" },
                                 { id: "contact", label: "Contact" },
                             ].map((section) => (
                                 <button
@@ -126,9 +131,10 @@ export function Navbar() {
                                 </div>
                                 {[
                                     { id: "about", label: "About" },
-                                    { id: "skills", label: "Skills" },
-                                    { id: "leadership", label: "Leadership" },
-                                    { id: "recommendations", label: "Reviews" },
+                                    { id: "impact", label: "Impact" },
+                                    { id: "philosophy", label: "Philosophy" },
+                                    { id: "case-studies", label: "Cases" },
+                                    { id: "timeline", label: "Journey" },
                                     { id: "contact", label: "Contact" },
                                 ].map((section) => (
                                     <button
