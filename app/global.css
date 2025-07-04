@@ -91,98 +91,11 @@ html {
     }
 }
 
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+/* Removed excessive animations for professional appearance */
 
-@keyframes pulse-glow {
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    0%,
-    50% {
-        opacity: 1;
-    }
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
+/* Simplified animation classes for professional appearance */
 .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
-}
-
-.animate-slide-in-right {
-    animation: slideInRight 0.6s ease-out;
-}
-
-.animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-shimmer {
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-}
-
-.animate-typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 3s steps(40, end);
-}
-
-.animate-blink {
-    animation: blink 1s infinite;
 }
 
 /* Improved focus states */
@@ -190,13 +103,13 @@ html {
     @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
 }
 
-/* Better button styles */
+/* Professional button styles */
 .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus-ring;
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl focus-ring;
 }
 
 .btn-secondary {
-    @apply bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus-ring;
+    @apply bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl focus-ring;
 }
 
 /* Advanced visual effects */
@@ -228,12 +141,13 @@ html {
     background: #1f2937;
 }
 
+/* Simplified hover effects */
 .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    @apply transition-shadow duration-300 hover:shadow-lg;
 }
 
 .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25;
+    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/25;
 }
 
 .text-shadow {
@@ -247,7 +161,7 @@ html {
     background-size: cover;
 }
 
-/* Scroll-triggered animations */
+/* Scroll-triggered animations with reduced motion support */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -279,6 +193,26 @@ html {
 .scroll-reveal-right.revealed {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scroll-reveal,
+    .scroll-reveal-left,
+    .scroll-reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* Loading states */

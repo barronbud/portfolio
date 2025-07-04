@@ -11,7 +11,7 @@ export default function ContactCTA() {
         <div className="mb-12">
             {/* Main CTA Section */}
             <div
-                ref={ctaRef}
+                ref={ctaRef as React.RefObject<HTMLDivElement>}
                 className="scroll-reveal relative bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center overflow-hidden group"
             >
                 <ParticleBackground

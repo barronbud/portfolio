@@ -6,15 +6,6 @@ export default function TechnicalSkills() {
     const skillsRef = useStaggeredScrollReveal(4, 150);
     const skillCategories = [
         {
-            title: "Leadership & Management",
-            skills: [
-                { name: "Team Leadership", level: "Expert", years: "3+" },
-                { name: "Agile/Scrum/Kanban", level: "Expert", years: "3+" },
-                { name: "Technical Strategy", level: "Expert", years: "3+" },
-                { name: "Remote Teams", level: "Expert", years: "3+" },
-            ],
-        },
-        {
             title: "Backend Technologies",
             skills: [
                 { name: "Node.js", level: "Intermediate", years: "1+" },
@@ -30,14 +21,6 @@ export default function TechnicalSkills() {
                 { name: "JavaScript", level: "Expert", years: "10+" },
                 { name: "Next.js", level: "Intermediate", years: "1+" },
                 { name: "Tailwind CSS", level: "Intermediate", years: "1+" },
-            ],
-        },
-        {
-            title: "DevOps & Infrastructure",
-            skills: [
-                { name: "Docker", level: "Advanced", years: "3+" },
-                { name: "CI/CD", level: "Advanced", years: "2+" },
-                { name: "PCI Compliance", level: "Advanced", years: "2+" },
             ],
         },
     ];
@@ -68,7 +51,7 @@ export default function TechnicalSkills() {
             </div>
 
             <div
-                ref={skillsRef}
+                ref={skillsRef as React.RefObject<HTMLDivElement>}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
                 {skillCategories.map((category, categoryIndex) => (
@@ -121,54 +104,6 @@ export default function TechnicalSkills() {
                         </div>
                     </div>
                 ))}
-            </div>
-
-            {/* Architecture Experience */}
-            <div className="mt-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 shadow-lg">
-                <div className="text-center mb-8">
-                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                        Architecture & System Design Experience
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        Real-world experience building scalable systems across
-                        diverse industries
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="group text-center p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-white/20 dark:border-gray-700/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                        <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">
-                            FinTech SaaS
-                        </div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                            Payment & Invoice Systems
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                            PCI Compliance • OCR Integration
-                        </div>
-                    </div>
-                    <div className="group text-center p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-white/20 dark:border-gray-700/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                        <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2 group-hover:scale-110 transition-transform">
-                            E-commerce
-                        </div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                            Multi-location Inventory
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                            Wallet Systems • Real-time Sync
-                        </div>
-                    </div>
-                    <div className="group text-center p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-white/20 dark:border-gray-700/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                        <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2 group-hover:scale-110 transition-transform">
-                            AI/ML Integration
-                        </div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                            OCR & Learning Paths
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                            TypeScript • Python APIs
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

@@ -12,12 +12,11 @@ export function Navbar() {
         const handleScroll = () => {
             const sections = [
                 "about",
-                "impact",
+                "results",
                 "skills",
                 "philosophy",
+                "remote-leadership",
                 "case-studies",
-                "timeline",
-                "leadership",
                 "articles",
                 "recommendations",
                 "contact",
@@ -74,10 +73,10 @@ export function Navbar() {
                         <div className="flex items-center space-x-1 ml-6 pl-6 border-l border-gray-300 dark:border-gray-600">
                             {[
                                 { id: "about", label: "About" },
-                                { id: "impact", label: "Impact" },
+                                { id: "results", label: "Results" },
                                 { id: "philosophy", label: "Philosophy" },
+                                { id: "remote-leadership", label: "Remote" },
                                 { id: "case-studies", label: "Cases" },
-                                { id: "timeline", label: "Journey" },
                                 { id: "contact", label: "Contact" },
                             ].map((section) => (
                                 <button
@@ -131,10 +130,13 @@ export function Navbar() {
                                 </div>
                                 {[
                                     { id: "about", label: "About" },
-                                    { id: "impact", label: "Impact" },
+                                    { id: "results", label: "Results" },
                                     { id: "philosophy", label: "Philosophy" },
+                                    {
+                                        id: "remote-leadership",
+                                        label: "Remote Leadership",
+                                    },
                                     { id: "case-studies", label: "Cases" },
-                                    { id: "timeline", label: "Journey" },
                                     { id: "contact", label: "Contact" },
                                 ].map((section) => (
                                     <button

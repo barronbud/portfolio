@@ -1,10 +1,11 @@
 import About from "@/components/about";
-import QuickImpact from "@/components/quick-impact";
+import LeadershipResults from "@/components/leadership-results";
 import TechnicalSkills from "@/components/technical-skills";
 import LeadershipPhilosophy from "@/components/leadership-philosophy";
+import RemoteLeadership from "@/components/remote-leadership";
+import TechnicalLeadership from "@/components/technical-leadership";
+import HiringInnovation from "@/components/hiring-innovation";
 import CaseStudies from "@/components/case-studies";
-import InteractiveTimeline from "@/components/interactive-timeline";
-import LeadershipImpact from "@/components/leadership-impact";
 import Recommendations from "@/components/recommendations";
 import ContactCTA from "@/components/contact-cta";
 import { getBlogPosts } from "@/app/mdx-utils";
@@ -30,8 +31,8 @@ export default async function Page() {
 
             <div className="section-divider"></div>
 
-            <div id="impact" className="mb-24">
-                <QuickImpact />
+            <div id="results" className="mb-24">
+                <LeadershipResults />
             </div>
 
             <div className="section-divider"></div>
@@ -48,20 +49,26 @@ export default async function Page() {
 
             <div className="section-divider"></div>
 
+            <div id="remote-leadership" className="mb-24">
+                <RemoteLeadership />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="technical-leadership" className="mb-24">
+                <TechnicalLeadership />
+            </div>
+
+            <div className="section-divider"></div>
+
+            <div id="hiring-innovation" className="mb-24">
+                <HiringInnovation />
+            </div>
+
+            <div className="section-divider"></div>
+
             <div id="case-studies" className="mb-24">
                 <CaseStudies />
-            </div>
-
-            <div className="section-divider"></div>
-
-            <div id="timeline" className="mb-24">
-                <InteractiveTimeline />
-            </div>
-
-            <div className="section-divider"></div>
-
-            <div id="leadership" className="mb-24">
-                <LeadershipImpact />
             </div>
 
             {featuredPosts.length > 0 && (

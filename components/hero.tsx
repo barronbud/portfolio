@@ -1,33 +1,33 @@
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
     return (
         <div className="relative">
             {/* Hero Section */}
-            <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 rounded-3xl p-8 lg:p-12 mb-16 overflow-hidden relative group">
-                {/* Animated Background Pattern */}
+            <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 rounded-3xl p-8 lg:p-12 mb-16 overflow-hidden relative">
+                {/* Subtle Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 transform rotate-12 scale-150 group-hover:rotate-6 transition-transform duration-1000"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 transform rotate-12 scale-150"></div>
                 </div>
 
                 <div className="relative flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
                     {/* Profile Image */}
                     <div className="flex-shrink-0 relative">
-                        <div className="relative group/image">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-lg opacity-30 group-hover/image:opacity-50 transition-opacity duration-500"></div>
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-lg opacity-30"></div>
                             <Image
                                 src="/images/profile-pic.png"
                                 width={240}
                                 height={240}
                                 alt="Jeffrey Barron profile picture"
-                                className="relative rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-gray-800/50 group-hover/image:scale-105 transition-transform duration-500"
+                                className="relative rounded-3xl shadow-2xl ring-4 ring-white/50 dark:ring-gray-800/50"
                                 priority
                             />
                             {/* Status Indicator */}
-                            <div className="absolute -bottom-2 -right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse-glow">
-                                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            <div className="absolute -bottom-2 -right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                                <div className="w-2 h-2 bg-white rounded-full"></div>
                                 Available
                             </div>
                         </div>
@@ -70,47 +70,11 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        {/* Key Metrics */}
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                            <div className="group text-center p-4 glass-effect rounded-xl shadow-sm hover-lift hover-glow">
-                                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 group-hover:scale-110 transition-transform">
-                                    10+
-                                </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                                    Years Development
-                                </div>
-                            </div>
-                            <div className="group text-center p-4 glass-effect rounded-xl shadow-sm hover-lift hover-glow">
-                                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1 group-hover:scale-110 transition-transform">
-                                    20+
-                                </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                                    Engineers Led
-                                </div>
-                            </div>
-                            <div className="group text-center p-4 glass-effect rounded-xl shadow-sm hover-lift hover-glow">
-                                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1 group-hover:scale-110 transition-transform">
-                                    150%
-                                </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                                    Velocity Increase
-                                </div>
-                            </div>
-                            <div className="group text-center p-4 glass-effect rounded-xl shadow-sm hover-lift hover-glow">
-                                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1 group-hover:scale-110 transition-transform">
-                                    60%
-                                </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                                    Time Savings
-                                </div>
-                            </div>
-                        </div>
-
                         {/* CTAs */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                             <a
                                 href="mailto:me@jeffreybarron.dev"
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                             >
                                 Let's Connect
                                 <ArrowRight className="w-5 h-5" />
@@ -119,7 +83,7 @@ export default function Hero() {
                                 href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-8 py-4 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                             >
                                 <Download className="w-5 h-5" />
                                 Download Resume
@@ -131,12 +95,12 @@ export default function Hero() {
                             <SocialIcon
                                 url="https://www.linkedin.com/in/jeffreyabarron/"
                                 style={{ height: 48, width: 48 }}
-                                className="hover:scale-110 transition-transform duration-200"
+                                className="hover:opacity-80 transition-opacity duration-200"
                             />
                             <SocialIcon
                                 url="https://github.com/barronbud"
                                 style={{ height: 48, width: 48 }}
-                                className="hover:scale-110 transition-transform duration-200"
+                                className="hover:opacity-80 transition-opacity duration-200"
                             />
                         </div>
                     </div>
