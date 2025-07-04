@@ -1,4 +1,9 @@
+"use client";
+
+import { useStaggeredScrollReveal } from "@/hooks/useScrollReveal";
+
 export default function TechnicalSkills() {
+    const skillsRef = useStaggeredScrollReveal(4, 150);
     const skillCategories = [
         {
             title: "Leadership & Management",
@@ -62,11 +67,14 @@ export default function TechnicalSkills() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div
+                ref={skillsRef}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            >
                 {skillCategories.map((category, categoryIndex) => (
                     <div
                         key={categoryIndex}
-                        className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 hover:-translate-y-1"
+                        className="scroll-reveal group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 hover:-translate-y-1 hover-glow"
                     >
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {category.title}
