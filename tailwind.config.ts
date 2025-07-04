@@ -11,6 +11,17 @@ const config: Config = {
             fontFamily: {
                 sans: ["var(--font-inter)"],
             },
+            animation: {
+                float: "float 3s ease-in-out infinite",
+                "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+                shimmer: "shimmer 2s infinite",
+                typewriter: "typewriter 3s steps(40, end)",
+                blink: "blink 1s infinite",
+                "scale-in": "scaleIn 0.5s ease-out",
+                "fade-in-up": "fadeInUp 0.6s ease-out",
+                "slide-in-left": "slideInLeft 0.6s ease-out",
+                "slide-in-right": "slideInRight 0.6s ease-out",
+            },
             colors: {
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",

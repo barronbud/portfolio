@@ -15,10 +15,10 @@ export function NavItem({ path, item }: NavItemProps) {
         <li className="relative group">
             <Link
                 href={path}
-                className={`transition-all duration-300 flex align-middle relative py-2 px-4 m-1 capitalize rounded-lg ${
+                className={`transition-all duration-300 flex align-middle relative py-3 px-4 m-1 capitalize rounded-lg min-h-[44px] items-center focus-ring ${
                     isActive
-                        ? "text-blue-600 dark:text-blue-400 font-semibold"
-                        : "text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                        ? "text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900/20"
+                        : "text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 }`}
             >
                 <span className="relative">
@@ -29,16 +29,16 @@ export function NavItem({ path, item }: NavItemProps) {
                 </span>
             </Link>
             {item.subItems && (
-                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                <div className="md:absolute md:left-0 md:mt-2 md:w-48 md:rounded-lg md:shadow-lg bg-white dark:bg-gray-800 md:ring-1 md:ring-black md:ring-opacity-5 md:opacity-0 md:invisible md:group-hover:opacity-100 md:group-hover:visible md:transition-all md:duration-300 md:transform md:origin-top md:scale-95 md:group-hover:scale-100 mt-2 md:mt-0 rounded-lg md:rounded-lg border border-gray-200 dark:border-gray-700 md:border-0">
                     <div className="py-2">
                         {Object.entries(item.subItems).map(
                             ([subPath, { name }]) => (
                                 <Link
                                     key={subPath}
                                     href={subPath}
-                                    className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                    className={`block px-4 py-3 text-sm transition-colors duration-200 min-h-[44px] flex items-center focus-ring ${
                                         pathname === subPath
-                                            ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                                            ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium"
                                             : "hover:bg-blue-50/50 dark:hover:bg-blue-900/10 hover:text-blue-600 dark:hover:text-blue-400"
                                     }`}
                                 >

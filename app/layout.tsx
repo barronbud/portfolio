@@ -65,15 +65,15 @@ export default function RootLayout({
                 inter.variable
             )}
         >
-            <body className="antialiased max-w-7xl mx-4 mt-8 lg:mx-auto px-4 bg-gray-50 dark:bg-gray-900">
-                <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-                    <Navbar />
-                    {children}
+            <body className="antialiased bg-gray-50 dark:bg-gray-900">
+                <Navbar />
+                <main className="max-w-7xl mx-auto px-4 lg:px-6">
+                    <div className="pt-8">{children}</div>
                     <Footer />
-                    <Analytics />
-                    <SpeedInsights />
-                    {shouldInjectToolbar && <VercelToolbar />}
                 </main>
+                <Analytics />
+                <SpeedInsights />
+                {shouldInjectToolbar && <VercelToolbar />}
             </body>
         </html>
     );

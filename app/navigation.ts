@@ -11,6 +11,21 @@ export const navItems: { [key: string]: NavItem } = {
     "/": {
         name: "Home",
     },
+    "/results": {
+        name: "Results",
+    },
+    "/philosophy": {
+        name: "Leadership Philosophy",
+    },
+    "/technical-leadership": {
+        name: "Technical Leadership",
+    },
+    "/hiring": {
+        name: "Hiring Innovation",
+    },
+    "/case-studies": {
+        name: "Case Studies",
+    },
     "/articles": {
         name: "Leadership Insights",
         subItems: {
@@ -21,8 +36,5 @@ export const navItems: { [key: string]: NavItem } = {
                 name: "How I Hire",
             },
         },
-    },
-    "/projects": {
-        name: "Portfolio",
     },
 };

@@ -1,53 +1,28 @@
 import About from "@/components/about";
-import TechnicalSkills from "@/components/technical-skills";
-import LeadershipImpact from "@/components/leadership-impact";
 import Recommendations from "@/components/recommendations";
 import ContactCTA from "@/components/contact-cta";
-import { getBlogPosts } from "@/app/mdx-utils";
-import { PostPreview } from "@/components/post-preview";
-import { categories, getCategoryPosts } from "@/app/categories";
+import TechnicalSkills from "@/components/technical-skills";
 
 export const dynamic = "force-dynamic";
 
-export default async function Page() {
-    const posts = getBlogPosts();
-    const howIHireCategory = categories.find(
-        (cat) => cat.slug === "how-i-hire"
-    );
-    const featuredPosts = howIHireCategory
-        ? getCategoryPosts(posts, howIHireCategory)
-        : [];
-
+export default function Page() {
     return (
-        <section>
-            <About />
+        <section className="space-y-0">
+            <div id="about" className="mb-24">
+                <About />
+            </div>
 
-            <TechnicalSkills />
+            <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+                <TechnicalSkills />
+            </div>
 
-            <LeadershipImpact />
+            <div id="recommendations" className="mb-24">
+                <Recommendations />
+            </div>
 
-            {featuredPosts.length > 0 && (
-                <div className="mb-16">
-                    <h2 className="text-3xl font-semibold tracking-tighter mb-8">
-                        Featured Articles
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {featuredPosts.map((post) => (
-                            <PostPreview
-                                key={post.slug}
-                                post={post}
-                                type="articles"
-                                useLabel={true}
-                                useImage={post.metadata.useImage === "true"}
-                            />
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            <Recommendations />
-
-            <ContactCTA />
+            <div id="contact" className="mb-24">
+                <ContactCTA />
+            </div>
         </section>
     );
 }

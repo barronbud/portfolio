@@ -1,25 +1,48 @@
+"use client";
+
 import { SocialIcon } from "react-social-icons";
-import { Mail, Download, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Download, MapPin, MessageCircle, Sparkles } from "lucide-react";
+import ParticleBackground from "./particle-background";
 
 export default function ContactCTA() {
     return (
         <div className="mb-12">
             {/* Main CTA Section */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center">
-                <h3 className="text-3xl font-bold mb-4">
-                    Ready to Build Something Great Together?
-                </h3>
-                <p className="text-xl mb-8 text-blue-100">
-                    Let&apos;s discuss how I can help lead your engineering team
-                    to success
-                </p>
+            <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 rounded-2xl p-8 text-white text-center overflow-hidden group">
+                <ParticleBackground
+                    particleCount={30}
+                    colors={["#ffffff", "#bfdbfe", "#93c5fd"]}
+                    speed={0.3}
+                    className="opacity-20"
+                />
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* Floating decorative elements */}
+                <div className="absolute top-4 right-4 opacity-30">
+                    <Sparkles className="w-6 h-6 animate-float" />
+                </div>
+                <div className="absolute bottom-4 left-4 opacity-30">
+                    <Sparkles
+                        className="w-4 h-4 animate-float"
+                        style={{ animationDelay: "1.5s" }}
+                    />
+                </div>
+
+                <div className="relative z-10">
+                    <h3 className="text-3xl font-bold mb-4 text-shadow">
+                        Ready to Build Something Great Together?
+                    </h3>
+                    <p className="text-xl mb-8 text-blue-100">
+                        Let&apos;s discuss how I can help lead your engineering
+                        team to success
+                    </p>
+                </div>
+
+                <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a
                         href="mailto:me@jeffreybarron.dev"
-                        className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                        className="group bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover-glow"
                     >
-                        <Mail className="w-5 h-5" />
+                        <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                         Get in Touch
                     </a>
 
@@ -27,9 +50,9 @@ export default function ContactCTA() {
                         href="/resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
+                        className="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     >
-                        <Download className="w-5 h-5" />
+                        <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
                         Download Resume
                     </a>
                 </div>
@@ -62,7 +85,9 @@ export default function ContactCTA() {
                     <p className="text-gray-600 dark:text-gray-400">
                         Remote-First
                         <br />
-                        <span className="text-sm">Open to Travel</span>
+                        <span className="text-sm">Sacramento, CA</span>
+                        <br />
+                        <span className="text-sm">Open to Relocation</span>
                     </p>
                 </div>
 
