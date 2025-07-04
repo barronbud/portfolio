@@ -9,6 +9,9 @@ import {
     Globe,
     Zap,
     CheckCircle,
+    TrendingUp,
+    UserPlus,
+    BookOpen,
 } from "lucide-react";
 
 export default function LeadershipPhilosophy() {
@@ -54,6 +57,79 @@ export default function LeadershipPhilosophy() {
             // },
         ],
     };
+
+    const leadershipInsights = [
+        {
+            icon: UserPlus,
+            title: "Hiring & Team Building Philosophy",
+            description:
+                "Building exceptional teams through culture-first hiring and recognizing talent in unexpected places",
+            insights: [
+                "Hire for culture first, tech second; great teammates can learn tech skills",
+                "Hire curious people vs know-it-all's; a drive to understand leads to success",
+                "Talent can be found in the oddest of places",
+                "Focus on potential and growth mindset over perfect experience match",
+            ],
+            quote: "I was extremely lucky that my first hires turned out to be my best. One went on to become the CTO for an aerospace start-up, while the other worked at a start-up eventually acquired by Google.",
+            color: "blue",
+        },
+        {
+            icon: BookOpen,
+            title: "Growth & Learning Mindset",
+            description:
+                "Fostering continuous learning and turning unknowns into opportunities for growth",
+            insights: [
+                "Not knowing something isn't a weakness, it's an opportunity to grow",
+                "Openly admit what you don't know to reveal efficient learning paths",
+                "Focus on what matters now, this week, this month for targeted growth",
+                "Curiosity and tenacity are the keys to discovering missing pieces",
+            ],
+            quote: "'I don't know' is a powerful phrase. When combined with 'but let me find out' it's the skeleton key that unlocks growth.",
+            color: "green",
+        },
+        {
+            icon: TrendingUp,
+            title: "Team Support & Retention",
+            description:
+                "Creating conditions for team success through focused support and empowerment",
+            insights: [
+                "Control how your team is supported and create conditions for growth",
+                "Focus entirely on ensuring the success of your team members",
+                "Create challenging problems and increase opportunities for ownership",
+                "Build consistent practices that improve over time",
+            ],
+            quote: "I can control how my team is supported. I can control that the right conditions for growth exist. I can control that my full focus is on ensuring the success of my team.",
+            color: "purple",
+        },
+        {
+            icon: Shield,
+            title: "Simplicity & Pragmatism",
+            description:
+                "Maintaining team effectiveness through simple, understandable solutions",
+            insights: [
+                "Keep solutions simple and easy to understand with clear boundaries",
+                "Every layer and abstraction comes with costs magnified on small teams",
+                "You can always add complexity, but taking it away is much harder",
+                "Simple solutions make shipping and maintaining things easier",
+            ],
+            quote: "Keep it simple for as long as you can. You can always add more, but taking away is usually much harder.",
+            color: "orange",
+        },
+        {
+            icon: Heart,
+            title: "Reputation & Collaboration",
+            description:
+                "Building lasting professional relationships through dependability and genuine support",
+            insights: [
+                "Being known as a dependable teammate is a currency that never loses value",
+                "Bring skill, reliability, and collaborative spirit to every role",
+                "Support your team and get things done quickly and correctly",
+                "Professional reputation creates opportunities and opens doors",
+            ],
+            quote: "Cultivating a great reputation is a valuable asset in any job search, but especially in this market. You never know when seeds you plant will lead to good things.",
+            color: "red",
+        },
+    ];
 
     const remoteLeadershipStrategies = [
         {
@@ -200,6 +276,77 @@ export default function LeadershipPhilosophy() {
                         );
                     })}
                 </div>
+            </div>
+
+            {/* Leadership Insights */}
+            <div className="space-y-8 mb-16">
+                <div className="text-center mb-8">
+                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        Leadership Insights & Practices
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                        Practical insights from leading engineering teams,
+                        hiring talent, and building high-performing cultures
+                    </p>
+                </div>
+
+                {leadershipInsights.map((insight, index) => {
+                    const colors = getColorClasses(insight.color);
+                    const Icon = insight.icon;
+
+                    return (
+                        <div
+                            key={index}
+                            className={`border-2 ${colors.border} rounded-3xl p-8 transition-shadow duration-300 hover:shadow-lg`}
+                        >
+                            <div className="flex flex-col lg:flex-row gap-8">
+                                <div className="flex items-start gap-4 lg:w-1/2">
+                                    <div
+                                        className={`w-16 h-16 ${colors.bg} rounded-2xl flex items-center justify-center flex-shrink-0`}
+                                    >
+                                        <Icon
+                                            className={`w-8 h-8 ${colors.icon}`}
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                                            {insight.title}
+                                        </h4>
+                                        <p className="text-gray-600 dark:text-gray-400 mb-4">
+                                            {insight.description}
+                                        </p>
+                                        <blockquote
+                                            className={`text-sm italic ${colors.icon} border-l-4 ${colors.border} pl-4`}
+                                        >
+                                            &ldquo;{insight.quote}&rdquo;
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div className="lg:w-1/2">
+                                    <h5 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider mb-4">
+                                        Key Insights
+                                    </h5>
+                                    <div className="space-y-3">
+                                        {insight.insights.map((item, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="flex items-start gap-3"
+                                            >
+                                                <CheckCircle
+                                                    className={`w-4 h-4 ${colors.icon} mt-0.5 flex-shrink-0`}
+                                                />
+                                                <span className="text-sm text-gray-600 dark:text-gray-400">
+                                                    {item}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
 
             {/* Remote Leadership Strategies */}
