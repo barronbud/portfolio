@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getProjectPosts } from "@/app/mdx-utils";
-import { baseUrl } from "@/app/sitemap";
+import { generatePostMetadata } from "@/lib/metadata-utils";
+import { JsonLdScript } from "@/components/json-ld-script";
 
 export async function generateStaticParams() {
     const posts = getProjectPosts();
@@ -23,38 +24,7 @@ export async function generateMetadata({
         return;
     }
 
-    const {
-        title,
-        publishedAt: publishedTime,
-        summary: description,
-        image,
-    } = post.metadata;
-    const ogImage = image
-        ? image
-        : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
-
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            type: "article",
-            publishedTime,
-            url: `${baseUrl}/projects/${post.slug}`,
-            images: [
-                {
-                    url: ogImage,
-                },
-            ],
-        },
-        twitter: {
-            card: "summary_large_image",
-            title,
-            description,
-            images: [ogImage],
-        },
-    };
+    return generatePostMetadata({ post, type: "projects" });
 }
 
 export default async function Blog({
@@ -71,30 +41,7 @@ export default async function Blog({
 
     return (
         <section>
-            <script
-                type="application/ld+json"
-                suppressHydrationWarning
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        headline: post.metadata.title,
-                        datePublished: post.metadata.publishedAt,
-                        dateModified: post.metadata.publishedAt,
-                        description: post.metadata.summary,
-                        image: post.metadata.image
-                            ? `${baseUrl}${post.metadata.image}`
-                            : `/og?title=${encodeURIComponent(
-                                  post.metadata.title
-                              )}`,
-                        url: `${baseUrl}/projects/${post.slug}`,
-                        author: {
-                            "@type": "Person",
-                            name: "My Portfolio",
-                        },
-                    }),
-                }}
-            />
+            <JsonLdScript post={post} type="projects" />
             <h1 className="title font-semibold text-3xl tracking-tighter">
                 {post.metadata.title}
             </h1>

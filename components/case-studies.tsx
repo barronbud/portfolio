@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function CaseStudies() {
     const caseStudies = [
@@ -47,7 +48,7 @@ export default function CaseStudies() {
             technologies: ["Node.js", "React", "TypeScript"],
             image: "/images/projects/agile-process-iterative-execution.png",
             link: "/projects/tackling-complex-rewrite-with-process-changes",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             id: "content-system",
@@ -91,7 +92,7 @@ export default function CaseStudies() {
             ],
             image: "/images/projects/content-build-system-with-python-and-docker.png",
             link: "/projects/content-build-system-with-python-and-docker",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             id: "ai-study-paths",
@@ -123,33 +124,9 @@ export default function CaseStudies() {
             technologies: ["TypeScript", "Azure Machine Learning"],
             image: null,
             link: "",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            blue: {
-                accent: "text-blue-600 dark:text-blue-400",
-                bg: "bg-blue-50 dark:bg-blue-900/20",
-                border: "border-blue-200 dark:border-blue-800",
-                button: "bg-blue-600 hover:bg-blue-700",
-            },
-            green: {
-                accent: "text-green-600 dark:text-green-400",
-                bg: "bg-green-50 dark:bg-green-900/20",
-                border: "border-green-200 dark:border-green-800",
-                button: "bg-green-600 hover:bg-green-700",
-            },
-            purple: {
-                accent: "text-purple-600 dark:text-purple-400",
-                bg: "bg-purple-50 dark:bg-purple-900/20",
-                border: "border-purple-200 dark:border-purple-800",
-                button: "bg-purple-600 hover:bg-purple-700",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">
@@ -178,7 +155,7 @@ export default function CaseStudies() {
                                 <div className="flex-1">
                                     <div className="flex items-center gap-4 mb-4">
                                         <span
-                                            className={`px-4 py-2 ${colors.bg} ${colors.border} border rounded-full text-sm font-semibold ${colors.accent}`}
+                                            className={`px-4 py-2 ${colors.bg} ${colors.border} border rounded-full text-sm font-semibold ${colors.icon}`}
                                         >
                                             Case Study {index + 1}
                                         </span>
@@ -190,7 +167,7 @@ export default function CaseStudies() {
                                         {study.title}
                                     </h4>
                                     <p
-                                        className={`text-lg font-medium ${colors.accent} mb-4`}
+                                        className={`text-lg font-medium ${colors.icon} mb-4`}
                                     >
                                         {study.subtitle}
                                     </p>
@@ -262,10 +239,10 @@ export default function CaseStudies() {
                                                 className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-gray-700/20 text-center group-hover:scale-105 transition-transform"
                                             >
                                                 <Icon
-                                                    className={`w-6 h-6 ${colors.accent} mx-auto mb-2`}
+                                                    className={`w-6 h-6 ${colors.icon} mx-auto mb-2`}
                                                 />
                                                 <div
-                                                    className={`text-2xl font-bold ${colors.accent} mb-1`}
+                                                    className={`text-2xl font-bold ${colors.icon} mb-1`}
                                                 >
                                                     {result.metric}
                                                 </div>

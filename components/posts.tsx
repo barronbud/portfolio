@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Post } from "@/app/mdx-utils";
 import { PostPreview } from "./post-preview";
+import { sortPostsByDate } from "@/lib/date-utils";
 
 export function Posts({ posts, type }: { posts: Post[]; type: string }) {
     return (
@@ -31,19 +32,9 @@ export function PostsSneakPeek({
 }) {
     return (
         <div>
-            {posts
-                .sort((a, b) => {
-                    if (
-                        new Date(a.metadata.publishedAt) >
-                        new Date(b.metadata.publishedAt)
-                    ) {
-                        return -1;
-                    }
-                    return 1;
-                })
-                .map((post) => (
-                    <PostPreview post={post} key={post.slug} type={type} />
-                ))}
+            {sortPostsByDate(posts).map((post) => (
+                <PostPreview post={post} key={post.slug} type={type} />
+            ))}
         </div>
     );
 }

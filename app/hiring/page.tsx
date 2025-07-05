@@ -1,14 +1,16 @@
 import HiringInnovation from "@/components/hiring-innovation";
+import { PageContainer } from "@/components/ui/page-container";
 
 export const metadata = {
     title: "Hiring Innovation & Philosophy",
-    description: "Revolutionizing technical hiring through human-centered approaches, practical assessments, and transparent communication.",
+    description:
+        "Revolutionizing technical hiring through human-centered approaches, practical assessments, and transparent communication.",
 };
 
 export default function HiringPage() {
     return (
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+        <PageContainer>
             <HiringInnovation />
-        </div>
+        </PageContainer>
     );
 }

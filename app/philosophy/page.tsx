@@ -1,4 +1,5 @@
 import LeadershipPhilosophy from "@/components/leadership-philosophy";
+import { PageContainer } from "@/components/ui/page-container";
 
 export const metadata = {
     title: "Leadership Philosophy & Remote Expertise",
@@ -8,8 +9,8 @@ export const metadata = {
 
 export default function PhilosophyPage() {
     return (
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+        <PageContainer>
             <LeadershipPhilosophy />
-        </div>
+        </PageContainer>
     );
 }

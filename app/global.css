@@ -91,25 +91,8 @@ html {
     }
 }
 
-/* Removed excessive animations for professional appearance */
-
-/* Simplified animation classes for professional appearance */
 .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
-}
-
-/* Improved focus states */
-.focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
-}
-
-/* Professional button styles */
-.btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl focus-ring;
-}
-
-.btn-secondary {
-    @apply bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl focus-ring;
 }
 
 /* Advanced visual effects */
@@ -325,7 +308,7 @@ table {
         --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
+        --primary: 221 83% 53%;
         --primary-foreground: 0 0% 98%;
         --secondary: 240 4.8% 95.9%;
         --secondary-foreground: 240 5.9% 10%;
@@ -353,8 +336,8 @@ table {
             --card-foreground: 0 0% 98%;
             --popover: 240 10% 3.9%;
             --popover-foreground: 0 0% 98%;
-            --primary: 0 0% 98%;
-            --primary-foreground: 240 5.9% 10%;
+            --primary: 221 83% 53%;
+            --primary-foreground: 0 0% 98%;
             --secondary: 240 3.7% 15.9%;
             --secondary-foreground: 0 0% 98%;
             --muted: 240 3.7% 15.9%;
@@ -372,6 +355,61 @@ table {
             --chart-4: 280 65% 60%;
             --chart-5: 340 75% 55%;
         }
+    }
+}
+
+@layer components {
+    /* Card Components */
+    .card-base {
+        @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+    }
+
+    .card-hover {
+        @apply hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+    }
+
+    .card-interactive {
+        @apply card-base card-hover;
+    }
+
+    /* Text Color Utilities */
+    .text-muted {
+        @apply text-gray-600 dark:text-gray-400;
+    }
+
+    .text-accent {
+        @apply text-blue-600 dark:text-blue-400;
+    }
+
+    /* Layout Utilities */
+    .container-base {
+        @apply max-w-7xl mx-auto px-4 lg:px-6;
+    }
+
+    .section-spacing {
+        @apply py-8 lg:py-12;
+    }
+
+    .section-container {
+        @apply container-base section-spacing;
+    }
+
+    /* Animation Utilities */
+    .animate-hover-lift {
+        @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+
+    .animate-fade-in {
+        @apply opacity-0 animate-in fade-in duration-500;
+    }
+
+    /* Gradient Backgrounds */
+    .bg-gradient-primary {
+        @apply bg-gradient-to-r from-blue-600 to-blue-700;
+    }
+
+    .bg-gradient-secondary {
+        @apply bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700;
     }
 }
 

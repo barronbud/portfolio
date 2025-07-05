@@ -13,6 +13,7 @@ import {
     UserPlus,
     BookOpen,
 } from "lucide-react";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function LeadershipPhilosophy() {
     const corePhilosophy = {
@@ -25,28 +26,28 @@ export default function LeadershipPhilosophy() {
                 title: "Servant Leadership",
                 description:
                     "Leading by serving the team, removing obstacles, and empowering others to achieve their highest potential.",
-                color: "red",
+                color: "red" as ColorVariant,
             },
             {
                 icon: Shield,
                 title: "Psychological Safety",
                 description:
                     "Creating safe spaces where team members can voice ideas, admit mistakes, and take calculated risks without fear.",
-                color: "green",
+                color: "green" as ColorVariant,
             },
             {
                 icon: Users,
                 title: "Collaborative Excellence",
                 description:
                     "Fostering collaborative achievement over individual excellence to build stronger, more cohesive teams.",
-                color: "blue",
+                color: "blue" as ColorVariant,
             },
             {
                 icon: Lightbulb,
                 title: "Informed Action",
                 description:
                     "Prioritizing informed action over detailed documentation to maintain agility while ensuring quality decisions.",
-                color: "yellow",
+                color: "yellow" as ColorVariant,
             },
             // {
             //     icon: MessageSquare,
@@ -71,7 +72,7 @@ export default function LeadershipPhilosophy() {
                 "Focus on potential and growth mindset over perfect experience match",
             ],
             quote: "I was extremely lucky that my first hires turned out to be my best. One went on to become the CTO for an aerospace start-up, while the other worked at a start-up eventually acquired by Google.",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             icon: BookOpen,
@@ -85,7 +86,7 @@ export default function LeadershipPhilosophy() {
                 "Curiosity and tenacity are the keys to discovering missing pieces",
             ],
             quote: "'I don't know' is a powerful phrase. When combined with 'but let me find out' it's the skeleton key that unlocks growth.",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             icon: TrendingUp,
@@ -99,7 +100,7 @@ export default function LeadershipPhilosophy() {
                 "Build consistent practices that improve over time",
             ],
             quote: "I can control how my team is supported. I can control that the right conditions for growth exist. I can control that my full focus is on ensuring the success of my team.",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
         {
             icon: Shield,
@@ -113,7 +114,7 @@ export default function LeadershipPhilosophy() {
                 "Simple solutions make shipping and maintaining things easier",
             ],
             quote: "Keep it simple for as long as you can. You can always add more, but taking away is usually much harder.",
-            color: "orange",
+            color: "orange" as ColorVariant,
         },
         {
             icon: Heart,
@@ -127,7 +128,7 @@ export default function LeadershipPhilosophy() {
                 "Professional reputation creates opportunities and opens doors",
             ],
             quote: "Cultivating a great reputation is a valuable asset in any job search, but especially in this market. You never know when seeds you plant will lead to good things.",
-            color: "red",
+            color: "red" as ColorVariant,
         },
     ];
 
@@ -144,7 +145,7 @@ export default function LeadershipPhilosophy() {
                 "Promote asynchronous decision-making processes",
             ],
             impact: "95% team retention rate across remote teams",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             icon: MessageSquare,
@@ -158,7 +159,7 @@ export default function LeadershipPhilosophy() {
                 "Create clear escalation paths for urgent issues",
             ],
             impact: "25% reduction in meeting overhead",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             icon: Target,
@@ -172,7 +173,7 @@ export default function LeadershipPhilosophy() {
                 "Promote ownership through project leadership opportunities",
             ],
             impact: "150% increase in team velocity",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
         {
             icon: Clock,
@@ -185,45 +186,9 @@ export default function LeadershipPhilosophy() {
                 "Create flexible core hours for collaboration",
             ],
             impact: "40% faster feature delivery",
-            color: "orange",
+            color: "orange" as ColorVariant,
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            red: {
-                icon: "text-red-600 dark:text-red-400",
-                bg: "bg-red-50 dark:bg-red-900/20",
-                border: "border-red-200 dark:border-red-800",
-            },
-            green: {
-                icon: "text-green-600 dark:text-green-400",
-                bg: "bg-green-50 dark:bg-green-900/20",
-                border: "border-green-200 dark:border-green-800",
-            },
-            blue: {
-                icon: "text-blue-600 dark:text-blue-400",
-                bg: "bg-blue-50 dark:bg-blue-900/20",
-                border: "border-blue-200 dark:border-blue-800",
-            },
-            yellow: {
-                icon: "text-yellow-600 dark:text-yellow-400",
-                bg: "bg-yellow-50 dark:bg-yellow-900/20",
-                border: "border-yellow-200 dark:border-yellow-800",
-            },
-            purple: {
-                icon: "text-purple-600 dark:text-purple-400",
-                bg: "bg-purple-50 dark:bg-purple-900/20",
-                border: "border-purple-200 dark:border-purple-800",
-            },
-            orange: {
-                icon: "text-orange-600 dark:text-orange-400",
-                bg: "bg-orange-50 dark:bg-orange-900/20",
-                border: "border-orange-200 dark:border-orange-800",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">

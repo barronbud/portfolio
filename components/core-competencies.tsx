@@ -1,4 +1,5 @@
 import { Users, Code, TrendingUp, Lightbulb } from "lucide-react";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function CoreCompetencies() {
     const competencies = [
@@ -7,60 +8,30 @@ export default function CoreCompetencies() {
             title: "Team Leadership & Agile Transformation",
             description:
                 "Led Agile transformations by applying Scrum, Kanban, and other methodologies. Built and nurtured cross-functional teams of up to 13 engineers, increasing feature delivery by 20% through scalable agile processes.",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             icon: Code,
             title: "Full-Stack Development & Architecture",
             description:
                 "Developed and led teams using Node, React, Python, and JavaScript/TypeScript. Executed strategic re-architecture of core data models and systems, coordinating efforts across multiple squads.",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             icon: TrendingUp,
             title: "Process Optimization & Velocity",
             description:
                 "Increased team velocity by 150% through non-blocking processes, code contracts, and reduced friction during merges. Led teams to 60% decrease in completion time by proactively clearing roadblocks.",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
         {
             icon: Lightbulb,
             title: "Product Innovation & Technical Leadership",
             description:
                 "Led development of OCR for invoice recording (60% time savings), AI/ML powered study paths, and PCI-compliant payment systems. Released 9 high-quality projects with defect rate lower than 5%.",
-            color: "orange",
+            color: "orange" as ColorVariant,
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            blue: {
-                icon: "text-blue-600 dark:text-blue-400",
-                bg: "bg-blue-50 dark:bg-blue-900/20",
-                border: "border-blue-200 dark:border-blue-800",
-                dot: "bg-blue-600",
-            },
-            green: {
-                icon: "text-green-600 dark:text-green-400",
-                bg: "bg-green-50 dark:bg-green-900/20",
-                border: "border-green-200 dark:border-green-800",
-                dot: "bg-green-600",
-            },
-            purple: {
-                icon: "text-purple-600 dark:text-purple-400",
-                bg: "bg-purple-50 dark:bg-purple-900/20",
-                border: "border-purple-200 dark:border-purple-800",
-                dot: "bg-purple-600",
-            },
-            orange: {
-                icon: "text-orange-600 dark:text-orange-400",
-                bg: "bg-orange-50 dark:bg-orange-900/20",
-                border: "border-orange-200 dark:border-orange-800",
-                dot: "bg-orange-600",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">

@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { NavList } from "./navigation/nav-list";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { ResumeButton } from "./buttons";
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,15 +17,10 @@ export function Navbar() {
                         <NavList />
 
                         {/* Resume Download Button */}
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                        >
-                            <Download className="w-4 h-4" />
-                            Resume
-                        </a>
+                        <ResumeButton
+                            size="default"
+                            className="shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        />
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -46,16 +42,14 @@ export function Navbar() {
                         <div className="flex flex-col space-y-2">
                             <NavList />
 
-                            <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <Download className="w-4 h-4" />
-                                Download Resume
-                            </a>
+                            <div onClick={() => setIsMenuOpen(false)}>
+                                <ResumeButton
+                                    size="lg"
+                                    className="mt-4 w-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                >
+                                    Download Resume
+                                </ResumeButton>
+                            </div>
                         </div>
                     </div>
                 )}

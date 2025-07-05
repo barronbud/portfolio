@@ -5,6 +5,7 @@ import {
     MessageSquare,
     Heart,
 } from "lucide-react";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function HiringInnovation() {
     const hiringPrinciples = [
@@ -22,7 +23,7 @@ export default function HiringInnovation() {
             ],
             insight:
                 "Traditional technical interviews like leetcode-style challenges feel disconnected from real-world software development.",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             icon: MessageSquare,
@@ -38,7 +39,7 @@ export default function HiringInnovation() {
             ],
             insight:
                 "Keeping shadow requirements hidden just wastes everyone's time. Be clear, be transparent, be honest.",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             icon: Target,
@@ -54,7 +55,7 @@ export default function HiringInnovation() {
             ],
             insight:
                 "Focus on the practical, collaborative skills engineers use every day, not memorization of algorithms.",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
         {
             icon: Heart,
@@ -69,7 +70,7 @@ export default function HiringInnovation() {
             ],
             insight:
                 "Job searching is hard enough without adding unnecessary stress and uncertainty to the process.",
-            color: "orange",
+            color: "orange" as ColorVariant,
         },
     ];
 
@@ -133,32 +134,6 @@ export default function HiringInnovation() {
             duration: "24-48 hours",
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            blue: {
-                icon: "text-blue-600 dark:text-blue-400",
-                bg: "bg-blue-100 dark:bg-blue-900/30",
-                border: "border-blue-200 dark:border-blue-800",
-            },
-            green: {
-                icon: "text-green-600 dark:text-green-400",
-                bg: "bg-green-100 dark:bg-green-900/30",
-                border: "border-green-200 dark:border-green-800",
-            },
-            purple: {
-                icon: "text-purple-600 dark:text-purple-400",
-                bg: "bg-purple-100 dark:bg-purple-900/30",
-                border: "border-purple-200 dark:border-purple-800",
-            },
-            orange: {
-                icon: "text-orange-600 dark:text-orange-400",
-                bg: "bg-orange-100 dark:bg-orange-900/30",
-                border: "border-orange-200 dark:border-orange-800",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">

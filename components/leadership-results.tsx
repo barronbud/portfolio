@@ -8,6 +8,7 @@ import {
     CheckCircle,
     ArrowUpRight,
 } from "lucide-react";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function LeadershipResults() {
     const keyImpacts = [
@@ -24,7 +25,7 @@ export default function LeadershipResults() {
             ],
             company: "Routable (YC '17)",
             timeframe: "6 months",
-            color: "blue",
+            color: "blue" as ColorVariant,
             bgPattern: "bg-gradient-to-br from-blue-500/10 to-indigo-500/10",
         },
         {
@@ -39,7 +40,7 @@ export default function LeadershipResults() {
             ],
             company: "Routable (YC '17)",
             timeframe: "4 months",
-            color: "green",
+            color: "green" as ColorVariant,
             bgPattern: "bg-gradient-to-br from-green-500/10 to-emerald-500/10",
         },
         {
@@ -55,7 +56,7 @@ export default function LeadershipResults() {
             ],
             company: "Multiple Organizations",
             timeframe: "3+ years",
-            color: "purple",
+            color: "purple" as ColorVariant,
             bgPattern: "bg-gradient-to-br from-purple-500/10 to-pink-500/10",
         },
         {
@@ -71,40 +72,10 @@ export default function LeadershipResults() {
             ],
             company: "vinSUITE",
             timeframe: "2 years",
-            color: "orange",
+            color: "orange" as ColorVariant,
             bgPattern: "bg-gradient-to-br from-orange-500/10 to-red-500/10",
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            blue: {
-                icon: "text-blue-600 dark:text-blue-400",
-                metric: "text-blue-600 dark:text-blue-400",
-                border: "border-blue-200 dark:border-blue-800",
-                dot: "bg-blue-500",
-            },
-            green: {
-                icon: "text-green-600 dark:text-green-400",
-                metric: "text-green-600 dark:text-green-400",
-                border: "border-green-200 dark:border-green-800",
-                dot: "bg-green-500",
-            },
-            purple: {
-                icon: "text-purple-600 dark:text-purple-400",
-                metric: "text-purple-600 dark:text-purple-400",
-                border: "border-purple-200 dark:border-purple-800",
-                dot: "bg-purple-500",
-            },
-            orange: {
-                icon: "text-orange-600 dark:text-orange-400",
-                metric: "text-orange-600 dark:text-orange-400",
-                border: "border-orange-200 dark:border-orange-800",
-                dot: "bg-orange-500",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">
@@ -143,7 +114,7 @@ export default function LeadershipResults() {
                                         </div>
                                         <div>
                                             <div
-                                                className={`text-4xl lg:text-5xl font-bold ${colors.metric} mb-1`}
+                                                className={`text-4xl lg:text-5xl font-bold ${colors.icon} mb-1`}
                                             >
                                                 {impact.metric}
                                             </div>

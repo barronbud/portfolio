@@ -44,7 +44,9 @@ export function PostPreview({
                 </p>
             </div>
 
-            <InternalButton href={postUrl}>Read more</InternalButton>
+            <InternalButton href={postUrl} size="default">
+                Read more
+            </InternalButton>
         </div>
     );
 }

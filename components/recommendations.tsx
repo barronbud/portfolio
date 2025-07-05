@@ -61,7 +61,7 @@ export default function Recommendations() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     Leadership Testimonials
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                <p className="text-lg text-muted max-w-2xl mx-auto">
                     What senior leaders and colleagues say about working with
                     Jeffrey
                 </p>
@@ -100,10 +100,7 @@ export default function Recommendations() {
                 {recommendations
                     .filter((_, index) => index > 0)
                     .map((recommendation) => (
-                        <div
-                            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
-                            key={recommendation.name}
-                        >
+                        <div className="card-base" key={recommendation.name}>
                             <Recommendation
                                 name={recommendation.name}
                                 title={recommendation.title}

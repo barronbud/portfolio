@@ -8,6 +8,7 @@ import {
     Target,
     CheckCircle,
 } from "lucide-react";
+import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function TechnicalLeadership() {
     const principles = [
@@ -23,7 +24,7 @@ export default function TechnicalLeadership() {
                 "Focus on shipping value, not showcasing technical prowess",
             ],
             quote: "Every day, companies run profitable businesses on tech stacks that are far more trailing edge than bleeding edge.",
-            color: "blue",
+            color: "blue" as ColorVariant,
         },
         {
             icon: Shield,
@@ -37,7 +38,7 @@ export default function TechnicalLeadership() {
                 "Document architectural decisions and their trade-offs",
             ],
             quote: "There's a point past which you can't duct tape, sweet talk, or bribe a tech stack to do one thing more.",
-            color: "green",
+            color: "green" as ColorVariant,
         },
         {
             icon: TrendingUp,
@@ -51,7 +52,7 @@ export default function TechnicalLeadership() {
                 "Establish clear success metrics and rollback plans",
             ],
             quote: "Successfully tackling complex rewrites requires careful planning, team alignment, and incremental delivery.",
-            color: "purple",
+            color: "purple" as ColorVariant,
         },
         {
             icon: Code,
@@ -65,7 +66,7 @@ export default function TechnicalLeadership() {
                 "Create documentation that enables team autonomy",
             ],
             quote: "Pick a poison you can live with. Make it work; make it clean; make it useful.",
-            color: "orange",
+            color: "orange" as ColorVariant,
         },
     ];
 
@@ -91,32 +92,6 @@ export default function TechnicalLeadership() {
             detail: "Across 9 high-quality project deliveries",
         },
     ];
-
-    const getColorClasses = (color: string) => {
-        const colorMap = {
-            blue: {
-                icon: "text-blue-600 dark:text-blue-400",
-                bg: "bg-blue-100 dark:bg-blue-900/30",
-                border: "border-blue-200 dark:border-blue-800",
-            },
-            green: {
-                icon: "text-green-600 dark:text-green-400",
-                bg: "bg-green-100 dark:bg-green-900/30",
-                border: "border-green-200 dark:border-green-800",
-            },
-            purple: {
-                icon: "text-purple-600 dark:text-purple-400",
-                bg: "bg-purple-100 dark:bg-purple-900/30",
-                border: "border-purple-200 dark:border-purple-800",
-            },
-            orange: {
-                icon: "text-orange-600 dark:text-orange-400",
-                bg: "bg-orange-100 dark:bg-orange-900/30",
-                border: "border-orange-200 dark:border-orange-800",
-            },
-        };
-        return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-    };
 
     return (
         <div className="mb-16">

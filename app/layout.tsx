@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { baseUrl } from "./sitemap";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { Analytics } from "@vercel/analytics/react";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -49,8 +50,6 @@ export const metadata: Metadata = {
     },
 };
 
-const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
-
 export default function RootLayout({
     children,
 }: {
@@ -60,7 +59,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={cx(
+            className={cn(
                 "dark text-black bg-gray-50 dark:text-white dark:bg-gray-900",
                 inter.variable
             )}

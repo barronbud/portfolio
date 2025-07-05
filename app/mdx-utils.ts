@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { sortPostsByDate } from "@/lib/date-utils";
 
 type Metadata = {
     title: string;
@@ -42,6 +43,41 @@ function getMDXFiles(dir: string) {
     return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
+/**
+ * Generate a clean preview from MDX content
+ */
+function generatePreview(content: string, maxLength: number = 150): string {
+    // Chain of transformations to clean the content
+    const cleanContent = content
+        // Remove frontmatter if present
+        .replace(/^---[\s\S]*?---\n?/m, "")
+        // Remove headers (# ## ### etc.)
+        .replace(/^#{1,6}\s+.*$/gm, "")
+        // Remove HTML/JSX tags
+        .replace(/<[^>]*>/g, "")
+        // Convert markdown links to plain text
+        .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+        // Remove markdown formatting
+        .replace(/[*_`]/g, "")
+        // Remove empty lines and normalize whitespace
+        .replace(/^\s*[\r\n]/gm, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    // Get the first meaningful sentence or paragraph
+    const sentences = cleanContent
+        .split(/[.!?]+/)
+        .filter((s) => s.trim().length > 0);
+    const firstSentence = sentences[0]?.trim() || "";
+
+    // Truncate if too long
+    if (firstSentence.length > maxLength) {
+        return firstSentence.substring(0, maxLength).trim() + "...";
+    }
+
+    return firstSentence;
+}
+
 function readMDXFile(filePath: string) {
     const rawContent = fs.readFileSync(filePath, "utf-8");
     return parseFrontmatter(rawContent);
@@ -52,15 +88,7 @@ function getMDXData(dir: string): Post[] {
     return mdxFiles.map((file) => {
         const { metadata, content } = readMDXFile(path.join(dir, file));
         const slug = path.basename(file, path.extname(file));
-        const preview = content
-            .replace(/^#.*$/gm, "") // Remove header lines
-            .replace(/^\s*[\r\n]/gm, "") // Remove empty lines
-            .replace(/<[^>]*>?/g, "") // Remove HTML tags
-            .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1") // Remove markdown links
-            .split("\n")
-            .slice(0, 1)
-            .join(".")
-            .trim();
+        const preview = generatePreview(content);
 
         return {
             metadata,
@@ -72,57 +100,16 @@ function getMDXData(dir: string): Post[] {
 }
 
 export function getBlogPosts() {
-    return getMDXData(
-        path.join(process.cwd(), "app", "articles", "posts")
-    ).sort(
-        (a, b) =>
-            new Date(b.metadata.publishedAt).getTime() -
-            new Date(a.metadata.publishedAt).getTime()
+    return sortPostsByDate(
+        getMDXData(path.join(process.cwd(), "app", "articles", "posts"))
     );
 }
 
 export function getProjectPosts() {
-    return getMDXData(
-        path.join(process.cwd(), "app", "projects", "posts")
-    ).sort(
-        (a, b) =>
-            new Date(b.metadata.publishedAt).getTime() -
-            new Date(a.metadata.publishedAt).getTime()
+    return sortPostsByDate(
+        getMDXData(path.join(process.cwd(), "app", "projects", "posts"))
     );
 }
 
-export function formatDate(date: string, includeRelative = false) {
-    const currentDate = new Date();
-    if (!date.includes("T")) {
-        date = `${date}T00:00:00`;
-    }
-    const targetDate = new Date(date);
-
-    const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-    const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-    const daysAgo = currentDate.getDate() - targetDate.getDate();
-
-    let formattedDate = "";
-
-    if (yearsAgo > 0) {
-        formattedDate = `${yearsAgo}y ago`;
-    } else if (monthsAgo > 0) {
-        formattedDate = `${monthsAgo}mo ago`;
-    } else if (daysAgo > 0) {
-        formattedDate = `${daysAgo}d ago`;
-    } else {
-        formattedDate = "Today";
-    }
-
-    const fullDate = targetDate.toLocaleString("en-us", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    });
-
-    if (!includeRelative) {
-        return fullDate;
-    }
-
-    return `${fullDate} (${formattedDate})`;
-}
+// Re-export formatDate from date-utils for backward compatibility
+export { formatDate } from "@/lib/date-utils";
