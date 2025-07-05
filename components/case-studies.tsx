@@ -135,7 +135,7 @@ export default function CaseStudies() {
                     Case Studies
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Real-world examples of how I&pos;ve transformed teams and
+                    Real-world examples of how I&apos;ve transformed teams and
                     delivered exceptional results across diverse technical
                     challenges
                 </p>

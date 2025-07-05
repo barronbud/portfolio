@@ -21,7 +21,7 @@ export const navItems: { [key: string]: NavItem } = {
         name: "Technical Leadership",
     },
     "/hiring": {
-        name: "Hiring Innovation",
+        name: "Hiring Approach",
     },
     "/case-studies": {
         name: "Case Studies",
