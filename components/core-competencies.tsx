@@ -1,35 +1,28 @@
-import { Users, Code, TrendingUp, Lightbulb } from "lucide-react";
+import { Users, Code, TrendingUp } from "lucide-react";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function CoreCompetencies() {
     const competencies = [
         {
-            icon: Users,
-            title: "Team Leadership & Agile Transformation",
+            icon: TrendingUp,
+            title: "Getting Stalled Teams Moving",
             description:
-                "Led Agile transformations by applying Scrum, Kanban, and other methodologies. Built and nurtured cross-functional teams of up to 13 engineers, increasing feature delivery by 20% through scalable agile processes.",
+                "I took over a platform rewrite that had stalled twice before. By switching from Scrum to Kanban, implementing non-blocking processes, and rebuilding team confidence, we achieved 150% velocity increase in 6 months.",
+            color: "green" as ColorVariant,
+        },
+        {
+            icon: Users,
+            title: "Building Teams That Stay & Grow",
+            description:
+                "Over 3+ years leading remote teams, I've maintained 95% retention while helping engineers grow from junior to senior roles. People don't just stay—they thrive and become mentors themselves.",
             color: "blue" as ColorVariant,
         },
         {
             icon: Code,
-            title: "Full-Stack Development & Architecture",
+            title: "Shipping Quality Software",
             description:
-                "Developed and led teams using Node, React, Python, and JavaScript/TypeScript. Executed strategic re-architecture of core data models and systems, coordinating efforts across multiple squads.",
-            color: "green" as ColorVariant,
-        },
-        {
-            icon: TrendingUp,
-            title: "Process Optimization & Velocity",
-            description:
-                "Increased team velocity by 150% through non-blocking processes, code contracts, and reduced friction during merges. Led teams to 60% decrease in completion time by proactively clearing roadblocks.",
+                "I've delivered 9 mission-critical projects with sub-5% defect rates, from PCI-compliant payment systems to AI/ML integrations. I stay hands-on with architecture decisions while empowering my team to own the implementation.",
             color: "purple" as ColorVariant,
-        },
-        {
-            icon: Lightbulb,
-            title: "Product Innovation & Technical Leadership",
-            description:
-                "Led development of OCR for invoice recording (60% time savings), AI/ML powered study paths, and PCI-compliant payment systems. Released 9 high-quality projects with defect rate lower than 5%.",
-            color: "orange" as ColorVariant,
         },
     ];
 
@@ -37,15 +30,15 @@ export default function CoreCompetencies() {
         <div className="mb-16">
             <div className="text-center mb-12">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Core Leadership Competencies
+                    How I Help Engineering Teams Succeed
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Proven expertise in building high-performing engineering
-                    teams and delivering scalable technical solutions
+                    Three areas where I&apos;ve consistently delivered results
+                    by focusing on people, process, and practical solutions
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {competencies.map((competency, index) => {
                     const colors = getColorClasses(competency.color);
                     const Icon = competency.icon;
@@ -85,19 +78,19 @@ export default function CoreCompetencies() {
             <div className="mt-12 text-center">
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
                     <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        Ready to Transform Your Engineering Team?
+                        Working on Similar Challenges?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        Let&apos;s discuss how these competencies can drive your
-                        team&apos;s success and accelerate your product
-                        development.
+                        If your team is facing stalled projects, retention
+                        issues, or delivery challenges, I&apos;d love to chat
+                        about how these approaches might help.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
-                        Start the Conversation
-                        <Users className="w-5 h-5" />
+                        Let&apos;s Chat
+                        <TrendingUp className="w-5 h-5" />
                     </a>
                 </div>
             </div>

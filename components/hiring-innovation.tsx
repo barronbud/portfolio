@@ -92,59 +92,16 @@ export default function HiringInnovation() {
         },
     ];
 
-    const hiringProcess = [
-        {
-            step: "1",
-            title: "Resume Deep Dive",
-            description:
-                "Thorough research on candidate background, portfolio, and LinkedIn",
-            duration: "30 minutes prep",
-        },
-        {
-            step: "2",
-            title: "Initial Conversation",
-            description:
-                "Cultural fit, motivation, and role expectations discussion",
-            duration: "45 minutes",
-        },
-        {
-            step: "3",
-            title: "Take-Home Project",
-            description: "Real-world problem similar to actual work challenges",
-            duration: "2-4 hours",
-        },
-        {
-            step: "4",
-            title: "Technical Discussion",
-            description:
-                "Review take-home project and discuss technical decisions",
-            duration: "60 minutes",
-        },
-        {
-            step: "5",
-            title: "Team Interaction",
-            description:
-                "Meet potential teammates and assess collaboration fit",
-            duration: "30-45 minutes",
-        },
-        {
-            step: "6",
-            title: "Final Decision",
-            description: "Comprehensive evaluation with detailed feedback",
-            duration: "24-48 hours",
-        },
-    ];
-
     return (
         <div className="mb-16">
             <div className="text-center mb-12">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Hiring Approach & Philosophy
+                    How I Approach Hiring
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Improving technical hiring through human-centered
-                    approaches, practical assessments, and transparent
-                    communication
+                    Technical hiring can be better. Here&apos;s how I make it
+                    more human, practical, and transparent for everyone
+                    involved.
                 </p>
             </div>
 
@@ -204,42 +161,6 @@ export default function HiringInnovation() {
                         </div>
                     );
                 })}
-            </div>
-
-            {/* Hiring Process */}
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 mb-16">
-                <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                    Streamlined Hiring Process
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 text-center mb-8">
-                    Respectful process that values both candidate and company
-                    time
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {hiringProcess.map((step, index) => (
-                        <div key={index} className="relative">
-                            <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">
-                                        {step.step}
-                                    </span>
-                                </div>
-                                <div>
-                                    <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
-                                        {step.title}
-                                    </h5>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                                        {step.description}
-                                    </p>
-                                    <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">
-                                        {step.duration}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </div>
 
             {/* Hiring Results */}

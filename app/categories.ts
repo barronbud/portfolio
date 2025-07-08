@@ -9,13 +9,15 @@ export const categories: Category[] = [
     {
         name: "General",
         slug: "general",
-        description: "Other articles and thoughts",
+        description:
+            "Engineering leadership insights and team management strategies",
         sortBy: "date",
     },
     {
         name: "How I Hire",
         slug: "how-i-hire",
-        description: "Articles about my approach to hiring and building teams",
+        description:
+            "Proven hiring strategies for building high-velocity engineering teams",
         sortBy: "seriesOrder",
     },
 ];
