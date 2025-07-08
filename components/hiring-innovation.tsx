@@ -99,8 +99,9 @@ export default function HiringInnovation() {
                     How I Approach Hiring
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Technical hiring can be better. Here's how I make it more
-                    human, practical, and transparent for everyone involved.
+                    Technical hiring can be better. Here&apos;s how I make it
+                    more human, practical, and transparent for everyone
+                    involved.
                 </p>
             </div>
 

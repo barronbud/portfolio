@@ -1,19 +1,4 @@
-import {
-    Users,
-    Target,
-    MessageSquare,
-    Clock,
-    Shield,
-    Lightbulb,
-    Heart,
-    Globe,
-    Zap,
-    CheckCircle,
-    TrendingUp,
-    UserPlus,
-    BookOpen,
-    Code,
-} from "lucide-react";
+import { Users, Shield, TrendingUp, Code } from "lucide-react";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function LeadershipPhilosophy() {

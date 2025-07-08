@@ -84,7 +84,7 @@ export default function LeadershipResults() {
                     Real Results from Real Projects
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Here's what happened when I applied these leadership
+                    Here&apos;s what happened when I applied these leadership
                     approaches to actual engineering challenges
                 </p>
             </div>
@@ -171,8 +171,9 @@ export default function LeadershipResults() {
                         The Bigger Picture
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                        These results aren't one-offs—they represent consistent
-                        patterns across different teams and challenges
+                        These results aren&apos;t one-offs—they represent
+                        consistent patterns across different teams and
+                        challenges
                     </p>
                 </div>
 

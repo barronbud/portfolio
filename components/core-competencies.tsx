@@ -33,8 +33,8 @@ export default function CoreCompetencies() {
                     How I Help Engineering Teams Succeed
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Three areas where I've consistently delivered results by
-                    focusing on people, process, and practical solutions
+                    Three areas where I&apos;ve consistently delivered results
+                    by focusing on people, process, and practical solutions
                 </p>
             </div>
 
@@ -82,8 +82,8 @@ export default function CoreCompetencies() {
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
                         If your team is facing stalled projects, retention
-                        issues, or delivery challenges, I'd love to chat about
-                        how these approaches might help.
+                        issues, or delivery challenges, I&apos;d love to chat
+                        about how these approaches might help.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"
