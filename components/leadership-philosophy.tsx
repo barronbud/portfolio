@@ -18,29 +18,29 @@ import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function LeadershipPhilosophy() {
     const corePhilosophy = {
-        title: "Leadership Through Results",
+        title: "Servant Leadership in Practice",
         description:
-            "I focus on creating conditions where teams consistently deliver exceptional results through clear processes, psychological safety, and data-driven decision making.",
+            "I believe in creating psychologically safe environments where teams feel empowered to take calculated risks, grow meaningfully, and deliver exceptional results through collaboration and ownership.",
         principles: [
             {
                 icon: TrendingUp,
-                title: "Velocity-Focused Leadership",
+                title: "Process Innovation",
                 description:
-                    "Optimize processes and remove roadblocks to consistently increase team delivery speed by 150%+.",
+                    "When teams get stuck, I focus on removing roadblocks and optimizing workflows—like switching from Scrum to Kanban to unlock 150% velocity gains.",
                 color: "green" as ColorVariant,
             },
             {
                 icon: Users,
-                title: "Remote-First Team Building",
+                title: "People-First Leadership",
                 description:
-                    "Build high-performing distributed teams with clear communication and strong retention rates.",
+                    "I prioritize psychological safety, mentorship, and growth opportunities. Engineers don't just deliver—they thrive and become force multipliers.",
                 color: "blue" as ColorVariant,
             },
             {
                 icon: Shield,
-                title: "Quality & Reliability",
+                title: "Pragmatic Excellence",
                 description:
-                    "Maintain <5% defect rates while delivering complex technical projects on time.",
+                    "Choose proven technologies over bleeding-edge complexity. Maintain quality through clear standards while empowering team autonomy.",
                 color: "purple" as ColorVariant,
             },
         ],
@@ -49,23 +49,23 @@ export default function LeadershipPhilosophy() {
     const technicalPrinciples = [
         {
             icon: Users,
-            title: "Customer-First Technology Decisions",
+            title: "Business Value Over Complexity",
             description:
-                "Choose proven technologies over bleeding-edge for reliability and business value",
+                "I choose proven technologies that solve real problems rather than chasing the latest trends. Reliability and team productivity matter more than being cutting-edge.",
             color: "blue" as ColorVariant,
         },
         {
             icon: Shield,
-            title: "Technical Debt Management",
+            title: "Technical Debt as Investment",
             description:
-                "Balance innovation with maintainability, treating debt as a business decision",
+                "Technical debt isn't inherently bad—it's a tool. I help teams make conscious trade-offs between speed and maintainability based on business priorities.",
             color: "green" as ColorVariant,
         },
         {
             icon: Code,
-            title: "Engineering Excellence",
+            title: "Quality Through Ownership",
             description:
-                "Build scalable systems with quality, clear standards, and team autonomy",
+                "The best quality comes from engineers who own their work. I establish clear standards then trust my team to execute with autonomy and pride.",
             color: "orange" as ColorVariant,
         },
     ];
@@ -92,11 +92,11 @@ export default function LeadershipPhilosophy() {
         <div className="mb-16">
             <div className="text-center mb-12">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Leadership & Technical Philosophy
+                    How I Lead Engineering Teams
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Combining people leadership with technical excellence to
-                    drive consistent results
+                    My approach to building teams that deliver great software
+                    while growing as engineers and people
                 </p>
             </div>
 
@@ -144,11 +144,11 @@ export default function LeadershipPhilosophy() {
             <div className="mb-16">
                 <div className="text-center mb-8">
                     <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        Technical Leadership Approach
+                        My Technical Leadership Principles
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                        Pragmatic technology decisions focused on business value
-                        and team productivity
+                        How I make technology decisions that support both
+                        business goals and team happiness
                     </p>
                 </div>
 

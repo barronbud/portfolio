@@ -6,12 +6,13 @@ export default function LeadershipPhilosophyBrief() {
             <div className="bg-gradient-to-r from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 rounded-2xl p-8 border border-slate-200 dark:border-gray-700">
                 <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        My Leadership Approach
+                        My Leadership Philosophy
                     </h3>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                        What I bring to every team and product: heavy
-                        collaboration, minimal solutions, and iterative
-                        development.
+                        I believe in servant leadership—creating psychologically
+                        safe environments where teams feel empowered to take
+                        calculated risks, grow meaningfully, and ship value
+                        fast.
                     </p>
                 </div>
 
@@ -21,11 +22,11 @@ export default function LeadershipPhilosophyBrief() {
                             <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                         </div>
                         <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                            Heavy Collaboration
+                            Ownership & Autonomy
                         </h4>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            People-first leadership emphasizing trust,
-                            ownership, and empowered autonomy
+                            Empowering engineers to own their work and make
+                            decisions while providing support and mentorship
                         </p>
                     </div>
 
@@ -34,11 +35,11 @@ export default function LeadershipPhilosophyBrief() {
                             <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
                         </div>
                         <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                            Minimal Solutions
+                            Pragmatic Solutions
                         </h4>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Proactively removing roadblocks and reducing risk
-                            through proper planning
+                            Choosing proven technologies and approaches that
+                            deliver business value over bleeding-edge complexity
                         </p>
                     </div>
 
@@ -47,11 +48,11 @@ export default function LeadershipPhilosophyBrief() {
                             <Target className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                         </div>
                         <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                            Iterative Development
+                            Continuous Growth
                         </h4>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Shipping fast through incremental development and
-                            continuous feedback loops
+                            Supporting both technical and non-technical growth
+                            through mentorship and learning opportunities
                         </p>
                     </div>
                 </div>

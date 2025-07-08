@@ -40,41 +40,40 @@ export default function Hero() {
                                 Jeffrey Barron
                             </h1>
                             <h2 className="text-2xl lg:text-3xl gradient-text font-semibold mb-6">
-                                Engineering Transformation Specialist
+                                Engineering Leader
                             </h2>
                         </div>
 
                         {/* Value Proposition */}
                         <div className="mb-8">
                             <p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                I accelerate engineering teams by restarting
-                                stalled initiatives and building a culture where
-                                engineers thrive and deliver exceptional
-                                results.
+                                I build high-performing full-stack engineering
+                                teams that deliver exceptional results through
+                                collaboration, ownership, and shipping fast.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                        Complex Projects
+                                        3+ Years
                                     </div>
                                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                                        Delivered Successfully
+                                        Leading Remote Teams
                                     </div>
                                 </div>
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                        95% Retention
+                                        20+ Engineers
                                     </div>
                                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                                        High-Performing Engineers
+                                        Successfully Mentored
                                     </div>
                                 </div>
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                        150% Velocity
+                                        150% Faster
                                     </div>
                                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                                        Team Performance Increase
+                                        Team Delivery Speed
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +85,7 @@ export default function Hero() {
                                 href="mailto:me@jeffreybarron.dev"
                                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
                             >
-                                Let&apos;s Talk About Your Team
+                                Let&apos;s Chat
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                         </div>
