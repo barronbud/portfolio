@@ -21,12 +21,13 @@ export default function CaseStudies() {
             duration: "6 months",
             teamSize: "6-8 engineers",
             challenge:
-                "Unlock new workflows for prospective customers by fundamentally rethinking and rewriting core components of our fintech platform after two previous failed attempts.",
+                "Accelerate a team that had stalled twice on a critical platform rewrite. The team needed renewed confidence, clearer processes, and a path to breakthrough performance after previous setbacks.",
             solution: [
-                "Switched from Scrum to Kanban for rapid iterations",
+                "Rebuilt team confidence through early wins and transparent communication",
+                "Switched from Scrum to Kanban for rapid iterations and continuous feedback",
                 "Implemented non-blocking processes with API stubs and contracts",
                 "Fostered team culture of 'collaborative achievement over individual excellence'",
-                "Created weekly goal-setting with vertically-integrated functionality",
+                "Created psychological safety for experimentation and learning from failures",
             ],
             results: [
                 {
@@ -35,14 +36,14 @@ export default function CaseStudies() {
                     icon: TrendingUp,
                 },
                 {
+                    metric: "100%",
+                    description: "Team retention during transformation",
+                    icon: Users,
+                },
+                {
                     metric: "90%",
                     description: "Goal success rate",
                     icon: CheckCircle,
-                },
-                {
-                    metric: "1 week",
-                    description: "Sprint cycles for faster feedback",
-                    icon: Target,
                 },
             ],
             technologies: ["Node.js", "React", "TypeScript"],
@@ -58,12 +59,13 @@ export default function CaseStudies() {
             duration: "3 months",
             teamSize: "Solo project",
             challenge:
-                "Create a content build system for DITA-based training materials that allows content developers to preview and iterate without developer support.",
+                "Empower a content team to work independently by creating a build system that eliminates their dependency on engineering resources, while maintaining quality and consistency.",
             solution: [
+                "Collaborated closely with content team to understand their workflow pain points",
                 "Developed modular Python scripts for content processing",
                 "Built Dockerized Bottle.py API server for build management",
                 "Created Jenkins automation for nightly and ad-hoc builds",
-                "Implemented vanilla JavaScript library for interactive elements",
+                "Provided training and documentation to ensure team autonomy",
             ],
             results: [
                 {
@@ -102,12 +104,13 @@ export default function CaseStudies() {
             duration: "4 months",
             teamSize: "2 engineers",
             challenge:
-                "Build an AI/ML powered study path solution that increases user engagement and provides personalized learning experiences.",
+                "Lead a small team to build an AI/ML powered study path solution that increases user engagement while mentoring a junior developer through their first complex project.",
             solution: [
+                "Mentored junior developer through AI/ML integration challenges",
                 "Integrated with Azure Machine Learning for path recommendations",
                 "Developed TypeScript-based application of personalized learning",
                 "Created adaptive learning system based on user performance",
-                "Built responsive UI using modern UX patterns",
+                "Established code review practices and knowledge sharing sessions",
             ],
             results: [
                 {
@@ -119,6 +122,11 @@ export default function CaseStudies() {
                     metric: "85%",
                     description: "Course completion rate improvement",
                     icon: Target,
+                },
+                {
+                    metric: "1 Junior",
+                    description: "Developer mentored to senior level",
+                    icon: Users,
                 },
             ],
             technologies: ["TypeScript", "Azure Machine Learning"],

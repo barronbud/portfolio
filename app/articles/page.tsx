@@ -6,7 +6,8 @@ import { PostPreview } from "@/components/post-preview";
 
 export const metadata: Metadata = {
     title: "Articles",
-    description: "Read my articles.",
+    description:
+        "Engineering leadership insights and proven strategies for building high-velocity teams.",
 };
 
 export default function Page() {

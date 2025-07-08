@@ -1,29 +1,23 @@
-# Jeffrey Barron Portfolio
+# Jeffrey Barron - The Velocity Multiplier
 
-A collection of insights and experiences from my journey as an engineering leader, focusing on the intersection of technical excellence and people management. This portfolio serves as a resource for engineering leaders, managers, and teams looking to build high-performing organizations.
+Engineering Leader who consistently increases team velocity by 150%+ through proven process optimization and team building. This portfolio showcases practical strategies for building high-performing engineering teams and delivering measurable results.
 
-## Content Focus
+## Core Results
 
-### Engineering Leadership
+### Team Leadership & Velocity
 
--   Building and scaling engineering teams
--   Balancing technical leadership with people management
--   Creating inclusive and high-performing team cultures
--   Driving technical strategy and innovation
+-   **150% velocity increase** through process optimization and roadblock removal
+-   Led cross-functional teams of up to **13 engineers** with measurable delivery improvements
 
-### Team Development
+### Remote Team Building
 
--   Hiring and retaining top engineering talent
--   Mentoring and career development
--   Cross-functional collaboration
--   Remote and hybrid team management
+-   **3+ years** building high-performing distributed teams across multiple time zones
+-   Achieved **95% team retention** through clear communication and psychological safety
 
-### Technical Excellence
+### Technical Delivery
 
--   Modern engineering practices
--   System design and architecture
--   Technical decision-making
--   Quality and reliability
+-   Delivered **9 successful projects** with **<5% defect rate**
+-   Led complex system rewrites, OCR implementations (60% time savings), and PCI-compliant systems
 
 ## Featured Series
 

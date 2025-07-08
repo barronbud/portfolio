@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import { ArrowRight } from "lucide-react";
-import { ResumeButton } from "./buttons";
 
 export default function Hero() {
     return (
@@ -41,52 +40,55 @@ export default function Hero() {
                                 Jeffrey Barron
                             </h1>
                             <h2 className="text-2xl lg:text-3xl gradient-text font-semibold mb-6">
-                                Engineering Leader & Technical Executive
+                                Engineering Transformation Specialist
                             </h2>
                         </div>
 
-                        {/* Elevator Pitch */}
+                        {/* Value Proposition */}
                         <div className="mb-8">
                             <p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                I transform engineering teams into
-                                high-velocity, collaborative powerhouses that
-                                deliver exceptional results.
+                                I accelerate engineering teams by restarting
+                                stalled initiatives and building a culture where
+                                engineers thrive and deliver exceptional
+                                results.
                             </p>
-                            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                                With{" "}
-                                <span className="font-semibold text-blue-600 dark:text-blue-400">
-                                    10+ years
-                                </span>{" "}
-                                in software development and{" "}
-                                <span className="font-semibold text-blue-600 dark:text-blue-400">
-                                    3+ years
-                                </span>{" "}
-                                leading remote teams, I&apos;ve consistently
-                                increased team velocity by{" "}
-                                <span className="font-semibold text-green-600 dark:text-green-400">
-                                    150%
-                                </span>{" "}
-                                while building scalable solutions across
-                                fintech, edutech, and e-commerce.
-                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
+                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                        Complex Projects
+                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                                        Delivered Successfully
+                                    </div>
+                                </div>
+                                <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
+                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                        95% Retention
+                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                                        High-Performing Engineers
+                                    </div>
+                                </div>
+                                <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
+                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                        150% Velocity
+                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                                        Team Performance Increase
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* CTAs */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        {/* Primary CTA */}
+                        <div className="flex justify-center lg:justify-start mb-8">
                             <a
                                 href="mailto:me@jeffreybarron.dev"
                                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
                             >
-                                Let&apos;s Connect
+                                Let&apos;s Talk About Your Team
                                 <ArrowRight className="w-5 h-5" />
                             </a>
-                            <ResumeButton
-                                variant="outline"
-                                size="lg"
-                                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl"
-                            >
-                                Download Resume
-                            </ResumeButton>
                         </div>
 
                         {/* Social Links */}

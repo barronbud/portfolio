@@ -61,7 +61,7 @@ export default function Recommendations() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     Leadership Testimonials
                 </h3>
-                <p className="text-lg text-muted max-w-2xl mx-auto">
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     What senior leaders and colleagues say about working with
                     Jeffrey
                 </p>

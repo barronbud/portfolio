@@ -29,11 +29,12 @@ export default function ContactCTA() {
 
                 <div className="relative z-10">
                     <h3 className="text-3xl font-bold mb-4 text-shadow">
-                        Ready to Build Something Great Together?
+                        Turn Your Engineering Team Into a Delivery Machine
                     </h3>
                     <p className="text-xl mb-8 text-blue-100">
-                        Let&apos;s discuss how I can help lead your engineering
-                        team to success
+                        I specialize in leading complex projects and
+                        transforming engineering teams. Let&apos;s discuss your
+                        specific challenges.
                     </p>
                 </div>
 
@@ -43,7 +44,7 @@ export default function ContactCTA() {
                         className="group bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover-glow"
                     >
                         <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        Get in Touch
+                        Discuss Your Team Transformation
                     </a>
 
                     <a
@@ -116,12 +117,13 @@ export default function ContactCTA() {
                 <div className="flex items-center justify-center gap-2 mb-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="font-semibold text-green-800 dark:text-green-300">
-                        Currently Available for New Opportunities
+                        Available for Engineering Leadership & Transformation
+                        Roles
                     </span>
                 </div>
                 <p className="text-green-700 dark:text-green-400">
-                    Seeking Engineering Manager or Senior Engineering Leadership
-                    roles
+                    Specializing in rescuing failed projects and building
+                    high-performing, sustainable engineering teams
                 </p>
             </div>
         </div>

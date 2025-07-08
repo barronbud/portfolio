@@ -4,32 +4,25 @@ import { getColorClasses, type ColorVariant } from "@/lib/utils";
 export default function CoreCompetencies() {
     const competencies = [
         {
-            icon: Users,
-            title: "Team Leadership & Agile Transformation",
+            icon: TrendingUp,
+            title: "Velocity Transformation",
             description:
-                "Led Agile transformations by applying Scrum, Kanban, and other methodologies. Built and nurtured cross-functional teams of up to 13 engineers, increasing feature delivery by 20% through scalable agile processes.",
+                "Delivered a complex rewrite project after two previous attempts stalled. Achieved 150% velocity increase in 6 months through process innovation, transforming team dynamics into a high-performing delivery machine.",
+            color: "green" as ColorVariant,
+        },
+        {
+            icon: Users,
+            title: "Talent Retention & Growth",
+            description:
+                "Built and retained 95% of distributed engineering teams across 3+ years. Engineers don't just stay—they grow into senior roles and become force multipliers.",
             color: "blue" as ColorVariant,
         },
         {
             icon: Code,
-            title: "Full-Stack Development & Architecture",
+            title: "Complex System Delivery",
             description:
-                "Developed and led teams using Node, React, Python, and JavaScript/TypeScript. Executed strategic re-architecture of core data models and systems, coordinating efforts across multiple squads.",
-            color: "green" as ColorVariant,
-        },
-        {
-            icon: TrendingUp,
-            title: "Process Optimization & Velocity",
-            description:
-                "Increased team velocity by 150% through non-blocking processes, code contracts, and reduced friction during merges. Led teams to 60% decrease in completion time by proactively clearing roadblocks.",
+                "Delivered 9 mission-critical projects with <5% defect rate, including PCI-compliant payment systems and AI/ML integrations. I don't just manage—I architect solutions and guide technical decisions that scale.",
             color: "purple" as ColorVariant,
-        },
-        {
-            icon: Lightbulb,
-            title: "Product Innovation & Technical Leadership",
-            description:
-                "Led development of OCR for invoice recording (60% time savings), AI/ML powered study paths, and PCI-compliant payment systems. Released 9 high-quality projects with defect rate lower than 5%.",
-            color: "orange" as ColorVariant,
         },
     ];
 
@@ -37,15 +30,15 @@ export default function CoreCompetencies() {
         <div className="mb-16">
             <div className="text-center mb-12">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Core Leadership Competencies
+                    Engineering Team Acceleration Expertise
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Proven expertise in building high-performing engineering
-                    teams and delivering scalable technical solutions
+                    Three core areas where I unlock breakthrough performance and
+                    sustainable team growth
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {competencies.map((competency, index) => {
                     const colors = getColorClasses(competency.color);
                     const Icon = competency.icon;
@@ -88,16 +81,16 @@ export default function CoreCompetencies() {
                         Ready to Transform Your Engineering Team?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        Let&apos;s discuss how these competencies can drive your
-                        team&apos;s success and accelerate your product
-                        development.
+                        I specialize in accelerating teams to breakthrough
+                        performance. Let&apos;s discuss your growth
+                        opportunities and how I can help unlock them.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
-                        Start the Conversation
-                        <Users className="w-5 h-5" />
+                        Let&apos;s Talk Results
+                        <TrendingUp className="w-5 h-5" />
                     </a>
                 </div>
             </div>
