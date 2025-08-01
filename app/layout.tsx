@@ -5,7 +5,6 @@ import { Navbar } from "@/components/nav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
 import { baseUrl } from "./sitemap";
-import { VercelToolbar } from "@vercel/toolbar/next";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
 
@@ -55,7 +54,6 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const shouldInjectToolbar = process.env.NODE_ENV === "development";
     return (
         <html
             lang="en"
@@ -72,7 +70,6 @@ export default function RootLayout({
                 </main>
                 <Analytics />
                 <SpeedInsights />
-                {shouldInjectToolbar && <VercelToolbar />}
             </body>
         </html>
     );
