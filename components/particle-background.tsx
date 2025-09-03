@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 interface Particle {
     x: number;
@@ -21,19 +21,19 @@ interface ParticleBackgroundProps {
 
 export default function ParticleBackground({
     particleCount = 50,
-    colors = ['#3b82f6', '#8b5cf6', '#6366f1', '#06b6d4'],
+    colors = ["#3b82f6", "#8b5cf6", "#6366f1", "#06b6d4"],
     speed = 0.5,
-    className = ''
+    className = "",
 }: ParticleBackgroundProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number>(0);
     const particlesRef = useRef<Particle[]>([]);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
         const resizeCanvas = () => {
@@ -41,8 +41,8 @@ export default function ParticleBackground({
             canvas.width = rect.width * window.devicePixelRatio;
             canvas.height = rect.height * window.devicePixelRatio;
             ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-            canvas.style.width = rect.width + 'px';
-            canvas.style.height = rect.height + 'px';
+            canvas.style.width = rect.width + "px";
+            canvas.style.height = rect.height + "px";
         };
 
         const createParticle = (): Particle => ({
@@ -52,7 +52,7 @@ export default function ParticleBackground({
             vy: (Math.random() - 0.5) * speed,
             size: Math.random() * 3 + 1,
             opacity: Math.random() * 0.5 + 0.1,
-            color: colors[Math.floor(Math.random() * colors.length)]
+            color: colors[Math.floor(Math.random() * colors.length)],
         });
 
         const initParticles = () => {
@@ -113,7 +113,7 @@ export default function ParticleBackground({
         const animate = () => {
             ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
-            particlesRef.current.forEach(particle => {
+            particlesRef.current.forEach((particle) => {
                 updateParticle(particle);
                 drawParticle(particle);
             });
@@ -134,10 +134,10 @@ export default function ParticleBackground({
         animate();
 
         // Event listeners
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener("resize", handleResize);
             if (animationRef.current) {
                 cancelAnimationFrame(animationRef.current);
             }
@@ -145,10 +145,6 @@ export default function ParticleBackground({
     }, [particleCount, colors, speed]);
 
     return (
-        <canvas
-            ref={canvasRef}
-            className={`absolute inset-0 pointer-events-none ${className}`}
-            style={{ zIndex: 0 }}
-        />
+        <canvas ref={canvasRef} className={`absolute inset-0 pointer-events-none ${className}`} style={{ zIndex: 0 }} />
     );
 }
