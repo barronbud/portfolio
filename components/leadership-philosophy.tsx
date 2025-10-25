@@ -11,7 +11,7 @@ export default function LeadershipPhilosophy() {
                 icon: TrendingUp,
                 title: "Process Innovation",
                 description:
-                    "When teams get stuck, I focus on removing roadblocks and optimizing workflows—like switching from Scrum to Kanban to unlock 150% velocity gains.",
+                    "When teams get stuck, I focus on removing roadblocks and optimizing workflows—like switching from Scrum to Kanban to unlock 50% velocity gains.",
                 color: "green" as ColorVariant,
             },
             {
@@ -57,7 +57,7 @@ export default function LeadershipPhilosophy() {
 
     const achievements = [
         {
-            metric: "150%",
+            metric: "50%",
             description: "Team velocity increase",
             detail: "Through process optimization and code contracts",
         },
@@ -80,17 +80,14 @@ export default function LeadershipPhilosophy() {
                     How I Lead Engineering Teams
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    My approach to building teams that deliver great software
-                    while growing as engineers and people
+                    My approach to building teams that deliver great software while growing as engineers and people
                 </p>
             </div>
 
             {/* Core Philosophy */}
             <div className="mb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800">
                 <div className="text-center mb-8">
-                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        {corePhilosophy.title}
-                    </h4>
+                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{corePhilosophy.title}</h4>
                     <p className="text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                         {corePhilosophy.description}
                     </p>
@@ -109,13 +106,9 @@ export default function LeadershipPhilosophy() {
                                 <div
                                     className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                                 >
-                                    <Icon
-                                        className={`w-6 h-6 ${colors.icon}`}
-                                    />
+                                    <Icon className={`w-6 h-6 ${colors.icon}`} />
                                 </div>
-                                <h5 className="font-bold text-gray-900 dark:text-white mb-2">
-                                    {principle.title}
-                                </h5>
+                                <h5 className="font-bold text-gray-900 dark:text-white mb-2">{principle.title}</h5>
                                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                                     {principle.description}
                                 </p>
@@ -132,8 +125,7 @@ export default function LeadershipPhilosophy() {
                         My Technical Leadership Principles
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                        How I make technology decisions that support both
-                        business goals and team happiness
+                        How I make technology decisions that support both business goals and team happiness
                     </p>
                 </div>
 
@@ -150,13 +142,9 @@ export default function LeadershipPhilosophy() {
                                 <div
                                     className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                                 >
-                                    <Icon
-                                        className={`w-6 h-6 ${colors.icon}`}
-                                    />
+                                    <Icon className={`w-6 h-6 ${colors.icon}`} />
                                 </div>
-                                <h5 className="font-bold text-gray-900 dark:text-white mb-2">
-                                    {principle.title}
-                                </h5>
+                                <h5 className="font-bold text-gray-900 dark:text-white mb-2">{principle.title}</h5>
                                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                                     {principle.description}
                                 </p>
@@ -172,8 +160,7 @@ export default function LeadershipPhilosophy() {
                             Measurable Technical Impact
                         </h5>
                         <p className="text-gray-600 dark:text-gray-400">
-                            Results from combining leadership and technical
-                            excellence
+                            Results from combining leadership and technical excellence
                         </p>
                     </div>
 
@@ -186,9 +173,7 @@ export default function LeadershipPhilosophy() {
                                 <div className="font-semibold text-gray-900 dark:text-white mb-1">
                                     {achievement.description}
                                 </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    {achievement.detail}
-                                </div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">{achievement.detail}</div>
                             </div>
                         ))}
                     </div>

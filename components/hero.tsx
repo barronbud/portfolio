@@ -47,18 +47,13 @@ export default function Hero() {
                         {/* Value Proposition */}
                         <div className="mb-8">
                             <p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                I build high-performing full-stack engineering
-                                teams that deliver exceptional results through
-                                collaboration, ownership, and shipping fast.
+                                I build high-performing full-stack engineering teams that deliver exceptional results
+                                through collaboration, ownership, and shipping fast.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
-                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                        3+ Years
-                                    </div>
-                                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                                        Leading Remote Teams
-                                    </div>
+                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3+ Years</div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">Leading Remote Teams</div>
                                 </div>
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
@@ -70,11 +65,9 @@ export default function Hero() {
                                 </div>
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                        150% Faster
+                                        50% Faster
                                     </div>
-                                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                                        Team Delivery Speed
-                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">Team Delivery Speed</div>
                                 </div>
                             </div>
                         </div>

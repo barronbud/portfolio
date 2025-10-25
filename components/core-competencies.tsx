@@ -7,7 +7,7 @@ export default function CoreCompetencies() {
             icon: TrendingUp,
             title: "Getting Stalled Teams Moving",
             description:
-                "I took over a platform rewrite that had stalled twice before. By switching from Scrum to Kanban, implementing non-blocking processes, and rebuilding team confidence, we achieved 150% velocity increase in 6 months.",
+                "I took over a platform rewrite that had stalled twice before. By switching from Scrum to Kanban, implementing non-blocking processes, and rebuilding team confidence, we achieved 50% velocity increase in 6 months.",
             color: "green" as ColorVariant,
         },
         {
@@ -33,8 +33,8 @@ export default function CoreCompetencies() {
                     How I Help Engineering Teams Succeed
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Three areas where I&apos;ve consistently delivered results
-                    by focusing on people, process, and practical solutions
+                    Three areas where I&apos;ve consistently delivered results by focusing on people, process, and
+                    practical solutions
                 </p>
             </div>
 
@@ -81,9 +81,8 @@ export default function CoreCompetencies() {
                         Working on Similar Challenges?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        If your team is facing stalled projects, retention
-                        issues, or delivery challenges, I&apos;d love to chat
-                        about how these approaches might help.
+                        If your team is facing stalled projects, retention issues, or delivery challenges, I&apos;d love
+                        to chat about how these approaches might help.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"

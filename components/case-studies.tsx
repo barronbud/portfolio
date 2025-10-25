@@ -1,12 +1,4 @@
-import {
-    TrendingUp,
-    Code,
-    Users,
-    Clock,
-    Target,
-    CheckCircle,
-    ArrowRight,
-} from "lucide-react";
+import { TrendingUp, Code, Users, Clock, Target, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
@@ -31,14 +23,9 @@ export default function CaseStudies() {
             ],
             results: [
                 {
-                    metric: "150%",
+                    metric: "50%",
                     description: "Increase in team velocity",
                     icon: TrendingUp,
-                },
-                {
-                    metric: "100%",
-                    description: "Team retention during transformation",
-                    icon: Users,
                 },
                 {
                     metric: "90%",
@@ -84,14 +71,7 @@ export default function CaseStudies() {
                     icon: Users,
                 },
             ],
-            technologies: [
-                "Python",
-                "Docker",
-                "Bottle.py",
-                "Jenkins",
-                "DITA",
-                "JavaScript",
-            ],
+            technologies: ["Python", "Docker", "Bottle.py", "Jenkins", "DITA", "JavaScript"],
             image: "/images/projects/content-build-system-with-python-and-docker.png",
             link: "/projects/content-build-system-with-python-and-docker",
             color: "green" as ColorVariant,
@@ -123,11 +103,6 @@ export default function CaseStudies() {
                     description: "Course completion rate improvement",
                     icon: Target,
                 },
-                {
-                    metric: "1 Junior",
-                    description: "Developer mentored to senior level",
-                    icon: Users,
-                },
             ],
             technologies: ["TypeScript", "Azure Machine Learning"],
             image: null,
@@ -139,13 +114,10 @@ export default function CaseStudies() {
     return (
         <div className="mb-16">
             <div className="text-center mb-12">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Case Studies
-                </h3>
+                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Case Studies</h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Real-world examples of how I&apos;ve transformed teams and
-                    delivered exceptional results across diverse technical
-                    challenges
+                    Real-world examples of how I&apos;ve transformed teams and delivered exceptional results across
+                    diverse technical challenges
                 </p>
             </div>
 
@@ -174,11 +146,7 @@ export default function CaseStudies() {
                                     <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                                         {study.title}
                                     </h4>
-                                    <p
-                                        className={`text-lg font-medium ${colors.icon} mb-4`}
-                                    >
-                                        {study.subtitle}
-                                    </p>
+                                    <p className={`text-lg font-medium ${colors.icon} mb-4`}>{study.subtitle}</p>
                                     <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
                                         <span>📅 {study.duration}</span>
                                         <span>👥 {study.teamSize}</span>
@@ -206,9 +174,7 @@ export default function CaseStudies() {
                                     <Target className="w-5 h-5 text-red-500" />
                                     Challenge
                                 </h5>
-                                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {study.challenge}
-                                </p>
+                                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{study.challenge}</p>
                             </div>
 
                             {/* Solution */}
@@ -219,14 +185,9 @@ export default function CaseStudies() {
                                 </h5>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {study.solution.map((item, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="flex items-start gap-3"
-                                        >
+                                        <div key={idx} className="flex items-start gap-3">
                                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span className="text-gray-700 dark:text-gray-300 text-sm">
-                                                {item}
-                                            </span>
+                                            <span className="text-gray-700 dark:text-gray-300 text-sm">{item}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -238,20 +199,16 @@ export default function CaseStudies() {
                                     <TrendingUp className="w-5 h-5 text-green-500" />
                                     Results & Impact
                                 </h5>
-                                <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
+                                <div className="flex gap-10">
                                     {study.results.map((result, idx) => {
                                         const Icon = result.icon;
                                         return (
                                             <div
                                                 key={idx}
-                                                className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-gray-700/20 text-center group-hover:scale-105 transition-transform"
+                                                className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-gray-700/20 text-center group-hover:scale-105 transition-transform flex-1"
                                             >
-                                                <Icon
-                                                    className={`w-6 h-6 ${colors.icon} mx-auto mb-2`}
-                                                />
-                                                <div
-                                                    className={`text-2xl font-bold ${colors.icon} mb-1`}
-                                                >
+                                                <Icon className={`w-6 h-6 ${colors.icon} mx-auto mb-2`} />
+                                                <div className={`text-2xl font-bold ${colors.icon} mb-1`}>
                                                     {result.metric}
                                                 </div>
                                                 <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -299,9 +256,8 @@ export default function CaseStudies() {
                         Ready to Tackle Your Next Challenge?
                     </h4>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                        Let&apos;s discuss how these proven methodologies and
-                        leadership approaches can drive success for your
-                        engineering team.
+                        Let&apos;s discuss how these proven methodologies and leadership approaches can drive success
+                        for your engineering team.
                     </p>
                     <a
                         href="mailto:me@jeffreybarron.dev"

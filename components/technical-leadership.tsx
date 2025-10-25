@@ -1,13 +1,4 @@
-import {
-    Users,
-    Lightbulb,
-    TrendingUp,
-    Shield,
-    Code,
-    Zap,
-    Target,
-    CheckCircle,
-} from "lucide-react";
+import { Users, Lightbulb, TrendingUp, Shield, Code, Zap, Target, CheckCircle } from "lucide-react";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function TechnicalLeadership() {
@@ -15,8 +6,7 @@ export default function TechnicalLeadership() {
         {
             icon: Users,
             title: "Customer-First Technology Decisions",
-            description:
-                "Your customers don't care about your tech stack—they care about results",
+            description: "Your customers don't care about your tech stack—they care about results",
             insights: [
                 "Choose proven technologies over bleeding-edge for reliability",
                 "Prioritize user experience and business value over technical novelty",
@@ -29,8 +19,7 @@ export default function TechnicalLeadership() {
         {
             icon: Shield,
             title: "Technical Debt Management",
-            description:
-                "Balancing innovation with maintainability for long-term success",
+            description: "Balancing innovation with maintainability for long-term success",
             insights: [
                 "Treat technical debt as a business decision, not just a technical one",
                 "Communicate debt impact in terms of velocity and risk",
@@ -43,8 +32,7 @@ export default function TechnicalLeadership() {
         {
             icon: TrendingUp,
             title: "Platform Migration Leadership",
-            description:
-                "Successfully leading complex rewrites and system migrations",
+            description: "Successfully leading complex rewrites and system migrations",
             insights: [
                 "Break large migrations into incremental, deliverable phases",
                 "Maintain business continuity throughout the transition",
@@ -57,8 +45,7 @@ export default function TechnicalLeadership() {
         {
             icon: Code,
             title: "Engineering Excellence",
-            description:
-                "Building scalable systems with quality and maintainability in mind",
+            description: "Building scalable systems with quality and maintainability in mind",
             insights: [
                 "Implement code contracts and API stubs for parallel development",
                 "Establish clear coding standards and review processes",
@@ -77,7 +64,7 @@ export default function TechnicalLeadership() {
             detail: "Migrated 15 applications to Docker at Holmes Corp",
         },
         {
-            metric: "150%",
+            metric: "50%",
             description: "Team velocity increase",
             detail: "Through non-blocking processes and code contracts",
         },
@@ -100,9 +87,8 @@ export default function TechnicalLeadership() {
                     Technical Leadership Philosophy
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                    Pragmatic technology decisions focused on business value,
-                    team productivity, and long-term maintainability over
-                    technical novelty
+                    Pragmatic technology decisions focused on business value, team productivity, and long-term
+                    maintainability over technical novelty
                 </p>
             </div>
 
@@ -122,17 +108,13 @@ export default function TechnicalLeadership() {
                                     <div
                                         className={`w-16 h-16 ${colors.bg} rounded-2xl flex items-center justify-center flex-shrink-0`}
                                     >
-                                        <Icon
-                                            className={`w-8 h-8 ${colors.icon}`}
-                                        />
+                                        <Icon className={`w-8 h-8 ${colors.icon}`} />
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                                             {principle.title}
                                         </h4>
-                                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                                            {principle.description}
-                                        </p>
+                                        <p className="text-gray-600 dark:text-gray-400 mb-4">{principle.description}</p>
                                         <blockquote
                                             className={`text-sm italic ${colors.icon} border-l-4 ${colors.border} pl-4`}
                                         >
@@ -146,21 +128,16 @@ export default function TechnicalLeadership() {
                                         Key Insights
                                     </h5>
                                     <div className="space-y-3">
-                                        {principle.insights.map(
-                                            (insight, idx) => (
-                                                <div
-                                                    key={idx}
-                                                    className="flex items-start gap-3"
-                                                >
-                                                    <CheckCircle
-                                                        className={`w-4 h-4 ${colors.icon} mt-0.5 flex-shrink-0`}
-                                                    />
-                                                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                                                        {insight}
-                                                    </span>
-                                                </div>
-                                            )
-                                        )}
+                                        {principle.insights.map((insight, idx) => (
+                                            <div key={idx} className="flex items-start gap-3">
+                                                <CheckCircle
+                                                    className={`w-4 h-4 ${colors.icon} mt-0.5 flex-shrink-0`}
+                                                />
+                                                <span className="text-sm text-gray-600 dark:text-gray-400">
+                                                    {insight}
+                                                </span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -176,8 +153,7 @@ export default function TechnicalLeadership() {
                         Technical Leadership Results
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                        Measurable impact through pragmatic technical decisions
-                        and team empowerment
+                        Measurable impact through pragmatic technical decisions and team empowerment
                     </p>
                 </div>
 
@@ -190,9 +166,7 @@ export default function TechnicalLeadership() {
                             <div className="font-semibold text-gray-900 dark:text-white mb-1">
                                 {achievement.description}
                             </div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">
-                                {achievement.detail}
-                            </div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{achievement.detail}</div>
                         </div>
                     ))}
                 </div>
@@ -213,8 +187,7 @@ export default function TechnicalLeadership() {
                             Business Value First
                         </h5>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Every technical decision evaluated through the lens
-                            of customer impact and business outcomes
+                            Every technical decision evaluated through the lens of customer impact and business outcomes
                         </p>
                     </div>
 
@@ -226,8 +199,7 @@ export default function TechnicalLeadership() {
                             Pragmatic Innovation
                         </h5>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Adopting new technologies when they solve real
-                            problems, not for novelty&apos;s sake
+                            Adopting new technologies when they solve real problems, not for novelty&apos;s sake
                         </p>
                     </div>
 
@@ -235,12 +207,9 @@ export default function TechnicalLeadership() {
                         <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <Zap className="w-8 h-8 text-purple-600 dark:text-purple-400" />
                         </div>
-                        <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Team Empowerment
-                        </h5>
+                        <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Team Empowerment</h5>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Choosing tools and processes that enable team
-                            autonomy and reduce friction
+                            Choosing tools and processes that enable team autonomy and reduce friction
                         </p>
                     </div>
                 </div>

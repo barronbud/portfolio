@@ -1,12 +1,12 @@
 # Jeffrey Barron - The Velocity Multiplier
 
-Engineering Leader who consistently increases team velocity by 150%+ through proven process optimization and team building. This portfolio showcases practical strategies for building high-performing engineering teams and delivering measurable results.
+Engineering Leader who consistently increases team velocity by 50%+ through proven process optimization and team building. This portfolio showcases practical strategies for building high-performing engineering teams and delivering measurable results.
 
 ## Core Results
 
 ### Team Leadership & Velocity
 
--   **150% velocity increase** through process optimization and roadblock removal
+-   **50% velocity increase** through process optimization and roadblock removal
 -   Led cross-functional teams of up to **13 engineers** with measurable delivery improvements
 
 ### Remote Team Building

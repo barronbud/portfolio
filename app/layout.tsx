@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         template: "%s | Jeffrey Barron",
     },
     description:
-        "Engineering Leader with 10+ years in software development and 3+ years leading remote full-stack teams. Proven track record of increasing team velocity by 150% and delivering scalable solutions using Node, React, Python, and TypeScript.",
+        "Engineering Leader with 10+ years in software development and 3+ years leading remote full-stack teams. Proven track record of increasing team velocity by 50% and delivering scalable solutions using Node, React, Python, and TypeScript.",
     openGraph: {
         title: "Jeffrey Barron | Engineering Leader & Technical Executive",
         description:
@@ -49,19 +49,9 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html
-            lang="en"
-            className={cn(
-                "dark text-black bg-gray-50 dark:text-white dark:bg-gray-900",
-                inter.variable
-            )}
-        >
+        <html lang="en" className={cn("dark text-black bg-gray-50 dark:text-white dark:bg-gray-900", inter.variable)}>
             <body className="antialiased bg-gray-50 dark:bg-gray-900">
                 <Navbar />
                 <main className="max-w-7xl mx-auto px-4 lg:px-6">
