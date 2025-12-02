@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 ::selection {
     background-color: #47a3f3;
@@ -369,7 +367,7 @@ table {
     }
 
     .card-interactive {
-        @apply card-base card-hover;
+        @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
     }
 
     /* Text Color Utilities */
@@ -391,7 +389,7 @@ table {
     }
 
     .section-container {
-        @apply container-base section-spacing;
+        @apply max-w-7xl mx-auto px-4 lg:px-6 py-8 lg:py-12;
     }
 
     /* Animation Utilities */
@@ -400,7 +398,7 @@ table {
     }
 
     .animate-fade-in {
-        @apply opacity-0 animate-in fade-in duration-500;
+        animation: fadeInUp 0.6s ease-out;
     }
 
     /* Gradient Backgrounds */
@@ -415,9 +413,10 @@ table {
 
 @layer base {
     * {
-        @apply border-border;
+        border-color: hsl(var(--border));
     }
     body {
-        @apply bg-background text-foreground;
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
     }
 }
