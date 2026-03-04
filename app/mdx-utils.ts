@@ -56,7 +56,7 @@ function generatePreview(content: string, maxLength: number = 150): string {
         // Remove HTML/JSX tags
         .replace(/<[^>]*>/g, "")
         // Convert markdown links to plain text
-        .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
         // Remove markdown formatting
         .replace(/[*_`]/g, "")
         // Remove empty lines and normalize whitespace

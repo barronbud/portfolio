@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { categories } from "@/app/categories";
 
-export function ArticleCategories({}) {
+export function ArticleCategories() {
     const pathname = usePathname();
     const currentCategory = pathname.split("/").pop();
 

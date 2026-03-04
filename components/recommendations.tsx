@@ -1,10 +1,10 @@
+"use client";
+
 import Recommendation from "./recommendation";
 import { MessageSquareQuote } from "lucide-react";
+import { useMemo } from "react";
 
-export const dynamic = "force-dynamic";
-
-export default function Recommendations() {
-    const allRecommendations = [
+const ALL_RECOMMENDATIONS = [
         {
             name: "Anthony Bull",
             title: "Director of Engineering @ Rad AI",
@@ -50,9 +50,18 @@ export default function Recommendations() {
         },
     ];
 
-    const recommendations = allRecommendations
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
+// Deterministic selection: first 3 when sorted by name (stable, pure)
+function pickThree(
+    items: typeof ALL_RECOMMENDATIONS
+): typeof ALL_RECOMMENDATIONS {
+    return [...items].sort((a, b) => a.name.localeCompare(b.name)).slice(0, 3);
+}
+
+export default function Recommendations() {
+    const recommendations = useMemo(
+        () => pickThree(ALL_RECOMMENDATIONS),
+        []
+    );
 
     return (
         <div className="mb-12">
