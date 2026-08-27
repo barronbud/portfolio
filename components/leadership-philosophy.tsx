@@ -1,4 +1,4 @@
-import { Users, Shield, TrendingUp, Code } from "lucide-react";
+import { Users, Shield, TrendingUp, Code, Zap } from "lucide-react";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function LeadershipPhilosophy() {
@@ -22,10 +22,10 @@ export default function LeadershipPhilosophy() {
                 color: "blue" as ColorVariant,
             },
             {
-                icon: Shield,
-                title: "Pragmatic Excellence",
+                icon: Zap,
+                title: "Agent Workflows, Real Results",
                 description:
-                    "Choose proven technologies over bleeding-edge complexity. Maintain quality through clear standards while empowering team autonomy.",
+                    "I drive team-wide adoption of agentic coding tools like Claude Code and Cursor the same way I lead any process change—with clear standards, not mandates. The result is faster dev cycles without cutting corners.",
                 color: "purple" as ColorVariant,
             },
         ],
@@ -67,9 +67,9 @@ export default function LeadershipPhilosophy() {
             detail: "Led OCR automation development",
         },
         {
-            metric: "<5%",
-            description: "Defect rate",
-            detail: "Across 9 high-quality project deliveries",
+            metric: "25%",
+            description: "Faster dev cycles",
+            detail: "Team-wide adoption of agentic coding with Claude Code & Cursor",
         },
     ];
 
