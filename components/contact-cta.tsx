@@ -32,9 +32,10 @@ export default function ContactCTA() {
                         Turn Your Engineering Team Into a Delivery Machine
                     </h3>
                     <p className="text-xl mb-8 text-blue-100">
-                        I specialize in leading complex projects and
-                        transforming engineering teams. Let&apos;s discuss your
-                        specific challenges.
+                        I specialize in leading complex projects, 
+                        transforming engineering teams, and implementing
+                        AI-assisted workflows that measurably speed up
+                        delivery.
                     </p>
                 </div>
 
