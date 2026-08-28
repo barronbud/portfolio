@@ -65,18 +65,16 @@ function generatePreview(content: string, maxLength: number = 150): string {
         .replace(/\s+/g, " ")
         .trim();
 
-    // Get the first meaningful sentence or paragraph
-    const sentences = cleanContent
-        .split(/[.!?]+/)
-        .filter((s) => s.trim().length > 0);
-    const firstSentence = sentences[0]?.trim() || "";
-
-    // Truncate if too long
-    if (firstSentence.length > maxLength) {
-        return firstSentence.substring(0, maxLength).trim() + "...";
+    if (cleanContent.length <= maxLength) {
+        return cleanContent;
     }
 
-    return firstSentence;
+    // Truncate at the last word boundary so we don't cut off mid-word
+    const truncated = cleanContent.substring(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(" ");
+    const trimmed = lastSpace > 0 ? truncated.substring(0, lastSpace) : truncated;
+
+    return trimmed.trim() + "...";
 }
 
 function readMDXFile(filePath: string) {
