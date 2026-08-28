@@ -12,6 +12,7 @@ type Metadata = {
     useImage: string;
     category?: string;
     seriesOrder?: string;
+    draft?: string;
 };
 
 export interface Post {
@@ -85,18 +86,20 @@ function readMDXFile(filePath: string) {
 
 function getMDXData(dir: string): Post[] {
     const mdxFiles = getMDXFiles(dir);
-    return mdxFiles.map((file) => {
-        const { metadata, content } = readMDXFile(path.join(dir, file));
-        const slug = path.basename(file, path.extname(file));
-        const preview = generatePreview(content);
+    return mdxFiles
+        .map((file) => {
+            const { metadata, content } = readMDXFile(path.join(dir, file));
+            const slug = path.basename(file, path.extname(file));
+            const preview = generatePreview(content);
 
-        return {
-            metadata,
-            slug,
-            content,
-            preview,
-        };
-    });
+            return {
+                metadata,
+                slug,
+                content,
+                preview,
+            };
+        })
+        .filter((post) => post.metadata.draft !== "true");
 }
 
 export function getBlogPosts() {

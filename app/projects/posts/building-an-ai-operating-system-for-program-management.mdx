@@ -1,0 +1,118 @@
+---
+title: "Building an AI Operating System for Program Management"
+publishedAt: "2026-08-27"
+summary: "A system for compressing the highest-overhead parts of program management—status reporting, root-cause investigation, ticket writing—into 11 interconnected Claude Code skills."
+image: ""
+type: "projects"
+promoted: "true"
+useImage: "false"
+---
+
+## The Problem
+
+Six concurrent projects. Three to five active repositories, including a large monorepo nobody fully holds in their head. As a fractional Technical Program Manager for an Operational Technology (OT) SaaS company, the time intensive parts of the job weren't the hard parts...it was the repetitive ones. 
+
+Things like reconstructing a week's worth of commits, Jira changes, and Slack messages into a status update. Or digging through an unfamiliar codebase to trace a root cause. Or especially turning a conversation into a Jira ticket without losing the nuance that made it useful in the first place.
+
+None of it required brilliance. All of it required time, and six concurrent projects don't leave much of that lying around.
+
+### Design Constraints
+
+Before writing a single skill, three constraints shaped everything that followed:
+
+- **Co-designed, not handed off.** Every skill went through the same shaping conversation - generate a first pass, review the full output, revise. Most took one to three revision cycles; a few got rebuilt from scratch because they just didn't work.
+- **Interconnected, not standalone.** A skill that only helps in isolation is a script. The system needed skills that fed each other.
+- **Human-in-the-loop by design, not by accident.** Consent gates before anything gets created. Correction steps before anything ships. The AI drafts; a human decides.
+
+## The Solution
+
+Eleven Claude Code skills, organized around the actual shape of the work:
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
+
+<div className="p-5 border border-gray-200 dark:border-gray-700 border-l-4 border-l-blue-500 dark:border-l-blue-400 rounded-xl bg-gray-50 dark:bg-gray-800/50 md:col-span-2">
+<div className="flex items-center gap-2 mb-1">
+<Workflow className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+<span className="font-bold text-gray-900 dark:text-white">Lifecycle</span>
+</div>
+
+`/project-setup` launches a project, writing the config every other skill reads. `/project-complete` closes the project down with a retro, archive, and cleanup.
+
+</div>
+
+<div className="p-5 border border-gray-200 dark:border-gray-700 border-l-4 border-l-indigo-500 dark:border-l-indigo-400 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+<div className="flex items-center gap-2 mb-1">
+<ListChecks className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+<span className="font-bold text-gray-900 dark:text-white">Scoping and tickets</span>
+</div>
+
+`/research` turns a vague question into discrete findings and, when warranted, automatically hands off to `/scope`, which turns findings into right-sized work items. `/create-ticket` drafts the Jira issue itself using a simple, easy to read format.
+
+</div>
+
+<div className="p-5 border border-gray-200 dark:border-gray-700 border-l-4 border-l-violet-500 dark:border-l-violet-400 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+<div className="flex items-center gap-2 mb-1">
+<FileText className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+<span className="font-bold text-gray-900 dark:text-white">Reporting</span>
+</div>
+
+`/weekly-gather` pulls Jira and GitHub data into a re-runnable briefing; `/weekly-update` drafts the exec-facing summary from it. 
+
+</div>
+
+<div className="p-5 border border-gray-200 dark:border-gray-700 border-l-4 border-l-purple-500 dark:border-l-purple-400 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+<div className="flex items-center gap-2 mb-1">
+<Search className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+<span className="font-bold text-gray-900 dark:text-white">Investigation</span>
+</div>
+
+`/investigate` spawns one agent per finding to trace root cause in parallel rather than digging sequentially. `/observability-audit` runs an observability posture check across a project, diffing against its own last run so unchanged repos cost nothing to re-check.
+
+</div>
+
+<div className="p-5 border border-gray-200 dark:border-gray-700 border-l-4 border-l-fuchsia-500 dark:border-l-fuchsia-400 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+<div className="flex items-center gap-2 mb-1">
+<ShieldCheck className="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400" />
+<span className="font-bold text-gray-900 dark:text-white">Validation</span>
+</div>
+
+`/validate-audit` exists because `/observability-audit` doesn't always get it right. It spawns agents specifically to try to disprove the audit's own claims.
+
+</div>
+
+</div>
+
+### How They Connect
+
+The system's actual value isn't any single skill. It's the handoffs:
+
+<div className="flex flex-col gap-3 my-6 not-prose">
+
+<div className="flex flex-wrap items-center gap-3">
+<span className="font-mono text-sm px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">/project-setup</span>
+<span className="text-gray-400">→</span>
+<span className="text-sm text-gray-500 dark:text-gray-400">writes the config every other skill reads first, so none of them need re-explaining what "this project" means</span>
+</div>
+
+<div className="flex flex-wrap items-center gap-3">
+<span className="font-mono text-sm px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">/research</span>
+<span className="text-gray-400">→</span>
+<span className="font-mono text-sm px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">/scope</span>
+<span className="text-sm text-gray-500 dark:text-gray-400">findings hand off automatically, no re-typing</span>
+</div>
+
+<div className="flex flex-wrap items-center gap-3">
+<span className="font-mono text-sm px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">/observability-audit</span>
+<span className="text-gray-400">⇄</span>
+<span className="font-mono text-sm px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">/validate-audit</span>
+<span className="text-sm text-gray-500 dark:text-gray-400">co-evolved report format</span>
+</div>
+
+</div>
+
+## Outcomes
+
+* 3–5 hours saved per week
+* 5–10 hours saved on a single research spike
+* Fifteen work items surfaced by one audit run on a codebase with zero prior context
+* Ten to fifteen minutes back on every Jira ticket

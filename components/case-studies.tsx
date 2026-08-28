@@ -1,6 +1,7 @@
 import { TrendingUp, Code, Users, Clock, Target, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Markdown from "markdown-to-jsx";
 import { getColorClasses, type ColorVariant } from "@/lib/utils";
 
 export default function CaseStudies() {
@@ -37,6 +38,44 @@ export default function CaseStudies() {
             image: "/images/projects/agile-process-iterative-execution.png",
             link: "/projects/tackling-complex-rewrite-with-process-changes",
             color: "blue" as ColorVariant,
+        },
+        {
+            id: "ai-operating-system",
+            title: "Building an AI Operating System for Program Management",
+            subtitle: "11 Interconnected Agentic Skills, Not 11 Scripts",
+            company: "Operational Technology (OT) SaaS",
+            duration: "Ongoing",
+            teamSize: "Solo build",
+            challenge:
+                "Six concurrent projects. Three to five active repos. And a status update that ate one to two hours every week just to reconstruct what actually happened from GitHub, Jira, and half-remembered Slack threads. None of it was hard, exactly. It was just expensive, and expensive doesn't scale by working nights.",
+            solution: [
+                "Designed 11 agentic skills as one connected system on Claude Code—not eleven standalone scripts. **/project-setup** writes the config every other skill reads",
+                "Gave **/create-ticket** a hard rule: never fabricate a missing field. An empty acceptance-criteria section beats a padded one—the same standard I'd hold a PR against",
+                "Built **/observability-audit** look for monitoring gaps. Included a guardrail to diff against its own last run—changed repos get a full re-audit, untouched ones carry forward at zero cost",
+                "The audit skill started inventing findings that sounded right and weren't. So I built **/validate-audit**—a second skill whose only job is catching the first one lying before anything reaches a dev team",
+                "Chained dedicated **/research** skill directly into **/scope**, so a vague 'how would we do X' turns into appropriately sized work items. Supports detail level from 10,000 feet to ready-to-assign tasks.",
+            ],
+            results: [
+                {
+                    metric: "3-5 hrs",
+                    description: "Saved every week",
+                    icon: Clock,
+                },
+                {
+                    metric: "15",
+                    description: "Gaps surfaced in a codebase I'd never touched",
+                    icon: Target,
+                },
+                {
+                    metric: "5-10 hrs",
+                    description: "Saved on a single research spike",
+                    icon: TrendingUp,
+                },
+            ],
+            technologies: ["Claude Code", "Agentic Skills", "Jira (MCP)", "GitHub CLI"],
+            image: null,
+            link: "/projects/building-an-ai-operating-system-for-program-management",
+            color: "orange" as ColorVariant,
         },
         {
             id: "content-system",
@@ -174,7 +213,9 @@ export default function CaseStudies() {
                                     <Target className="w-5 h-5 text-red-500" />
                                     Challenge
                                 </h5>
-                                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{study.challenge}</p>
+                                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    <Markdown options={{ forceInline: true }}>{study.challenge}</Markdown>
+                                </p>
                             </div>
 
                             {/* Solution */}
@@ -187,7 +228,9 @@ export default function CaseStudies() {
                                     {study.solution.map((item, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
                                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span className="text-gray-700 dark:text-gray-300 text-sm">{item}</span>
+                                            <span className="text-gray-700 dark:text-gray-300 text-sm">
+                                                <Markdown options={{ forceInline: true }}>{item}</Markdown>
+                                            </span>
                                         </div>
                                     ))}
                                 </div>
@@ -212,7 +255,7 @@ export default function CaseStudies() {
                                                     {result.metric}
                                                 </div>
                                                 <div className="text-xs text-gray-600 dark:text-gray-400">
-                                                    {result.description}
+                                                    <Markdown options={{ forceInline: true }}>{result.description}</Markdown>
                                                 </div>
                                             </div>
                                         );

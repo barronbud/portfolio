@@ -50,7 +50,7 @@ export default function Hero() {
                                 I build high-performing full-stack engineering teams that deliver exceptional results
                                 through collaboration, ownership, and shipping fast.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3+ Years</div>
                                     <div className="text-sm text-gray-600 dark:text-gray-400">Leading Remote Teams</div>
@@ -68,6 +68,12 @@ export default function Hero() {
                                         50% Faster
                                     </div>
                                     <div className="text-sm text-gray-600 dark:text-gray-400">Team Delivery Speed</div>
+                                </div>
+                                <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
+                                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                        11+ Skills
+                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">Powers an Agentic Toolkit</div>
                                 </div>
                             </div>
                         </div>
