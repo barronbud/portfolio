@@ -97,7 +97,7 @@ importers:
         specifier: ^7.1.1
         version: 7.1.1(eslint@10.15.0(jiti@2.7.0))
       postcss:
-        specifier: ^8.5.33
+        specifier: '>=8.5.10'
         version: 8.5.33
       tailwindcss:
         specifier: ^4.3.5
